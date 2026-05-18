@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── GLOBAL TOKENS ──────────────────────────── */
+:root {
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease2: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── BORDER SPIN PROPERTY (enables smooth conic animation) ── */
+@property --connect-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes connect-border-spin {
+  from { --connect-angle: 0deg; }
+  to   { --connect-angle: 360deg; }
+}
+
+/* ── RESET ──────────────────────────────────── */
+* { cursor: none; }
+html { scroll-behavior: auto; /* Lenis handles smooth scroll */ }
+body {
+  background: #050505;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── MARQUEE KEYFRAMES ───────────────────────────
+   translateX(-50%) works because each row has 2×
+   identical card sets, so half the total width = 1 set.
+   CSS animations loop with zero flash / jump. ──── */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ── SPOTLIGHT CURSOR ───────────────────────────
+   A soft radial glow that follows the mouse — no
+   visible cursor shape, just ambient light.
+   States: default | on-link (tighter) | hide-cursor
+─────────────────────────────────────────────── */
+.spotlight-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  /* Size & centering */
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  /* Soft violet/indigo radial glow */
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.18) 0%,
+    rgba(139, 92, 246, 0.10) 30%,
+    rgba(59,  80, 220, 0.05) 60%,
+    transparent 75%
+  );
+  /* Smooth size + opacity transitions */
+  transition:
+    width  0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.3s ease,
+    background 0.4s ease;
+  /* filter blur softens the hard edge */
+  filter: blur(2px);
+  will-change: left, top;
+}
+
+/* On link / button hover — tighter, brighter spotlight */
+.on-link .spotlight-cursor {
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.32) 0%,
+    rgba(99, 102, 241, 0.18) 35%,
+    rgba(59,  80, 220, 0.08) 65%,
+    transparent 80%
+  );
+  filter: blur(1px);
+}
+
+/* ── HIDE CURSOR (wand is active in KnowAboutMe) */
+.hide-cursor .spotlight-cursor { opacity: 0 !important; }
+
+/* ── SCROLL PROGRESS ────────────────────────── */
+.scroll-progress {
+  @apply fixed top-0 left-0 h-[2px] z-[8999];
+  background: linear-gradient(90deg, #3b6cf5, #7c3aed);
+  transition: width 0.06s linear;
+}
+
+/* ── NOISE TEXTURE ──────────────────────────── */
+.noise-overlay {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* ── GLASSMORPHISM CARD ─────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  backdrop-filter: blur(16px) saturate(1.3);
+  transition: border-color 0.3s, transform 0.5s var(--ease), box-shadow 0.4s;
+}
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(59, 108, 245, 0.06);
+}
+
+/* ── HERO CARD POSITIONS ────────────────────── */
+.hc-c1 { top: 14%; left: 1%; }
+.hc-c2 { top: 10%; right: 1%; }
+.hc-c3 { top: 48%; left: 0%; }
+.hc-c4 { top: 48%; right: 0%; }
+.hc-c5 { bottom: 16%; left: 1%; }
+.hc-c6 { bottom: 12%; right: 1%; }
+
+/* ── SECTION DIVIDERS ───────────────────────── */
+/* Removed hard border — sections now flow continuously */
+.sec-divider {
+  border-top: none;
+}
+
+/* ── SECTION BLEND — gradient fade top & bottom so aurora bleeds through ── */
+.section-blend::before,
+.section-blend::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 140px;
+  pointer-events: none;
+  z-index: 2;
+}
+.section-blend::before {
+  top: 0;
+  background: linear-gradient(to bottom, #050505 0%, transparent 100%);
+}
+.section-blend::after {
+  bottom: 0;
+  background: linear-gradient(to top, #050505 0%, transparent 100%);
+}
+
+/* ── MARQUEE EDGE FADES ─────────────────────── */
+.marquee-fade-l {
+  background: linear-gradient(90deg, #050505, transparent);
+}
+.marquee-fade-r {
+  background: linear-gradient(-90deg, #050505, transparent);
+}
+
+/* ── PROJECT ARROW HOVER ────────────────────── */
+.proj-row:hover .proj-arrow-icon {
+  background: rgba(59, 108, 245, 0.6);
+  color: #fff;
+  border-color: rgba(59, 108, 245, 0.4);
+  transform: rotate(45deg);
+}
+
+/* ── BLOG ITEM HOVER ────────────────────────── */
+.blog-row { transition: padding-left 0.3s var(--ease); }
+.blog-row:hover { padding-left: 8px; }
+.blog-row:hover .blog-read-label { color: #f0f0f5; }
+
+/* ── HERO CONNECT BUTTON — border-only circuit spin ── */
+/* Wrapper creates the 2px border space; inner <a> fills center with white */
+.connect-btn-wrap {
+  position: relative;
+  display: inline-flex;
+  border-radius: 9999px;
+  padding: 2px;             /* <-- this gap is where the border ring shows */
+  transition: transform 0.35s var(--ease), filter 0.35s;
+}
+
+/* Conic spinning ring fills the entire wrapper */
+.connect-btn-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from var(--connect-angle),
+    transparent 0%,
+    rgba(139, 92, 246, 0.9)  8%,
+    rgba(220, 220, 255, 1)   18%,
+    rgba(99, 102, 241, 0.9)  28%,
+    transparent              40%
+  );
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+
+/* On hover: spin the ring + subtle lift + soft glow */
+.connect-btn-wrap:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 8px 20px rgba(99, 102, 241, 0.25));
+}
+
+.connect-btn-wrap:hover::before {
+  opacity: 1;
+  animation: connect-border-spin 1.6s linear infinite;
+}
+
+/* The inner button: white bg covers the conic center — only border ring visible */
+.connect-btn-inner {
+  position: relative;
+  z-index: 1;
+  border-radius: 9999px;
+  transition: background 0.35s;
+}
+.connect-btn-wrap:hover .connect-btn-inner {
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* ── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 860px) {
+  /* Hide browser mockup windows on mobile — too cluttered */
+  .hero-cards-container .hc-card { display: none; }
+  /* Target the mockup wrapper directly */
+  section#hero > div[class*="absolute"][class*="inset-0"][class*="z-[2]"] {
+    display: none;
+  }
+}
