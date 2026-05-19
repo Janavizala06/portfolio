@@ -2,11 +2,11 @@
 
 import { useRef, useCallback, type MouseEvent as ReactMouseEvent } from "react";
 
-export function useTilt3d(strength = 8) {
-  const ref = useRef<HTMLDivElement>(null);
+export function useTilt3d<T extends HTMLElement = HTMLDivElement>(strength = 8) {
+  const ref = useRef<T>(null);
 
   const onMove = useCallback(
-    (e: ReactMouseEvent<HTMLDivElement>) => {
+    (e: ReactMouseEvent<T>) => {
       const el = ref.current;
       if (!el) return;
       const r = el.getBoundingClientRect();

@@ -42,55 +42,14 @@ body {
   to   { transform: translateX(0); }
 }
 
-/* ── SPOTLIGHT CURSOR ───────────────────────────
-   A soft radial glow that follows the mouse — no
-   visible cursor shape, just ambient light.
-   States: default | on-link (tighter) | hide-cursor
+/* ── CURSOR VISIBILITY ──────────────────────────
+   hide-cursor: used by KnowAboutMe wand cursor to
+   hide all custom cursors when wand is active
 ─────────────────────────────────────────────── */
-.spotlight-cursor {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  /* Size & centering */
-  width: 300px;
-  height: 300px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  /* Soft violet/indigo radial glow */
-  background: radial-gradient(
-    circle,
-    rgba(99, 102, 241, 0.18) 0%,
-    rgba(139, 92, 246, 0.10) 30%,
-    rgba(59,  80, 220, 0.05) 60%,
-    transparent 75%
-  );
-  /* Smooth size + opacity transitions */
-  transition:
-    width  0.45s cubic-bezier(0.16, 1, 0.3, 1),
-    height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.3s ease,
-    background 0.4s ease;
-  /* filter blur softens the hard edge */
-  filter: blur(2px);
-  will-change: left, top;
+.hide-cursor .neon-cursor-container,
+.hide-cursor #canvas {
+  opacity: 0 !important;
 }
-
-/* On link / button hover — tighter, brighter spotlight */
-.on-link .spotlight-cursor {
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(
-    circle,
-    rgba(139, 92, 246, 0.32) 0%,
-    rgba(99, 102, 241, 0.18) 35%,
-    rgba(59,  80, 220, 0.08) 65%,
-    transparent 80%
-  );
-  filter: blur(1px);
-}
-
-/* ── HIDE CURSOR (wand is active in KnowAboutMe) */
-.hide-cursor .spotlight-cursor { opacity: 0 !important; }
 
 /* ── SCROLL PROGRESS ────────────────────────── */
 .scroll-progress {

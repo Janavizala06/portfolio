@@ -6,7 +6,7 @@ import AuroraBackground from "./AuroraBackground";
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
 export default function Testimonials() {
@@ -41,7 +41,7 @@ export default function Testimonials() {
                 scale: 1.03,
                 borderColor: "rgba(255,255,255,0.16)",
                 boxShadow: "0 24px 52px rgba(99,102,241,0.16), 0 8px 20px rgba(0,0,0,0.28)",
-                transition: { duration: 0.32, ease: [0.16, 1, 0.3, 1] },
+                transition: { duration: 0.32, ease: [0.16, 1, 0.3, 1] as const },
               }}
               className="glass-card p-7 flex flex-col gap-5 cursor-default"
             >

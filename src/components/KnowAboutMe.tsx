@@ -10,7 +10,7 @@ import AuroraBackground from "./AuroraBackground";
 /* ── Reveal variants ──────────────────────────── */
 const reveal = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
 /* ── Bento Card wrapper ──────────────────────── */
@@ -204,7 +204,7 @@ export default function KnowAboutMe() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
             className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-3"
           >
             Know About Me
@@ -214,7 +214,7 @@ export default function KnowAboutMe() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.85, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.85, delay: 0.1, ease: [0.16, 1, 0.3, 1] as const }}
             className="font-serif text-[clamp(32px,5vw,56px)] font-normal tracking-[-0.02em] leading-[1.1] text-[#f0f0f5] mb-10"
           >
             Full-Stack Developer and
@@ -232,7 +232,7 @@ export default function KnowAboutMe() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
             >
               <p className="text-[14.5px] text-white/60 leading-[1.8] mb-5">
                 I&apos;m Janavi Zala, a proactive full-stack developer and AI enthusiast
@@ -283,7 +283,7 @@ export default function KnowAboutMe() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.85, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.85, delay: 0.35, ease: [0.16, 1, 0.3, 1] as const }}
               className="relative flex items-start justify-center pt-2"
             >
               <div
@@ -293,52 +293,38 @@ export default function KnowAboutMe() {
                   boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 0 2.5px rgba(60,120,255,0.45), 0 0 40px rgba(60,120,255,0.12), 0 0 80px rgba(60,120,255,0.06)",
                 }}
               >
-                {/* Layer 1: Monogram with futuristic background */}
-                <div
-                  className="absolute inset-0 flex items-center justify-center z-[1]"
-                  style={{ background: "linear-gradient(145deg, #0a0a28 0%, #060614 35%, #050510 70%, #080820 100%)" }}
-                >
-                  {/* Grid pattern */}
+                {/* Layer 1: Logo image with glow */}
+                <div className="absolute inset-0 z-[1] bg-[#060614]">
+                  {/* Center radial glow */}
                   <div
-                    className="absolute inset-0 opacity-[0.12]"
+                    className="absolute inset-0 pointer-events-none"
                     style={{
-                      backgroundImage: "linear-gradient(rgba(80,130,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(80,130,255,0.4) 1px, transparent 1px)",
-                      backgroundSize: "36px 36px",
+                      background: "radial-gradient(circle at 50% 50%, rgba(99,102,241,0.28) 0%, rgba(124,58,237,0.15) 35%, rgba(79,70,229,0.06) 60%, transparent 80%)",
                     }}
                   />
-                  {/* Diagonal grid */}
+                  {/* Top-right accent glow */}
                   <div
-                    className="absolute inset-0 opacity-[0.06]"
+                    className="absolute top-0 right-0 w-[200px] h-[200px] pointer-events-none"
                     style={{
-                      backgroundImage: "linear-gradient(45deg, rgba(80,130,255,0.3) 1px, transparent 1px), linear-gradient(-45deg, rgba(80,130,255,0.3) 1px, transparent 1px)",
-                      backgroundSize: "50px 50px",
+                      background: "radial-gradient(circle at 100% 0%, rgba(139,92,246,0.35) 0%, transparent 65%)",
                     }}
                   />
-                  {/* Radar circles */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="w-[200px] h-[200px] rounded-full border border-white/[0.04]" />
-                    <div className="absolute w-[300px] h-[300px] rounded-full border border-white/[0.03]" />
-                    <div className="absolute w-[400px] h-[400px] rounded-full border border-white/[0.02]" />
-                  </div>
-
-                  {/* Corner accent glow */}
-                  <div className="absolute top-0 right-0 w-[180px] h-[180px] opacity-30 pointer-events-none"
-                    style={{ background: "radial-gradient(circle at 100% 0%, rgba(60,120,255,0.35) 0%, transparent 65%)" }}
-                  />
-                  <div className="absolute bottom-0 left-0 w-[140px] h-[140px] opacity-20 pointer-events-none"
-                    style={{ background: "radial-gradient(circle at 0% 100%, rgba(60,120,255,0.3) 0%, transparent 65%)" }}
-                  />
-
-                  {/* JZ Monogram — large futuristic */}
-                  <span
-                    className="relative font-sans text-[130px] font-extrabold tracking-[-0.06em] text-white"
+                  {/* Bottom-left accent glow */}
+                  <div
+                    className="absolute bottom-0 left-0 w-[160px] h-[160px] pointer-events-none"
                     style={{
-                      textShadow: "0 0 30px rgba(60,120,255,0.4), 0 0 60px rgba(60,120,255,0.15), 0 4px 20px rgba(0,0,0,0.5)",
-                      WebkitTextStroke: "1px rgba(100,160,255,0.15)",
+                      background: "radial-gradient(circle at 0% 100%, rgba(99,102,241,0.25) 0%, transparent 65%)",
                     }}
-                  >
-                    JZ
-                  </span>
+                  />
+                  {/* Logo */}
+                  <img
+                    src="/logo.png"
+                    alt="JZ Logo"
+                    className="relative w-full h-full object-cover"
+                    style={{
+                      filter: "drop-shadow(0 0 20px rgba(99,102,241,0.4)) drop-shadow(0 0 50px rgba(139,92,246,0.2))",
+                    }}
+                  />
                 </div>
 
                 {/* Layer 2: Photo reveal */}
@@ -387,7 +373,7 @@ export default function KnowAboutMe() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }}
             className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
           >
             Where I&apos;ve{" "}
@@ -535,7 +521,7 @@ export default function KnowAboutMe() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }}
             className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
           >
             Builder, not just <em className="italic bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">a coder</em>
