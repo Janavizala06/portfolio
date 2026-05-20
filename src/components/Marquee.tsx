@@ -7,7 +7,7 @@ export default function Marquee() {
   const reversed = [...[...marqueeItems].reverse(), ...[...marqueeItems].reverse()];
 
   return (
-    <div className="relative py-8 overflow-hidden border-t border-b border-white/[0.04] bg-transparent">
+    <div className="relative py-8 overflow-hidden bg-transparent">
       {/* Edge fades */}
       <div className="absolute top-0 bottom-0 left-0 w-[120px] z-[2] pointer-events-none marquee-fade-l" />
       <div className="absolute top-0 bottom-0 right-0 w-[120px] z-[2] pointer-events-none marquee-fade-r" />

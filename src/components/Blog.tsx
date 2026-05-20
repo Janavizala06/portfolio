@@ -24,7 +24,7 @@ export default function Blog() {
         </motion.p>
         <motion.h2 variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
           className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]">
-          Achievements & <em className="italic bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">recognition</em>
+          Achievements & <em className="italic gradient-text-animated">recognition</em>
         </motion.h2>
 
         <div className="flex flex-col">
@@ -37,7 +37,7 @@ export default function Blog() {
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="blog-row flex items-start justify-between gap-5 py-7 border-b border-white/[0.06] first:pt-0 no-underline text-[#f0f0f5]"
+              className="blog-row flex items-start justify-between gap-5 py-7 first:pt-0 no-underline text-[#f0f0f5]"
             >
               <div>
                 <div className="text-[11.5px] text-white/30 font-mono tracking-[0.05em] mb-2">

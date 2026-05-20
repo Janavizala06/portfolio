@@ -220,7 +220,7 @@ export default function KnowAboutMe() {
             Full-Stack Developer and
             <br />
             an AI-powered {" "}
-            <em className="italic bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
+            <em className="italic gradient-text-animated">
               innovator
             </em>
           </motion.h2>
@@ -377,7 +377,7 @@ export default function KnowAboutMe() {
             className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
           >
             Where I&apos;ve{" "}
-            <em className="italic bg-gradient-to-r from-violet-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent">
+            <em className="italic gradient-text-animated">
               been
             </em>
           </motion.h3>
@@ -524,7 +524,7 @@ export default function KnowAboutMe() {
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }}
             className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
           >
-            Builder, not just <em className="italic bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">a coder</em>
+            Builder, not just <em className="italic gradient-text-animated">a coder</em>
           </motion.h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
@@ -532,7 +532,7 @@ export default function KnowAboutMe() {
             <BentoCard className="md:col-span-2">
               <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-white/30 mb-3">Connect</div>
               <h4 className="font-serif text-[clamp(22px,2.8vw,32px)] font-normal tracking-[-0.02em] leading-[1.25] text-[#f0f0f5] mb-2">
-                Always open to new <em className="italic bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">opportunities</em>
+                Always open to new <em className="italic gradient-text-animated">opportunities</em>
               </h4>
               <p className="text-[13px] text-white/55 leading-[1.7]">
                 I build AI-powered platforms and full-stack web apps. Open to internships, collaborations, and exciting opportunities.
@@ -555,7 +555,7 @@ export default function KnowAboutMe() {
             <BentoCard className="md:col-span-3" delay={0.2}>
               <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-white/30 mb-3">Stack</div>
               <h4 className="font-serif text-[clamp(22px,2.8vw,32px)] font-normal tracking-[-0.02em] leading-[1.25] text-[#f0f0f5] mb-2">
-                Tools I <em className="italic bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">actually use</em>
+                Tools I <em className="italic gradient-text-animated">actually use</em>
               </h4>
               <div className="flex flex-wrap gap-2 mt-2.5">
                 {stackItems.map((s) => (

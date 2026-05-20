@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-transparent text-white/50 border-t border-white/[0.04] pt-12 pb-10 px-7">
+    <footer className="bg-transparent text-white/50 pt-12 pb-10 px-7">
       <div className="max-w-[1080px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] gap-10">
         {/* Brand */}
         <div>
@@ -55,7 +55,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom */}
-      <div className="max-w-[1080px] mx-auto mt-9 flex flex-col sm:flex-row justify-between items-center border-t border-white/[0.07] pt-7 text-xs gap-3">
+      <div className="max-w-[1080px] mx-auto mt-9 flex flex-col sm:flex-row justify-between items-center pt-7 text-xs gap-3">
         <span>© 2026 Janavi Zala. All rights reserved.</span>
         <span className="text-white/25">Built with Next.js, Tailwind CSS &amp; Framer Motion</span>
       </div>

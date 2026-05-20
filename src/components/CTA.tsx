@@ -38,7 +38,7 @@ export default function CTA() {
 
       <motion.h2 variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
         className="relative z-[2] font-serif text-[clamp(40px,7vw,80px)] font-normal tracking-[-0.03em] leading-[1.05] text-white mb-[18px]">
-        From concept<br />to <em className="italic bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">creation.</em><br />Let&apos;s make it happen!
+        From concept<br />to <em className="italic gradient-text-animated">creation.</em><br />Let&apos;s make it happen!
       </motion.h2>
 
       <motion.p variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}

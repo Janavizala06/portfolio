@@ -199,26 +199,24 @@ const ROW_PX = 1912;
 function MarqueeRow({ right, duration, offset, children }: {
   right?: boolean; duration: number; offset?: number; children: React.ReactNode;
 }) {
+  const GAP = 16;
   return (
-    /*
-      width: max-content → row is exactly as wide as (2 × card set).
-      animation translates by -50% → exactly 1 card-set width.
-      Because set-A and set-B are identical, at -50% it looks like set-A again.
-      CSS @keyframes loops natively with zero flash or jump.
-    */
     <div style={{ marginLeft: offset ?? 0, overflow: "visible", flexShrink: 0 }}>
       <div
         style={{
           display: "flex",
           flexWrap: "nowrap",
-          gap: "28px",
           width: "max-content",
-          animation: `${right ? "marquee-right" : "marquee-left"} ${duration}s linear infinite`,
+          animation: `${right ? "marquee-right-3" : "marquee-left-3"} ${duration}s linear infinite`,
           willChange: "transform",
         }}
       >
-        {children}
-        {children}
+        {/* 3 identical sets — guarantees no blank space even with 3D perspective */}
+        {[0, 1, 2].map((n) => (
+          <div key={n} style={{ display: "flex", flexWrap: "nowrap", gap: `${GAP}px`, paddingRight: `${GAP}px` }}>
+            {children}
+          </div>
+        ))}
       </div>
     </div>
   );

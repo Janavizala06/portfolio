@@ -24,7 +24,7 @@ export default function Projects() {
         </motion.p>
         <motion.h2 variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
           className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]">
-          Projects that <em className="italic bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">shipped</em>
+          Projects that <em className="italic gradient-text-animated">shipped</em>
         </motion.h2>
 
         <div className="flex flex-col">
@@ -36,7 +36,7 @@ export default function Projects() {
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="proj-row grid grid-cols-[56px_1fr_auto] items-start gap-7 py-9 border-b border-white/[0.06] first:pt-0 relative transition-colors"
+              className="proj-row grid grid-cols-[56px_1fr_auto] items-start gap-7 py-9 first:pt-0 relative transition-colors"
             >
               {/* Number */}
               <span className="font-serif text-[15px] text-white/30 italic pt-[5px]">{p.num}</span>

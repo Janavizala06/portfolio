@@ -95,7 +95,7 @@ export default function Hero() {
               variants={fadeUp}
               className="font-serif font-normal text-[clamp(44px,8vw,96px)] leading-[1.0] tracking-[-0.03em] text-[#f0f0f5] mb-7"
             >
-              Building <em className="italic text-[rgba(123,138,255,0.8)]">intelligent</em> web
+              Building <em className="italic gradient-text-animated">intelligent</em> web
               <br />
               experiences that matter.
             </motion.h1>

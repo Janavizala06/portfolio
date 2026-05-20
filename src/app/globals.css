@@ -29,6 +29,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── ANIMATED GRADIENT TEXT ─────────────────── */
+.gradient-text-animated {
+  background: linear-gradient(
+    270deg,
+    #ff2d78, #ff6b35, #ff2d78, #e040fb, #ff6b35, #ff2d78
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 18s ease infinite;
+}
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* ── MARQUEE KEYFRAMES ───────────────────────────
    translateX(-50%) works because each row has 2×
    identical card sets, so half the total width = 1 set.
@@ -39,6 +57,15 @@ body {
 }
 @keyframes marquee-right {
   from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+/* 3-set hero card marquee — translate 1/3 for seamless loop */
+@keyframes marquee-left-3 {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+@keyframes marquee-right-3 {
+  from { transform: translateX(-33.333%); }
   to   { transform: translateX(0); }
 }
 

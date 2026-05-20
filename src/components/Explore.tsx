@@ -56,7 +56,7 @@ export default function Explore() {
         </motion.p>
         <motion.h2 variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
           className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]">
-          Go <em className="italic bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">deeper</em>
+          Go <em className="italic gradient-text-animated">deeper</em>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
