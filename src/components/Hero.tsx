@@ -49,7 +49,7 @@ export default function Hero() {
         className="relative h-screen bg-[#050512]"
       >
         {/* ── Sticky viewport-height inner container ── */}
-        <div className="sticky top-0 h-screen overflow-hidden flex flex-col items-center justify-center text-center px-6 pt-[130px] pb-20">
+        <div className="sticky top-0 h-screen overflow-hidden flex flex-col items-center justify-center text-center px-4 sm:px-6 pt-[100px] sm:pt-[130px] pb-12 sm:pb-20">
 
           {/* Aurora background — indigo/violet/blue */}
           <AuroraBackground layout="radial" colors={[
@@ -103,7 +103,7 @@ export default function Hero() {
             {/* Subtitle */}
             <motion.p
               variants={fadeUp}
-              className="text-[clamp(15px,1.8vw,18px)] text-white/55 max-w-[640px] mx-auto leading-[1.75] mb-20"
+              className="text-[clamp(15px,1.8vw,18px)] text-white/55 max-w-[640px] mx-auto leading-[1.75] mb-10 sm:mb-20"
             >
               I craft full-stack applications powered by AI, turning complex problems
               into elegant, user-centric solutions. MERN · Python · LLMs.

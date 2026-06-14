@@ -31,7 +31,8 @@ export default function Navbar() {
       className="fixed top-4 left-1/2 z-[800] flex items-center gap-1 px-2 py-1.5 rounded-pill
         bg-[rgba(15,15,22,0.55)] border border-white/[0.08]
         backdrop-blur-[32px] saturate-[1.6]
-        shadow-[0_4px_30px_rgba(0,0,0,0.5),0_1px_0_0_rgba(255,255,255,0.06)_inset,0_0_0_0.5px_rgba(255,255,255,0.04)]"
+        shadow-[0_4px_30px_rgba(0,0,0,0.5),0_1px_0_0_rgba(255,255,255,0.06)_inset,0_0_0_0.5px_rgba(255,255,255,0.04)]
+        max-w-[calc(100vw-32px)]"
     >
       {/* Logo — always visible */}
       <a href="#hero" className="flex items-center px-3 py-[5px] no-underline">
@@ -73,7 +74,7 @@ export default function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`relative text-[13px] font-medium no-underline px-4 py-[7px] rounded-pill transition-colors duration-200 outline-none focus:outline-none focus:ring-0 active:outline-none
+                  className={`relative text-[12px] sm:text-[13px] font-medium no-underline px-2.5 sm:px-4 py-[7px] rounded-pill transition-colors duration-200 outline-none focus:outline-none focus:ring-0 active:outline-none
                     ${isActive ? "text-[#e8e8f0]" : "text-white/50 hover:text-[#d0d0da]"}`}
                 >
                   {/* Active background pill */}

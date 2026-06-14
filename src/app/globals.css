@@ -47,6 +47,21 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* ── TYPEWRITER CURSOR ─────────────────────── */
+@keyframes blink-caret {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  margin-left: 2px;
+  background: linear-gradient(180deg, #ff2d78, #e040fb);
+  animation: blink-caret 0.53s step-end infinite;
+  border-radius: 1px;
+  vertical-align: baseline;
+}
+
 /* ── MARQUEE KEYFRAMES ───────────────────────────
    translateX(-50%) works because each row has 2×
    identical card sets, so half the total width = 1 set.
@@ -213,11 +228,74 @@ body {
 }
 
 /* ── RESPONSIVE ─────────────────────────────── */
+
+/* ── Hide custom cursors on touch / mobile devices ── */
+@media (hover: none), (pointer: coarse) {
+  * { cursor: auto !important; }
+  .neon-cursor-container,
+  .cursor-main,
+  .cursor-trail,
+  .cursor-glow,
+  .spotlight-cursor,
+  #canvas { display: none !important; }
+}
+
 @media (max-width: 860px) {
+  /* Restore default cursor on mobile */
+  * { cursor: auto !important; }
+
+  /* Hide custom cursor elements */
+  .neon-cursor-container,
+  .cursor-main,
+  .cursor-trail,
+  .cursor-glow,
+  .spotlight-cursor,
+  #canvas { display: none !important; }
+
   /* Hide browser mockup windows on mobile — too cluttered */
   .hero-cards-container .hc-card { display: none; }
   /* Target the mockup wrapper directly */
   section#hero > div[class*="absolute"][class*="inset-0"][class*="z-[2]"] {
     display: none;
   }
+
+  /* Reduce section padding */
+  .section-blend::before,
+  .section-blend::after {
+    height: 80px;
+  }
+
+  /* Glass card: smaller padding + radius on mobile */
+  .glass-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  .glass-card:hover {
+    transform: none; /* Disable hover lift on touch — it sticks */
+  }
+
+  /* Scroll progress thicker for visibility */
+  .scroll-progress { height: 3px; }
+
+  /* Marquee edge fades narrower */
+  .marquee-fade-l,
+  .marquee-fade-r { width: 60px; }
+
+  /* Project rows: stack on mobile */
+  .proj-row {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  /* Connect button: no hover transforms on touch */
+  .connect-btn-wrap:hover {
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .glass-card { padding: 16px; border-radius: 14px; }
+  .marquee-fade-l,
+  .marquee-fade-r { width: 40px; }
 }

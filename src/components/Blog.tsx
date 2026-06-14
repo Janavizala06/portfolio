@@ -11,13 +11,13 @@ const reveal = {
 
 export default function Blog() {
   return (
-    <section id="blog" className="py-24 relative z-10 section-blend overflow-hidden">
+    <section id="blog" className="py-16 sm:py-24 relative z-10 section-blend overflow-hidden">
       <AuroraBackground layout="tl-br" colors={[
         "rgba(124, 58, 237, 0.52)",
         "rgba(109, 40, 217, 0.40)",
         "rgba(139, 92, 246, 0.30)",
       ]} />
-      <div className="max-w-[1080px] mx-auto px-7 relative z-[1]">
+      <div className="max-w-[1080px] mx-auto px-4 sm:px-7 relative z-[1]">
         <motion.p variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
           className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-2.5">
           Honors & Awards
@@ -37,7 +37,7 @@ export default function Blog() {
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="blog-row flex items-start justify-between gap-5 py-7 first:pt-0 no-underline text-[#f0f0f5]"
+              className="blog-row flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-5 py-5 sm:py-7 first:pt-0 no-underline text-[#f0f0f5]"
             >
               <div>
                 <div className="text-[11.5px] text-white/30 font-mono tracking-[0.05em] mb-2">

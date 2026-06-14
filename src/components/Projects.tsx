@@ -11,13 +11,13 @@ const reveal = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 relative z-10 section-blend overflow-hidden">
+    <section id="projects" className="py-16 sm:py-24 relative z-10 section-blend overflow-hidden">
       <AuroraBackground layout="center" colors={[
         "rgba(99, 102, 241, 0.55)",
         "rgba(79, 70, 229, 0.42)",
         "rgba(124, 58, 237, 0.32)",
       ]} />
-      <div className="max-w-[1080px] mx-auto px-7 relative z-[1]">
+      <div className="max-w-[1080px] mx-auto px-4 sm:px-7 relative z-[1]">
         <motion.p variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
           className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-2.5">
           Selected Work
@@ -36,10 +36,10 @@ export default function Projects() {
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="proj-row grid grid-cols-[56px_1fr_auto] items-start gap-7 py-9 first:pt-0 relative transition-colors"
+              className="proj-row grid grid-cols-[1fr] sm:grid-cols-[56px_1fr_auto] items-start gap-4 sm:gap-7 py-7 sm:py-9 first:pt-0 relative transition-colors"
             >
               {/* Number */}
-              <span className="font-serif text-[15px] text-white/30 italic pt-[5px]">{p.num}</span>
+              <span className="font-serif text-[15px] text-white/30 italic pt-[5px] hidden sm:block">{p.num}</span>
 
               {/* Info */}
               <div>

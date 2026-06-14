@@ -43,13 +43,13 @@ function ExploreCard({ label, title, desc, href, delay }: typeof exploreItems[nu
 
 export default function Explore() {
   return (
-    <section className="py-24 relative z-10 section-blend overflow-hidden">
+    <section className="py-16 sm:py-24 relative z-10 section-blend overflow-hidden">
       <AuroraBackground layout="center" colors={[
         "rgba(124, 58, 237, 0.58)",
         "rgba(99, 102, 241, 0.45)",
         "rgba(79, 70, 229, 0.35)",
       ]} />
-      <div className="max-w-[1080px] mx-auto px-7 relative z-[1]">
+      <div className="max-w-[1080px] mx-auto px-4 sm:px-7 relative z-[1]">
         <motion.p variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
           className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-2.5">
           Explore

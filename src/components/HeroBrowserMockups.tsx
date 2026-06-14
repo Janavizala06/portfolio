@@ -225,7 +225,7 @@ function MarqueeRow({ right, duration, offset, children }: {
 export default function HeroBrowserMockups({ onResume }: { onResume: () => void }) {
   return (
     <div
-      className="absolute z-[2] pointer-events-none"
+      className="absolute z-[2] pointer-events-none hidden md:block"
       style={{ left:0, right:0, top:"-400px", height:"calc(100% + 800px)", overflow:"hidden", perspective:"1200px" }}
     >
       {/* Static 3D tilt wrapper */}

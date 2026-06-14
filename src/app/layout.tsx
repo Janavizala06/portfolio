@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { DM_Sans, Instrument_Serif } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { DM_Sans, Instrument_Serif, Dancing_Script } from "next/font/google";
 import "./globals.css";
 
 import SmoothScroll from "@/providers/SmoothScroll";
@@ -21,6 +21,13 @@ const serif = Instrument_Serif({
   display: "swap",
 });
 
+const cursive = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-cursive",
+  weight: ["400", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Janavi Zala — Full Stack Developer & AI Engineer",
   description: "I craft full-stack applications powered by AI, turning complex problems into elegant, user-centric solutions. MERN · Python · LLMs.",
@@ -30,9 +37,15 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+    <html lang="en" className={`${sans.variable} ${serif.variable} ${cursive.variable}`}>
       <body className="font-sans text-[#f0f0f5] leading-relaxed" suppressHydrationWarning>
         <SmoothScroll>
           <CinematicBackground />

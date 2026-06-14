@@ -48,7 +48,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
-            className="relative z-[2] w-[92vw] max-w-[900px] h-[88vh] rounded-[20px] overflow-hidden
+            className="relative z-[2] w-[96vw] sm:w-[92vw] max-w-[900px] h-[92vh] sm:h-[88vh] rounded-[14px] sm:rounded-[20px] overflow-hidden
               bg-[#0a0a14] border border-white/[0.08]
               shadow-[0_40px_100px_rgba(0,0,0,0.6),0_0_0_1px_rgba(60,120,255,0.1)]"
             onClick={(e) => e.stopPropagation()}

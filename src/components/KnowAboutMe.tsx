@@ -54,6 +54,76 @@ function EmailCopy() {
   );
 }
 
+/* ── Typewriter roles ────────────────────────── */
+const ROLES = [
+  "Full-Stack Developer",
+  "Web Developer",
+  "React Developer",
+  "Next.js Developer",
+  "Tech Innovator",
+  "Problem Solver",
+  "AI-powered Innovator",
+  "Leadership Enthusiast",
+];
+
+function TypewriterHeading() {
+  const [roleIdx, setRoleIdx] = useState(0);
+  const [charIdx, setCharIdx] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const role = ROLES[roleIdx];
+
+    if (!isDeleting && charIdx === role.length) {
+      // Pause at fully typed word
+      const t = setTimeout(() => setIsDeleting(true), 2000);
+      return () => clearTimeout(t);
+    }
+
+    if (isDeleting && charIdx === 0) {
+      // Move to next role
+      setIsDeleting(false);
+      setRoleIdx((prev) => (prev + 1) % ROLES.length);
+      return;
+    }
+
+    const speed = isDeleting ? 40 : 80;
+    const t = setTimeout(() => {
+      setCharIdx((prev) => prev + (isDeleting ? -1 : 1));
+    }, speed);
+    return () => clearTimeout(t);
+  }, [charIdx, isDeleting, roleIdx]);
+
+  const displayed = ROLES[roleIdx].substring(0, charIdx);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.85, delay: 0.1, ease: [0.16, 1, 0.3, 1] as const }}
+      className="mb-6 sm:mb-10"
+    >
+      <h2 className="font-serif text-[clamp(28px,5vw,56px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5]">
+        Hey, I&apos;m{" "}
+        <span
+          className="font-cursive font-bold ml-2"
+          style={{
+            textShadow: "0 0 20px rgba(255,255,255,0.35), 0 0 40px rgba(255,255,255,0.15)",
+          }}
+        >
+          Janavi Zala
+        </span>
+      </h2>
+      <div className="font-serif text-[clamp(24px,4vw,46px)] font-normal tracking-[-0.02em] leading-[1.2] mt-2">
+        <span className="text-[#f0f0f5]">I&apos;m a&nbsp;</span>
+        <span className="gradient-text-animated italic">{displayed}</span>
+        <span className="typewriter-cursor" style={{ height: "0.8em" }}>&nbsp;</span>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ── Know About Me Section ─────────────────────── */
 export default function KnowAboutMe() {
   const stylusZoneRef = useRef<HTMLElement>(null);
@@ -124,7 +194,7 @@ export default function KnowAboutMe() {
     <section
       id="about"
       ref={stylusZoneRef}
-      className="py-28 relative z-10 section-blend overflow-hidden"
+      className="py-16 sm:py-28 relative z-10 section-blend overflow-hidden"
       style={{ cursor: "none" }}
     >
       <AuroraBackground layout="tl-br" colors={[
@@ -196,7 +266,7 @@ export default function KnowAboutMe() {
         )}
       </AnimatePresence>
 
-      <div className="max-w-[1080px] mx-auto px-7 relative z-[1]">
+      <div className="max-w-[1080px] mx-auto px-4 sm:px-7 relative z-[1]">
         {/* Stylus zone — full section width triggers the wand cursor */}
         <div>
           {/* Section header */}
@@ -210,23 +280,11 @@ export default function KnowAboutMe() {
             Know About Me
           </motion.p>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.85, delay: 0.1, ease: [0.16, 1, 0.3, 1] as const }}
-            className="font-serif text-[clamp(32px,5vw,56px)] font-normal tracking-[-0.02em] leading-[1.1] text-[#f0f0f5] mb-10"
-          >
-            Full-Stack Developer and
-            <br />
-            an AI-powered {" "}
-            <em className="italic gradient-text-animated">
-              innovator
-            </em>
-          </motion.h2>
+          {/* ── Typewriter Roles ─────────────────────── */}
+          <TypewriterHeading />
 
           {/* Two-column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-12 items-start">
             {/* Left: Bio */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -254,7 +312,7 @@ export default function KnowAboutMe() {
                   aria-label="LinkedIn"
                   className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-white/80 hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                   </svg>
                 </a>
                 {/* GitHub */}
@@ -262,7 +320,7 @@ export default function KnowAboutMe() {
                   aria-label="GitHub"
                   className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-white/80 hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/>
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z" />
                   </svg>
                 </a>
                 {/* Gmail */}
@@ -270,8 +328,8 @@ export default function KnowAboutMe() {
                   aria-label="Gmail"
                   className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-white/80 hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="4" width="20" height="16" rx="2"/>
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
                 </a>
               </div>
@@ -288,7 +346,7 @@ export default function KnowAboutMe() {
             >
               <div
                 ref={cardRef}
-                className="relative w-[340px] h-[380px] rounded-[28px] overflow-hidden bg-[#060614]"
+                className="relative w-[280px] h-[320px] sm:w-[340px] sm:h-[380px] rounded-[28px] overflow-hidden bg-[#060614]"
                 style={{
                   boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 0 2.5px rgba(60,120,255,0.45), 0 0 40px rgba(60,120,255,0.12), 0 0 80px rgba(60,120,255,0.06)",
                 }}
@@ -329,7 +387,7 @@ export default function KnowAboutMe() {
 
                 {/* Layer 2: Photo reveal */}
                 <motion.div className="absolute inset-0 z-[2]" style={{ clipPath }}>
-                  <img src="/avatar.jpeg" alt="Janavi Zala" className="w-full h-full object-cover" />
+                  <img src="/avatar.png" alt="Janavi Zala" className="w-full h-full object-cover" />
                 </motion.div>
 
                 {/* Blue border glow overlay */}
@@ -362,7 +420,7 @@ export default function KnowAboutMe() {
         {/* ══════════════════════════════════════════════════
             RESUME HIGHLIGHTS — Education, Experience, Awards
             ══════════════════════════════════════════════════ */}
-        <div className="relative mt-24">
+        <div className="relative mt-14 sm:mt-24">
           {/* Aurora — tr-bl mirrors the tl-br above, visual variety */}
           <AuroraBackground layout="tr-bl" colors={[
             "rgba(59, 130, 246, 0.50)",
@@ -383,7 +441,7 @@ export default function KnowAboutMe() {
           </motion.h3>
 
           {/* Row A — Education + Experience */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 mb-3.5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-3.5 mb-3 sm:mb-3.5">
 
             {/* Education */}
             <BentoCard delay={0}>
@@ -516,7 +574,7 @@ export default function KnowAboutMe() {
         </div>{/* end resume highlights */}
 
         {/* ── Bento Grid ─────────────────────────────── */}
-        <div className="mt-24">
+        <div className="mt-14 sm:mt-24">
           <motion.h3
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -11,13 +11,13 @@ const reveal = {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 relative z-10 section-blend overflow-hidden">
+    <section id="testimonials" className="py-16 sm:py-24 relative z-10 section-blend overflow-hidden">
       <AuroraBackground layout="radial" colors={[
         "rgba(79, 70, 229, 0.52)",
         "rgba(59, 130, 246, 0.40)",
         "rgba(99, 102, 241, 0.30)",
       ]} />
-      <div className="max-w-[1080px] mx-auto px-7 relative z-[1]">
+      <div className="max-w-[1080px] mx-auto px-4 sm:px-7 relative z-[1]">
         <motion.p variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
           className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-2.5">
           Experience
