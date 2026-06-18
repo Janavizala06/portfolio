@@ -63,6 +63,7 @@ const ROLES = [
   "Tech Innovator",
   "Problem Solver",
   "AI-powered Innovator",
+  "Hackathon Winner",
   "Leadership Enthusiast",
 ];
 
@@ -284,7 +285,7 @@ export default function KnowAboutMe() {
           <TypewriterHeading />
 
           {/* Two-column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-12 items-center">
             {/* Left: Bio */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}

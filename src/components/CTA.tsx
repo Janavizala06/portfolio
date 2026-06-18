@@ -48,7 +48,7 @@ export default function CTA() {
 
       <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
         className="relative z-[2] flex gap-3 flex-wrap justify-center">
-        <a href="mailto:janavi0612@gmail.com"
+        <a href="mailto:janavizala0612@gmail.com"
           className="inline-flex items-center gap-[7px] px-[22px] py-[11px] rounded-pill text-sm font-medium no-underline bg-white text-black
             hover:bg-white/90 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,0,0,0.25)] transition-all duration-300">
           <MailIcon /> Get In Touch

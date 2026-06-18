@@ -114,7 +114,9 @@ export default function Hero() {
               {/* Let's Connect — border-only circuit spin */}
               <span className="connect-btn-wrap">
                 <a
-                  href="mailto:janavi0612@gmail.com"
+                  href="https://www.linkedin.com/in/janavi-zala"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="connect-btn-inner inline-flex items-center gap-[7px] px-[22px] py-[11px] rounded-pill text-sm font-medium no-underline bg-white text-[#050505]"
                 >
                   <MailIcon /> Let&apos;s Connect
@@ -132,6 +134,18 @@ export default function Hero() {
               >
                 View Work <ArrowIcon />
               </a>
+
+              {/* Resume */}
+              <button
+                onClick={() => setShowResume(true)}
+                className="inline-flex items-center gap-[7px] px-[22px] py-[11px] rounded-pill text-sm font-medium
+                  bg-white/[0.06] text-[#f0f0f5] border border-white/[0.1] backdrop-blur-[10px]
+                  hover:bg-white/[0.1] hover:-translate-y-1 hover:border-white/[0.2]
+                  hover:shadow-[0_8px_28px_rgba(99,102,241,0.22)]
+                  transition-all duration-300 cursor-pointer"
+              >
+                📄 Resume
+              </button>
             </motion.div>
           </motion.div>
 

@@ -2,7 +2,12 @@
 export interface MarqueeItem { emoji: string; text: string }
 export interface StackItem { emoji: string; name: string }
 export interface HeroCardData { cls: string; icon: string; main: string; sub: string; href: string }
-export interface Project { num: string; type: string; title: string; period: string; desc: string; tags: string[] }
+export interface Project {
+  num: string; type: string; title: string; period: string;
+  desc: string; fullDesc: string; image: string;
+  highlights: { icon: string; text: string }[];
+  tags: { name: string; logo?: string }[];
+}
 export interface BlogPost { date: string; read: string; title: string; excerpt: string }
 export interface Testimonial { avatar: string; name: string; role: string; quote: string }
 
@@ -37,7 +42,7 @@ export const stackItems: StackItem[] = [
 
 // ── Hero Cards ─────────────────────────────────
 export const heroCards: HeroCardData[] = [
-  { cls: "c1", icon: "📬", main: "Let's collaborate", sub: "janavi0612@gmail.com", href: "mailto:janavi0612@gmail.com" },
+  { cls: "c1", icon: "📬", main: "Let's collaborate", sub: "janavizala0612@gmail.com", href: "mailto:janavizala0612@gmail.com" },
   { cls: "c2", icon: "github", main: "GitHub", sub: "Janavizala06", href: "https://github.com/Janavizala06" },
   { cls: "c3", icon: "📄", main: "Resume", sub: "View my experience", href: "resume" },
   { cls: "c4", icon: "🌏", main: "Based in India", sub: "Anand, Gujarat", href: "#" },
@@ -47,18 +52,122 @@ export const heroCards: HeroCardData[] = [
 
 // ── Projects ───────────────────────────────────
 export const projects: Project[] = [
-  { num: "01", type: "AI Platform", title: "CodeTalk", period: "2025",
-    desc: "An intelligent platform that performs real-time code analysis, identifies bugs, and generates context-aware debugging recommendations using large language models.",
-    tags: ["Python", "GROQ API", "LLM", "AI/ML", "Real-time Analysis"] },
-  { num: "02", type: "Web App", title: "LibTrack", period: "2025",
-    desc: "A complete library management solution featuring book cataloguing, member registration, and automated issue/return tracking with a responsive UI.",
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs"] },
-  { num: "03", type: "Web App", title: "Smart Recipe Generator", period: "2025",
-    desc: "An AI-assisted meal planning web app enabling personalized recipe discovery, weekly planning, and dynamic ingredient suggestions.",
-    tags: ["GROQ API", "MealDB API", "Firebase Auth", "AI/ML", "Web App"] },
-  { num: "04", type: "AI Chatbot", title: "MuseMate", period: "2024",
-    desc: "A WebSocket-driven chatbot for museum visitors enabling real-time exhibit exploration and ticket booking through an intelligent knowledge base.",
-    tags: ["Python", "Flask", "Flask-SocketIO", "WebSocket", "AI Chatbot"] },
+  {
+    num: "01",
+    type: "IT Monitoring",
+    title: "InfraEye",
+    period: "2025",
+    desc: "Real-Time Endpoint Monitoring & Enterprise Asset Management Platform",
+    fullDesc: "Centralized IT infrastructure monitoring platform that provides real-time endpoint visibility, asset tracking, network discovery, and license compliance across enterprise LAN environments.",
+    image: "/projects/infraeye.png",
+    highlights: [
+      { icon: "🖥️", text: "Real-time endpoint monitoring & alerts" },
+      { icon: "📊", text: "Hardware, software & license inventory" },
+      { icon: "🌐", text: "Automatic network discovery & device tracking" },
+      { icon: "🔐", text: "Secure agent-based monitoring architecture" },
+    ],
+    tags: [
+      { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "FastAPI", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
+      { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+      { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+    ],
+  },
+  {
+    num: "02",
+    type: "AI Platform",
+    title: "CodeTalk",
+    period: "2025",
+    desc: "LLM-Powered Code Analysis & Error Explanation Platform",
+    fullDesc: "Intelligent code analysis platform leveraging LLM technology to provide contextual error explanations, interactive debugging assistance, and real-time code insights across multiple programming languages.",
+    image: "/projects/codetalk.png",
+    highlights: [
+      { icon: "🧠", text: "LLM-powered code understanding" },
+      { icon: "⚡", text: "Real-time analysis & instant feedback" },
+      { icon: "🔍", text: "Context-aware error explanations" },
+      { icon: "💡", text: "Interactive AI mentor for developers" },
+    ],
+    tags: [
+      { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "Streamlit", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" },
+      { name: "Groq API" },
+      { name: "Llama 3.2" },
+      { name: "LangChain" },
+      { name: "ExecJS" },
+    ],
+  },
+  {
+    num: "03",
+    type: "Web App",
+    title: "LibTrack",
+    period: "2025",
+    desc: "Smart Digital Library & Resource Management Platform",
+    fullDesc: "Full-stack library management solution that streamlines inventory management, lending operations, user engagement, and analytics through automated workflows, role-based access control, and real-time resource tracking.",
+    image: "/projects/libtrack.png",
+    highlights: [
+      { icon: "📖", text: "Comprehensive catalog, search & resource tracking" },
+      { icon: "⚡", text: "Automated lending, returns & overdue fine management" },
+      { icon: "🔐", text: "Secure role-based authentication & access control" },
+      { icon: "📊", text: "Analytics, recommendations & user engagement features" },
+    ],
+    tags: [
+      { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "Express.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+      { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+      { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "JWT" },
+      { name: "Mongoose" },
+      { name: "Axios" },
+    ],
+  },
+  {
+    num: "04",
+    type: "AI Platform",
+    title: "Flavour with Fusion",
+    period: "2025",
+    desc: "AI-Powered Recipe Generation & Smart Meal Planning Platform",
+    fullDesc: "Smart culinary platform that combines AI-powered recipe generation, nutritional analysis, ingredient optimization, and personalized meal planning to create healthier, more diverse, and sustainable dining experiences.",
+    image: "/projects/flavour_fusion.png",
+    highlights: [
+      { icon: "🤖", text: "AI-generated fusion recipes from global cuisines" },
+      { icon: "📊", text: "Nutritional analysis & health-focused meal planning" },
+      { icon: "♻️", text: "Food waste reduction through ingredient optimization" },
+      { icon: "🎯", text: "Personalized dietary recommendations & smart substitutions" },
+    ],
+    tags: [
+      { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+      { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg" },
+      { name: "Spoonacular API" },
+      { name: "Groq AI" },
+      { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+    ],
+  },
+  {
+    num: "05",
+    type: "AI Chatbot",
+    title: "MuseMate",
+    period: "2024",
+    desc: "AI-Powered Smart Ticketing & Visitor Engagement System",
+    fullDesc: "Conversational AI platform designed to streamline ticket booking, enhance visitor engagement, and provide personalized travel assistance through intelligent natural language interactions.",
+    image: "/projects/musemate.png",
+    highlights: [
+      { icon: "🧠", text: "Natural language ticket booking assistant" },
+      { icon: "🎯", text: "Personalized recommendations & visitor guidance" },
+      { icon: "📊", text: "Visitor insights & engagement analytics" },
+      { icon: "🔒", text: "Secure and scalable AI-driven support system" },
+    ],
+    tags: [
+      { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+      { name: "NLP" },
+      { name: "Machine Learning" },
+      { name: "Generative AI" },
+    ],
+  },
 ];
 
 // ── Blog / Achievements ────────────────────────
