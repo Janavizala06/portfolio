@@ -72,7 +72,7 @@ export default function Projects() {
               <motion.article
                 key={p.num}
                 className="project-card"
-                style={{ overflow: offset > 0 ? "hidden" : "visible" }}
+                style={{ overflow: offset > 0 ? "hidden" : "visible", gridArea: "stack" }}
                 animate={{
                   y: offset * -28,
                   scale: 1 - offset * 0.04,
@@ -84,7 +84,6 @@ export default function Projects() {
                   duration: 0.5,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                style={{ gridArea: "stack" }}
               >
                 {/* Card Header */}
                 <div className="project-card-header">
