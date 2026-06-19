@@ -124,27 +124,21 @@ export default function Hero() {
               </span>
 
               {/* View Work */}
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-[7px] px-[22px] py-[11px] rounded-pill text-sm font-medium no-underline
-                  bg-white/[0.06] text-[#f0f0f5] border border-white/[0.1] backdrop-blur-[10px]
-                  hover:bg-white/[0.1] hover:-translate-y-1 hover:border-white/[0.2]
-                  hover:shadow-[0_8px_28px_rgba(99,102,241,0.22)]
-                  transition-all duration-300"
-              >
-                View Work <ArrowIcon />
+              <a href="#projects" className="sparkle-btn">
+                <span>
+                  {"View Work →".split("").map((ch, i) => (
+                    <span key={i} className="sparkle-letter">{ch === " " ? "\u00A0" : ch}</span>
+                  ))}
+                </span>
               </a>
 
               {/* Resume */}
-              <button
-                onClick={() => setShowResume(true)}
-                className="inline-flex items-center gap-[7px] px-[22px] py-[11px] rounded-pill text-sm font-medium
-                  bg-white/[0.06] text-[#f0f0f5] border border-white/[0.1] backdrop-blur-[10px]
-                  hover:bg-white/[0.1] hover:-translate-y-1 hover:border-white/[0.2]
-                  hover:shadow-[0_8px_28px_rgba(99,102,241,0.22)]
-                  transition-all duration-300 cursor-pointer"
-              >
-                📄 Resume
+              <button onClick={() => setShowResume(true)} className="sparkle-btn">
+                <span>
+                  {"Resume".split("").map((ch, i) => (
+                    <span key={i} className="sparkle-letter">{ch}</span>
+                  ))}
+                </span>
               </button>
             </motion.div>
           </motion.div>
