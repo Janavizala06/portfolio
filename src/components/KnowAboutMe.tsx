@@ -285,7 +285,7 @@ export default function KnowAboutMe() {
           <TypewriterHeading />
 
           {/* Two-column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-12 items-start">
             {/* Left: Bio */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -343,7 +343,7 @@ export default function KnowAboutMe() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.35, ease: [0.16, 1, 0.3, 1] as const }}
-              className="relative flex items-start justify-center pt-2"
+              className="relative flex items-start justify-center -mt-14"
             >
               <div
                 ref={cardRef}
