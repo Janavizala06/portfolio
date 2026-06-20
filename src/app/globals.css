@@ -597,6 +597,28 @@ body {
 .blog-row:hover { padding-left: 8px; }
 .blog-row:hover .blog-read-label { color: #f0f0f5; }
 
+/* ── WHERE I'VE BEEN CARDS ────────────────────── */
+.wib-card {
+  background: rgba(8, 12, 24, 0.75);
+  border: 1px solid rgba(0, 200, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.wib-card:hover {
+  border-color: rgba(0, 200, 255, 0.18);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.06);
+}
+.wib-card-inner {
+  background: rgba(0, 200, 255, 0.03);
+  border: 1px solid rgba(0, 200, 255, 0.06);
+  transition: border-color 0.3s, background 0.3s;
+}
+.wib-card-inner:hover {
+  background: rgba(0, 200, 255, 0.06);
+  border-color: rgba(0, 200, 255, 0.15);
+}
+
 /* ── HERO CONNECT BUTTON — border-only circuit spin ── */
 /* Wrapper creates the 2px border space; inner <a> fills center with white */
 .connect-btn-wrap {

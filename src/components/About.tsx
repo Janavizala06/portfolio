@@ -39,7 +39,7 @@ export default function About() {
   const [copied, setCopied] = useState(false);
 
   const copyEmail = useCallback(() => {
-    navigator.clipboard.writeText("hello@aayushbharti.in");
+    navigator.clipboard.writeText("janavizala0612@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }, []);
@@ -68,7 +68,7 @@ export default function About() {
               I work with founders, agencies, and startups to build fast, accessible, and intentionally designed web products.
             </p>
             <div className="flex items-center gap-2.5 mt-5 px-4 py-3 bg-[#0a0a12] rounded-[14px] border border-white/[0.06] text-sm transition-colors hover:bg-[#111120]">
-              <span className="text-white/55">hello@aayushbharti.in</span>
+              <span className="text-white/55">janavizala0612@gmail.com</span>
               <button
                 onClick={copyEmail}
                 className="ml-auto text-xs font-medium px-3 py-[5px] rounded-lg bg-white/10 text-white border border-white/10 transition-colors hover:bg-white/15"
