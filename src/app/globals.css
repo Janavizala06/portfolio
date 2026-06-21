@@ -597,26 +597,46 @@ body {
 .blog-row:hover { padding-left: 8px; }
 .blog-row:hover .blog-read-label { color: #f0f0f5; }
 
-/* ── WHERE I'VE BEEN CARDS ────────────────────── */
+/* ▪ WHERE I'VE BEEN CARDS ▪ */
 .wib-card {
-  background: rgba(8, 12, 24, 0.75);
-  border: 1px solid rgba(0, 200, 255, 0.08);
+  background: #0e0e14;
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 16px;
-  backdrop-filter: blur(8px);
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.wib-card:hover {
-  border-color: rgba(0, 200, 255, 0.18);
-  box-shadow: 0 0 20px rgba(0, 200, 255, 0.06);
-}
-.wib-card-inner {
-  background: rgba(0, 200, 255, 0.03);
-  border: 1px solid rgba(0, 200, 255, 0.06);
   transition: border-color 0.3s, background 0.3s;
 }
+.wib-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: #121218;
+}
+.wib-card-inner {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, background 0.3s;
+}
+.wib-card-inner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+}
 .wib-card-inner:hover {
-  background: rgba(0, 200, 255, 0.06);
-  border-color: rgba(0, 200, 255, 0.15);
+  background: #050505;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── SPOTLIGHT CARDS ────────────────────────── */
+.spotlight-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(300px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(255,255,255,0.07), transparent 70%);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s;
 }
 
 /* ── HERO CONNECT BUTTON — border-only circuit spin ── */
@@ -734,4 +754,109 @@ body {
   .glass-card { padding: 16px; border-radius: 14px; }
   .marquee-fade-l,
   .marquee-fade-r { width: 40px; }
+}
+.earth-canvas { display: block; opacity: 0; transition: opacity 650ms ease; }
+
+/* ── STACKING CARDS ────────────────────────── */
+.stacking-cards-strip {
+  width: 100%;
+  background: #08080d;
+  padding-bottom: 12vh;
+}
+
+.stacking-card-container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  min-height: 620px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(16px, 4vw, 56px);
+  overflow: visible;
+}
+
+.stacking-project-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+  width: min(100%, 1350px);
+  min-height: clamp(460px, 68vh, 520px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  background: #0e0e14;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+  transform-origin: top center;
+  will-change: transform;
+}
+
+.stacking-project-card .project-image {
+  position: relative;
+  min-height: inherit;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.stacking-project-card .project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.stacking-project-card .project-copy {
+  min-width: 0;
+  padding: clamp(1.5rem, 3.6vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 980px) {
+  .stacking-card-container {
+    min-height: 760px;
+  }
+
+  .stacking-project-card {
+    grid-template-columns: 1fr;
+    width: min(100%, 720px);
+    min-height: auto;
+  }
+
+  .stacking-project-card .project-image {
+    min-height: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stacking-card-container {
+    min-height: 700px;
+    padding: 0 14px;
+  }
+
+  .stacking-project-card {
+    border-radius: 14px;
+  }
+
+  .stacking-project-card .project-image {
+    min-height: 220px;
+    height: 220px;
+  }
+
+  .stacking-project-card .project-copy {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .stacking-card-container {
+    min-height: 720px;
+  }
+
+  .stacking-project-card {
+    top: -18% !important;
+  }
 }

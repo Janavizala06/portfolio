@@ -50,11 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SmoothScroll>
           <CinematicBackground />
           <CursorManager />
-          {/* overflow-x-hidden MUST be on a child wrapper, NOT on html/body
-              Chromium breaks position:sticky when overflow is set on the scroll root */}
-          <div style={{ overflowX: "hidden" }}>
-            {children}
-          </div>
+          {children}
         </SmoothScroll>
       </body>
     </html>

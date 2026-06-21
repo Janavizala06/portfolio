@@ -5,7 +5,10 @@ import { motion, useMotionValue, useTransform, useSpring, AnimatePresence } from
 import { stackItems } from "@/data";
 import { useTilt3d } from "@/hooks/useTilt3d";
 import AuroraBackground from "./AuroraBackground";
-import Globe from "./ui/globe";
+import dynamic from "next/dynamic";
+const Earth = dynamic(() => import('./ui/Earth').then(m => m.Earth), { ssr: false });
+import { Sparkles } from "./ui/Sparkles";
+import { Spotlight, SpotLightItem } from "./ui/spotlight";
 
 
 /* ── Reveal variants ──────────────────────────── */
@@ -456,7 +459,7 @@ export default function KnowAboutMe() {
         </div>{/* end existing bento */}
 
         {/* RESUME HIGHLIGHTS - Redesigned Bento */}
-        <div className="relative mt-14 sm:mt-24">
+        <Spotlight className="relative mt-14 sm:mt-24">
           <AuroraBackground layout="tr-bl" colors={[
             "rgba(0, 200, 255, 0.18)",
             "rgba(0, 150, 255, 0.12)",
@@ -474,149 +477,175 @@ export default function KnowAboutMe() {
           </motion.h3>
 
           {/* Card 1: Globe + Education */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} transition={{ duration: 0.85 }}
-            className="wib-card grid grid-cols-1 md:grid-cols-2 gap-0 mb-3.5 overflow-hidden"
-          >
-            <div className="flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden min-h-[320px]" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(20,60,180,0.35) 0%, rgba(5,10,30,0.95) 70%)" }}>
-              {/* Sparkle dots - static positions */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[
-                  [8,12,1],[15,45,2],[22,78,1],[30,23,1],[38,67,2],[45,9,1],[52,56,2],[60,34,1],[68,81,2],[75,18,1],
-                  [82,62,1],[90,40,2],[5,88,1],[12,30,2],[20,55,1],[28,10,1],[36,72,2],[44,48,1],[50,25,2],[58,90,1],
-                  [65,5,1],[73,38,2],[80,70,1],[88,15,2],[3,50,1],[18,95,2],[32,42,1],[48,17,2],[62,85,1],[78,28,2],
-                  [10,60,1],[25,35,2],[40,80,1],[55,20,2],[70,65,1],[85,50,2],[7,75,1],[35,55,1],[53,33,2],[71,88,1],
-                ].map(([top, left, size], i) => (
-                  <div key={i} className="absolute rounded-full bg-blue-200" style={{ top: `${top}%`, left: `${left}%`, width: size, height: size, opacity: 0.35 }} />
-                ))}
+          <SpotLightItem className="mb-3.5">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.85 }}
+              className="wib-card grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden"
+            >
+              <div className="flex flex-col items-start relative overflow-hidden min-h-[380px] bg-black">
+                {/* Top label */}
+                <div className="relative z-10 text-center w-full pt-5 px-4">
+                  <p className="text-[9px] uppercase tracking-[0.2em] text-blue-300/70 mb-1">FLEXIBLE WITH TIMEZONES</p>
+                  <p className="text-[11px] text-white/50">Based in India, available globally</p>
+                </div>
+                {/* Earth Globe - centered, rotating */}
+                <div className="relative z-10 w-full px-4 flex justify-center mt-4">
+                  <Earth className="w-[280px] max-w-full" />
+                </div>
+                {/* Sparkles at bottom */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-36 overflow-hidden"
+                  style={{
+                    maskImage: "radial-gradient(50% 50%, white, transparent)",
+                    WebkitMaskImage: "radial-gradient(50% 50%, white, transparent)",
+                  }}
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_center,#3273ff,transparent_90%)] opacity-40" />
+                  <div className="absolute -left-1/2 top-1/2 aspect-[1/0.7] w-[200%] rounded-[10%] border-t border-[#163474] bg-[#08132b]" />
+                  <Sparkles
+                    density={1150}
+                    color="#dbeafe"
+                    size={1.35}
+                    minSize={0.35}
+                    speed={0.55}
+                    opacity={0.95}
+                    minOpacity={0.15}
+                    opacitySpeed={2.6}
+                    mousemove
+                    hover
+                    className="absolute inset-x-0 bottom-0 h-full w-full"
+                  />
+                </div>
               </div>
-              {/* Top label */}
-              <div className="relative z-10 text-center mb-2">
-                <p className="text-[9px] uppercase tracking-[0.18em] text-blue-300/60 mb-1">FLEXIBLE WITH TIMEZONES</p>
-                <p className="text-[11px] text-white/40">Based in India, available globally</p>
+              <div className="p-6 sm:p-8 flex flex-col justify-center border-l border-white/[0.06]">
+                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] text-[#f0f0f5] mb-4">Education</h3>
+                <h4 className="text-[22px] sm:text-[26px] font-bold text-white mb-1">CVM University, MBIT</h4>
+                <p className="text-[15px] text-white/70 mb-1">B.Tech - Computer Engineering</p>
+                <p className="text-[13px] text-white/40 mb-5">2023 - 2027</p>
+
+                <div className="mb-6">
+                  <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] text-[#f0f0f5] mb-2">Location</h3>
+                  <h4 className="text-[22px] sm:text-[26px] font-bold text-white mb-1">Anand, Gujarat 🇮🇳</h4>
+                </div>
+
+                <div className="flex gap-3 flex-wrap">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.07] text-[11px] text-white/60 font-medium">CGPA 9.05</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.07] text-[11px] text-white/60 font-medium">SGPA 9.43</span>
+                </div>
               </div>
-              {/* Globe */}
-              <div className="relative z-10">
-                <Globe size={220} />
-              </div>
-            </div>
-            <div className="p-6 sm:p-8 flex flex-col justify-center border-l border-white/[0.06]">
-              <div className="text-[11px] font-semibold tracking-[0.14em] uppercase text-cyan-400 mb-4">Education</div>
-              <h4 className="text-[22px] sm:text-[26px] font-bold text-white mb-1">CVM University, MBIT</h4>
-              <p className="text-[15px] text-white/70 mb-1">B.Tech - Computer Engineering</p>
-              <p className="text-[13px] text-white/40 mb-5">2023 - 2027</p>
-              <div className="flex gap-3 flex-wrap">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-[11px] text-cyan-300 font-semibold">CGPA 9.05</span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-[11px] text-cyan-300 font-semibold">SGPA 9.43</span>
-              </div>
-              <div className="mt-4 text-[11px] text-white/30 leading-relaxed">
-                DSA, OS, DBMS, Computer Networks, AI/ML, Cloud Computing
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </SpotLightItem>
 
           {/* Card 2: Stats Row */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.1 }}
-            className="wib-card mb-3.5 p-5 sm:p-6"
-          >
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-              {[
-                { value: "5+", label: "Projects", color: "#ff6b8a" },
-                { value: "15+", label: "Technologies", color: "#4ade80" },
-                { value: "9.05", label: "CGPA / 10", color: "#60a5fa" },
-                { value: "9.43", label: "SGPA / 10", color: "#fbbf24" },
-                { value: "\u221E", label: "Curiosity", color: "#c084fc" },
-              ].map((s) => (
-                <div key={s.label} className="flex flex-col items-center text-center p-4 rounded-2xl" style={{ background: `radial-gradient(circle at 50% 40%, ${s.color}12, transparent 70%)` }}>
-                  <span className="text-[28px] sm:text-[32px] font-bold mb-1" style={{ color: s.color, textShadow: `0 0 20px ${s.color}40` }}>{s.value}</span>
-                  <span className="text-[11px] text-white/50 uppercase tracking-[0.08em]">{s.label}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          <SpotLightItem className="mb-3.5">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.1 }}
+              className="wib-card p-5 sm:p-6"
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                {[
+                  { value: "5+", label: "Projects" },
+                  { value: "15+", label: "Technologies" },
+                  { value: "9.05", label: "CGPA / 10" },
+                  { value: "9.43", label: "SGPA / 10" },
+                  { value: "\u221E", label: "Curiosity" },
+                ].map((s) => (
+                  <div key={s.label} className="flex flex-col items-center text-center p-4 rounded-2xl bg-black border border-white/[0.05] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_10px_rgba(0,0,0,0.3)] relative overflow-hidden">
+                    <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                    <span className="text-[28px] sm:text-[32px] font-bold mb-1 gradient-text-animated">{s.value}</span>
+                    <span className="text-[11px] text-white/40 uppercase tracking-[0.08em]">{s.label}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </SpotLightItem>
 
           {/* Card 3: Achievements */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.15 }}
-            className="wib-card mb-3.5 p-5 sm:p-6"
-          >
-            <div className="text-[11px] font-semibold tracking-[0.14em] uppercase text-cyan-400 mb-5">Achievements &amp; Recognition</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              {[
-                { icon: "\uD83E\uDD49", title: "DevSummit 2026", sub: "2nd Runner-Up, 10K Prize" },
-                { icon: "\u2B50", title: "Flaunch Top 20", sub: "Level 2 Promotion, 5K Stipend" },
-                { icon: "\uD83D\uDE80", title: "Unleash LLM", sub: "Direct Finalist, Flaunch Excellence" },
-                { icon: "\uD83C\uDFE2", title: "IBM Recognition", sub: "Selected for GIFT City Visit" },
-              ].map((a) => (
-                <div key={a.title} className="wib-card-inner flex flex-col items-center text-center p-5 rounded-xl">
-                  <span className="text-[28px] mb-2">{a.icon}</span>
-                  <div className="text-[13px] font-semibold text-white/85 mb-1">{a.title}</div>
-                  <div className="text-[11px] text-white/40 leading-relaxed">{a.sub}</div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          <SpotLightItem className="mb-3.5">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.15 }}
+              className="wib-card p-5 sm:p-6"
+            >
+              <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] text-[#f0f0f5] mb-5">Achievements &amp; Recognition</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { icon: "\uD83E\uDD49", title: "DevSummit 2026", sub: "2nd Runner-Up, 10K Prize" },
+                  { icon: "\u2B50", title: "Flaunch Top 20", sub: "Level 2 Promotion, 5K Stipend" },
+                  { icon: "\uD83D\uDE80", title: "Unleash LLM", sub: "Direct Finalist, Flaunch Excellence" },
+                  { icon: "\uD83C\uDFE2", title: "IBM Recognition", sub: "Selected for GIFT City Visit" },
+                ].map((a) => (
+                  <div key={a.title} className="wib-card-inner flex flex-col items-center text-center p-5 rounded-xl">
+                    <span className="text-[28px] mb-2">{a.icon}</span>
+                    <div className="text-[13px] font-semibold text-white/85 mb-1">{a.title}</div>
+                    <div className="text-[11px] text-white/40 leading-relaxed">{a.sub}</div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </SpotLightItem>
 
           {/* Cards 4 and 5: Experience + Leadership */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.2 }}
-              className="wib-card p-6 sm:p-7 relative overflow-hidden"
-            >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cyan-400/40 blur-[20px]" />
-              <div className="text-[11px] font-semibold tracking-[0.14em] uppercase text-cyan-400 mb-6">Experience</div>
-              <div className="space-y-5">
-                {[
-                  { company: "Hi Lab Solution", role: "Full Stack Intern", year: "2026" },
-                  { company: "IBM", role: "Full Stack Dev Trainee", year: "2025" },
-                  { company: "Flaunch", role: "AI Technology Intern", year: "2024-25" },
-                ].map((exp, i) => (
-                  <div key={exp.company} className="flex items-start gap-3">
-                    <div className="flex flex-col items-center mt-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 flex-shrink-0 shadow-[0_0_8px_rgba(0,200,255,0.5)]" />
-                      {i < 2 && <div className="w-[1px] flex-1 bg-cyan-400/20 mt-1 min-h-[24px]" />}
+            <SpotLightItem>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.2 }}
+                className="wib-card p-6 sm:p-7 relative overflow-hidden"
+              >
+                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] text-[#f0f0f5] mb-6">Experience</h3>
+                <div className="space-y-5">
+                  {[
+                    { company: "Hi Lab Solution", role: "Full Stack Intern", year: "2026" },
+                    { company: "IBM", role: "Full Stack Dev Trainee", year: "2025" },
+                    { company: "Flaunch", role: "AI Technology Intern", year: "2024-25" },
+                  ].map((exp, i) => (
+                    <div key={exp.company} className="flex items-start gap-3">
+                      <div className="flex flex-col items-center mt-1.5">
+                        <div className="w-2.5 h-2.5 rounded-full bg-white/40 flex-shrink-0 shadow-[0_0_8px_rgba(255,255,255,0.1)]" />
+                        {i < 2 && <div className="w-[1px] flex-1 bg-white/10 mt-1 min-h-[24px]" />}
+                      </div>
+                      <div className="flex-1">
+                        <div className="text-[14px] font-bold text-white/90">{exp.company}</div>
+                        <div className="text-[12px] uppercase tracking-[0.06em] text-white/60 font-semibold">{exp.role}</div>
+                      </div>
+                      <span className="text-[13px] text-white/40 font-mono mt-0.5">{exp.year}</span>
                     </div>
-                    <div className="flex-1">
-                      <div className="text-[14px] font-bold text-white/90">{exp.company}</div>
-                      <div className="text-[12px] uppercase tracking-[0.06em] text-cyan-400/70 font-semibold">{exp.role}</div>
-                    </div>
-                    <span className="text-[13px] text-white/40 font-mono mt-0.5">{exp.year}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </SpotLightItem>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.25 }}
-              className="wib-card p-6 sm:p-7"
-            >
-              <div className="text-[11px] font-semibold tracking-[0.14em] uppercase text-cyan-400 mb-5">Leadership &amp; Volunteering</div>
-              <div className="space-y-4">
-                {[
-                  { role: "Chairperson, ISTE Student Branch", org: "MBIT, 2025-Present", desc: "Led technical workshops and anchored large-scale college events as branch head." },
-                  { role: "Design Coordinator", org: "MBIT, 2024-Present", desc: "Created posters, banners and digital creatives; led visual identity for student initiatives." },
-                  { role: "Social Media Coordinator", org: "NSS, 2024-2025", desc: "Managed NSS social media; promoted community outreach and volunteer programs online." },
-                  { role: "Robotics Developer", org: "Gyanotsav 1.0, CVM, Dec 2023-Jan 2024", desc: "Built and demonstrated an Arduino UNO robotics project with a multidisciplinary team." },
-                ].map((v) => (
-                  <div key={v.role} className="flex gap-3 items-start">
-                    <div className="w-1.5 h-1.5 rounded-full bg-cyan-400/60 flex-shrink-0 mt-[6px]" />
-                    <div>
-                      <div className="text-[12.5px] font-semibold text-white/80 leading-tight">{v.role}</div>
-                      <div className="text-[11px] text-cyan-400/50 mb-0.5">{v.org}</div>
-                      <div className="text-[11px] text-white/40 leading-relaxed">{v.desc}</div>
+            <SpotLightItem>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.25 }}
+                className="wib-card p-6 sm:p-7"
+              >
+                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] text-[#f0f0f5] mb-5">Leadership &amp; Volunteering</h3>
+                <div className="space-y-4">
+                  {[
+                    { role: "Chairperson, ISTE Student Branch", org: "MBIT, 2025-Present", desc: "Led technical workshops and anchored large-scale college events as branch head." },
+                    { role: "Design Coordinator", org: "MBIT, 2024-Present", desc: "Created posters, banners and digital creatives; led visual identity for student initiatives." },
+                    { role: "Social Media Coordinator", org: "NSS, 2024-2025", desc: "Managed NSS social media; promoted community outreach and volunteer programs online." },
+                    { role: "Robotics Developer", org: "Gyanotsav 1.0, CVM, Dec 2023-Jan 2024", desc: "Built and demonstrated an Arduino UNO robotics project with a multidisciplinary team." },
+                  ].map((v) => (
+                    <div key={v.role} className="flex gap-3 items-start">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/30 flex-shrink-0 mt-[6px]" />
+                      <div>
+                        <div className="text-[12.5px] font-semibold text-white/80 leading-tight">{v.role}</div>
+                        <div className="text-[11px] text-white/50 mb-0.5">{v.org}</div>
+                        <div className="text-[11px] text-white/40 leading-relaxed">{v.desc}</div>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </SpotLightItem>
           </div>
-        </div>{/* end resume highlights */}
+        </Spotlight>{/* end resume highlights */}
 
         {/* ── Bento Grid ─────────────────────────────── */}
         <div className="mt-14 sm:mt-24">

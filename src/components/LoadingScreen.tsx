@@ -161,11 +161,11 @@ export default function LoadingScreen({
                 animate={
                   isFlying
                     ? {
-                        x: orbTarget.x,
-                        y: orbTarget.y,
-                        scale: 0.11,
-                        opacity: 1,
-                      }
+                      x: orbTarget.x,
+                      y: orbTarget.y,
+                      scale: 0.11,
+                      opacity: 1,
+                    }
                     : { x: 0, y: 0, scale: 1, opacity: 1 }
                 }
                 transition={
@@ -235,7 +235,7 @@ export default function LoadingScreen({
                   transition={{ duration: 1, delay: 1 }}
                   className="text-[18px] sm:text-[20px] text-white tracking-[0.08em] -mt-1"
                 >
-                  ©Janavi Zala , 2026.
+                  ©Janavi Zala , 2023.
                 </motion.p>
               </motion.div>
             </div>

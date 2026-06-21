@@ -8,8 +8,8 @@ import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import KnowAboutMe from "@/components/KnowAboutMe";
 import Projects from "@/components/Projects";
-import Blog from "@/components/Blog";
-import Testimonials from "@/components/Testimonials";
+//import Blog from "@/components/Blog";
+//import Testimonials from "@/components/Testimonials";
 import Explore from "@/components/Explore";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -47,8 +47,8 @@ export default function Home() {
           <Marquee />
           <KnowAboutMe />
           <Projects />
-          <Blog />
-          <Testimonials />
+          {/* <Blog /> */}
+          {/* <Testimonials /> */}
           <Explore />
           <CTA />
           <Footer />

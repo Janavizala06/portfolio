@@ -28,8 +28,8 @@ function ExploreCard({ label, title, desc, href, delay }: typeof exploreItems[nu
       whileInView="show"
       viewport={{ once: true }}
       transition={{ delay }}
-      className="glass-card p-7 no-underline text-[#f0f0f5] relative overflow-hidden group block"
-      style={{ transformStyle: "preserve-3d", transition: "transform 0.12s linear" }}
+      className="bg-[#0e0e14] border border-white/[0.07] rounded-[22px] p-7 no-underline text-[#f0f0f5] relative overflow-hidden group block hover:-translate-y-[5px] hover:border-white/[0.12] hover:bg-[#121218] hover:shadow-[0_16px_48px_rgba(59,108,245,0.06)]"
+      style={{ transformStyle: "preserve-3d", transition: "all 0.4s var(--ease)" }}
     >
       <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-white/30 mb-3.5">{label}</div>
       <h3 className="font-serif text-[clamp(18px,2.2vw,24px)] font-normal tracking-[-0.02em] leading-[1.3] mb-2">{title}</h3>

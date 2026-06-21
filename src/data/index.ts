@@ -56,7 +56,7 @@ export const projects: Project[] = [
     num: "01",
     type: "IT Monitoring",
     title: "InfraEye",
-    period: "2025",
+    period: "2026",
     desc: "Real-Time Endpoint Monitoring & Enterprise Asset Management Platform",
     fullDesc: "Centralized IT infrastructure monitoring platform that provides real-time endpoint visibility, asset tracking, network discovery, and license compliance across enterprise LAN environments.",
     image: "/projects/infraeye.png",
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     num: "04",
     type: "AI Platform",
     title: "Flavour with Fusion",
-    period: "2025",
+    period: "2024",
     desc: "AI-Powered Recipe Generation & Smart Meal Planning Platform",
     fullDesc: "Smart culinary platform that combines AI-powered recipe generation, nutritional analysis, ingredient optimization, and personalized meal planning to create healthier, more diverse, and sustainable dining experiences.",
     image: "/projects/flavour_fusion.png",
@@ -172,45 +172,67 @@ export const projects: Project[] = [
 
 // ── Blog / Achievements ────────────────────────
 export const posts: BlogPost[] = [
-  { date: "2026", read: "Achievement",
+  {
+    date: "2026", read: "Achievement",
     title: "Dev Summit 2026 — 2nd Runner-Up",
-    excerpt: "Won Rs. 10,000 cash prize at a National Level Hackathon at Jagannath University, Jaipur. Competed against 500+ teams nationwide." },
-  { date: "2025", read: "Recognition",
+    excerpt: "Won Rs. 10,000 cash prize at a National Level Hackathon at Jagannath University, Jaipur. Competed against 500+ teams nationwide."
+  },
+  {
+    date: "2025", read: "Recognition",
     title: "IBM GIFT City Recognition",
-    excerpt: "Exclusively selected for IBM office visit at GIFT City, Gandhinagar for outstanding training performance during Full Stack Development program." },
-  { date: "2025", read: "Achievement",
+    excerpt: "Exclusively selected for IBM office visit at GIFT City, Gandhinagar for outstanding training performance during Full Stack Development program."
+  },
+  {
+    date: "2025", read: "Achievement",
     title: "Unleash LLM Hackathon — Direct Finalist",
-    excerpt: "Secured direct finals entry through excellence demonstrated during Flaunch internship. Built AI-powered solutions that stood out nationally." },
-  { date: "2025", read: "Internship",
+    excerpt: "Secured direct finals entry through excellence demonstrated during Flaunch internship. Built AI-powered solutions that stood out nationally."
+  },
+  {
+    date: "2025", read: "Internship",
     title: "Flaunch — Top 20 & Level 2 Promotion",
-    excerpt: "Earned Rs. 5,000 stipend for ranking among top performers nationally. Delivered CodeTalk as a top internship project." },
-  { date: "2024", read: "Certification",
+    excerpt: "Earned Rs. 5,000 stipend for ranking among top performers nationally. Delivered CodeTalk as a top internship project."
+  },
+  {
+    date: "2024", read: "Certification",
     title: "ITC Diploma in Programming Language",
-    excerpt: "Certified in C, C++, Python, Web Design, SQL & Database Management from Information Technology Centre." },
+    excerpt: "Certified in C, C++, Python, Web Design, SQL & Database Management from Information Technology Centre."
+  },
 ];
 
 // ── Testimonials / Experience ──────────────────
 export const testimonials: Testimonial[] = [
-  { avatar: "🤖", name: "Flaunch", role: "AI Technology Intern · Oct 2024 – Jan 2025",
-    quote: "Designed and deployed conversational AI systems and LLM-powered applications serving real user workflows. Engineered seamless integrations between machine learning APIs and production-grade application pipelines." },
-  { avatar: "💼", name: "IBM", role: "Full Stack Development Trainee · Aug 2025",
-    quote: "Architected and shipped responsive full-stack web applications leveraging the MERN stack with RESTful API design. Designed and presented LibTrack as the program capstone." },
-  { avatar: "🎓", name: "MBIT", role: "Chairperson, ISTE Student Branch · 2025 – Present",
-    quote: "Spearheaded technical workshops and anchored large-scale college events as branch head. Leading a team of 50+ members in organizing hackathons and tech talks." },
-  { avatar: "🎨", name: "MBIT", role: "Design Coordinator · 2024 – Present",
-    quote: "Conceptualized and produced posters, banners & digital creatives; led visual identity for student initiatives across multiple departments." },
-  { avatar: "📱", name: "NSS", role: "Social Media Coordinator · 2024 – 2025",
-    quote: "Managed NSS social media presence: promoted community outreach drives and volunteer programs online, increasing engagement by 40%." },
-  { avatar: "🤖", name: "CVM University", role: "Robotics Project Developer · Dec 2023 – Jan 2024",
-    quote: "Developed and demonstrated an Arduino UNO robotics project at Gyanotsav 1.0; coordinated with a multidisciplinary team." },
+  {
+    avatar: "🤖", name: "Flaunch", role: "AI Technology Intern · Oct 2024 – Jan 2025",
+    quote: "Designed and deployed conversational AI systems and LLM-powered applications serving real user workflows. Engineered seamless integrations between machine learning APIs and production-grade application pipelines."
+  },
+  {
+    avatar: "💼", name: "IBM", role: "Full Stack Development Trainee · Aug 2025",
+    quote: "Architected and shipped responsive full-stack web applications leveraging the MERN stack with RESTful API design. Designed and presented LibTrack as the program capstone."
+  },
+  {
+    avatar: "🎓", name: "MBIT", role: "Chairperson, ISTE Student Branch · 2025 – Present",
+    quote: "Spearheaded technical workshops and anchored large-scale college events as branch head. Leading a team of 50+ members in organizing hackathons and tech talks."
+  },
+  {
+    avatar: "🎨", name: "MBIT", role: "Design Coordinator · 2024 – Present",
+    quote: "Conceptualized and produced posters, banners & digital creatives; led visual identity for student initiatives across multiple departments."
+  },
+  {
+    avatar: "📱", name: "NSS", role: "Social Media Coordinator · 2024 – 2025",
+    quote: "Managed NSS social media presence: promoted community outreach drives and volunteer programs online, increasing engagement by 40%."
+  },
+  {
+    avatar: "🤖", name: "CVM University", role: "Robotics Project Developer · Dec 2023 – Jan 2024",
+    quote: "Developed and demonstrated an Arduino UNO robotics project at Gyanotsav 1.0; coordinated with a multidisciplinary team."
+  },
 ];
 
 // ── Nav sections for scroll tracking ───────────
-export const navSections = ["hero", "about", "projects", "blog", "cta"] as const;
+export const navSections = ["hero", "about", "projects", "cta"] as const;
 export const navItems = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Work", href: "#projects" },
-  { label: "Blog", href: "#blog" },
+  /*{ label: "Blog", href: "#blog" },*/
   { label: "Contact", href: "#cta" },
 ] as const;
