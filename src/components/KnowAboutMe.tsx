@@ -17,6 +17,34 @@ const reveal = {
   show: { opacity: 1, y: 0, transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
+/* ── WIB Hover Card (spotlight effect) ──────────────── */
+function WibHoverCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const handleMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    el.style.setProperty("--x", String(e.clientX - rect.left));
+    el.style.setProperty("--y", String(e.clientY - rect.top));
+  }, []);
+  const handleLeave = useCallback(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.setProperty("--x", "-9999");
+    el.style.setProperty("--y", "-9999");
+  }, []);
+  return (
+    <div
+      ref={ref}
+      className={`wib-hover-wrap ${className}`}
+      onMouseMove={handleMove}
+      onMouseLeave={handleLeave}
+    >
+      {children}
+    </div>
+  );
+}
+
 /* ── Bento Card wrapper ──────────────────────── */
 function BentoCard({ children, className = "", delay = 0 }: {
   children: React.ReactNode; className?: string; delay?: number;
@@ -129,16 +157,123 @@ function TypewriterHeading() {
   );
 }
 
+/* ── Luminous Stack Card (Toggleable) ─────────────── */
+function GalaxyButton({ s, index }: { s: { name: string; emoji: string }, index: number }) {
+  // Deterministic "random" logic for hydration safety
+  const seededRandom = (seed: number) => {
+    const x = Math.sin(seed++) * 10000;
+    return x - Math.floor(x);
+  };
+  const RANDOM = (min: number, max: number, seed: number) => Math.floor(seededRandom(seed) * (max - min + 1) + min);
+  
+  return (
+    <div className="galaxy-button">
+      <button type="button">
+        <span className="spark"></span>
+        <span className="backdrop"></span>
+        <span className="galaxy__container">
+          {[...Array(4)].map((_, i) => {
+            const seed = index * 100 + i;
+            return (
+              <span key={i} className="star star--static" style={{
+                '--angle': RANDOM(0, 360, seed),
+                '--duration': RANDOM(6, 20, seed + 1),
+                '--delay': RANDOM(1, 10, seed + 2),
+                '--alpha': RANDOM(40, 90, seed + 3) / 100,
+                '--size': RANDOM(2, 6, seed + 4),
+                '--distance': RANDOM(40, 200, seed + 5),
+              } as React.CSSProperties}></span>
+            );
+          })}
+        </span>
+        <span className="galaxy">
+          <span className="galaxy__ring">
+            {[...Array(20)].map((_, i) => {
+              const seed = index * 1000 + i;
+              return (
+                <span key={i} className="star" style={{
+                  '--angle': RANDOM(0, 360, seed),
+                  '--duration': RANDOM(6, 20, seed + 1),
+                  '--delay': RANDOM(1, 10, seed + 2),
+                  '--alpha': RANDOM(40, 90, seed + 3) / 100,
+                  '--size': RANDOM(2, 6, seed + 4),
+                  '--distance': RANDOM(40, 200, seed + 5),
+                } as React.CSSProperties}></span>
+              );
+            })}
+          </span>
+        </span>
+        <span className="text">
+          <span className="text-[16px]">{s.emoji}</span>{s.name}
+        </span>
+      </button>
+    </div>
+  );
+}
+
+function LuminousStackCard() {
+  const [active, setActive] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
+      className="w-full relative px-2"
+    >
+      <div className={`luminous-card w-full ${active ? "active" : ""}`}>
+        <div className="light-layer" style={{ top: '120px' }}>
+          <div className="slit"></div>
+          <div className="lumen">
+            <div className="min"></div>
+            <div className="mid"></div>
+            <div className="hi"></div>
+          </div>
+          <div className="darken">
+            <div className="sl"></div>
+            <div className="ll"></div>
+            <div className="slt"></div>
+            <div className="srt"></div>
+          </div>
+        </div>
+        <div className="content-layer pointer-events-none flex flex-col items-center pt-2">
+          <div className="relative z-20 pointer-events-auto w-full text-left mb-10 mt-2 px-2">
+            <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-white/30">Stack</div>
+          </div>
+          
+          <div className="flex flex-col gap-3 relative z-30 max-w-[95%] mx-auto pointer-events-auto">
+            {stackItems.map((row, rowIndex) => (
+              <div key={rowIndex} className="flex flex-wrap justify-center gap-3">
+                {row.map((s, colIndex) => (
+                  <GalaxyButton key={s.name} s={s} index={rowIndex * 10 + colIndex} />
+                ))}
+              </div>
+            ))}
+          </div>
+
+          <div className="bottom mt-14 h-10 pointer-events-auto w-full relative z-20">
+            <div className="toggle" onClick={() => setActive(!active)}>
+              <div className="handle"></div>
+              <span>Activate Lumen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ── Know About Me Section ─────────────────────── */
 export default function KnowAboutMe() {
-  const stylusZoneRef = useRef<HTMLElement>(null);
+  const stylusZoneRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
   /* ── Wand cursor position (viewport px) ────── */
   const wandX = useMotionValue(-100);
   const wandY = useMotionValue(-100);
-  const springX = useSpring(wandX, { stiffness: 180, damping: 22, mass: 0.8 });
-  const springY = useSpring(wandY, { stiffness: 180, damping: 22, mass: 0.8 });
+  const springX = useSpring(wandX, { stiffness: 300, damping: 30, mass: 0.5 });
+  const springY = useSpring(wandY, { stiffness: 300, damping: 30, mass: 0.5 });
 
   /* ── Card reveal progress (0→1 based on wand X over card) ── */
   const revealRaw = useMotionValue(0);
@@ -148,19 +283,21 @@ export default function KnowAboutMe() {
     return `inset(0 ${100 - pct}% 0 0)`;
   });
 
-  const [isInSection, setIsInSection] = useState(false);
-
   /* ── Mouse tracking ─────────────────────────── */
   const handleMouseMove = useCallback(
     (e: MouseEvent) => {
-      wandX.set(e.clientX);
-      wandY.set(e.clientY);
+      const zone = stylusZoneRef.current;
+      if (!zone) return;
+      const rect = zone.getBoundingClientRect();
+      // Mouse coordinates relative to the stylusZone
+      wandX.set(e.clientX - rect.left);
+      wandY.set(e.clientY - rect.top);
 
       // Calculate reveal based on cursor position relative to card
       const card = cardRef.current;
       if (card) {
-        const rect = card.getBoundingClientRect();
-        const relX = (e.clientX - rect.left) / rect.width;
+        const cardRect = card.getBoundingClientRect();
+        const relX = (e.clientX - cardRect.left) / cardRect.width;
         revealRaw.set(Math.max(0, Math.min(1, relX)));
       }
     },
@@ -168,20 +305,29 @@ export default function KnowAboutMe() {
   );
 
   const handleEnter = useCallback(() => {
-    setIsInSection(true);
     // Hide default custom cursor
     document.body.classList.add("hide-cursor");
   }, []);
 
   const handleLeave = useCallback(() => {
-    setIsInSection(false);
     document.body.classList.remove("hide-cursor");
     revealRaw.set(0); // Reset to initials
-  }, [revealRaw]);
+    
+    // Smoothly return to the default resting position
+    const zone = stylusZoneRef.current;
+    if (zone) {
+      wandX.set(zone.clientWidth / 2);
+      wandY.set(50);
+    }
+  }, [revealRaw, wandX, wandY]);
 
   useEffect(() => {
     const zone = stylusZoneRef.current;
     if (!zone) return;
+
+    // Set initial resting position on mount
+    wandX.set(zone.clientWidth / 2);
+    wandY.set(50);
 
     zone.addEventListener("mousemove", handleMouseMove);
     zone.addEventListener("mouseenter", handleEnter);
@@ -193,103 +339,98 @@ export default function KnowAboutMe() {
       zone.removeEventListener("mouseleave", handleLeave);
       document.body.classList.remove("hide-cursor");
     };
-  }, [handleMouseMove, handleEnter, handleLeave]);
+  }, [handleMouseMove, handleEnter, handleLeave, wandX, wandY]);
 
   return (
     <section
       id="about"
-      ref={stylusZoneRef}
       className="py-16 sm:py-28 relative z-10 section-blend overflow-hidden"
-      style={{ cursor: "none" }}
     >
       <AuroraBackground layout="tl-br" colors={[
         "rgba(109, 40, 217, 0.55)",
         "rgba(124, 58, 237, 0.42)",
         "rgba(99, 102, 241, 0.32)"
       ]} />
-      {/* ── Magician's Wand Cursor ─────────────── */}
-      <AnimatePresence>
-        {isInSection && (
+
+
+      <div className="max-w-[1080px] mx-auto px-4 sm:px-7 relative z-[1]">
+        {/* Stylus zone — full section width triggers the wand cursor */}
+        <div ref={stylusZoneRef} className="relative" style={{ cursor: "none" }}>
+          {/* ── Magician's Wand Cursor ─────────────── */}
           <motion.div
-            className="fixed z-[9999] pointer-events-none"
+            className="absolute z-[9999] pointer-events-none hidden lg:block"
             style={{ left: springX, top: springY }}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.5 }}
-            transition={{ duration: 0.25 }}
           >
-            {/* Stylus — large, smooth, premium */}
+            {/* Stylus — wide & stubby (Apple Pencil style) */}
             <div
               className="relative"
-              style={{ transform: "translate(-13px, 0)", transformOrigin: "top center" }}
+              style={{ transform: "translate(-20px, 0) scale(1.6)", transformOrigin: "top center" }}
             >
-              {/* White tip — large rounded top */}
-              <div className="w-[26px] h-[140px] rounded-t-full mx-auto relative overflow-hidden"
+              {/* White tip — wide, taller */}
+              <div className="w-[40px] h-[90px] rounded-t-full mx-auto relative overflow-hidden"
                 style={{
                   background: "linear-gradient(to right, #f2f2f8 0%, #ffffff 25%, #f5f5fa 50%, #e8e8f0 75%, #dcdce5 100%)",
                   boxShadow: "3px 0 10px rgba(0,0,0,0.08), -2px 0 8px rgba(0,0,0,0.06), 0 -2px 6px rgba(255,255,255,0.3)",
                 }}
               >
-                {/* Smooth left shine */}
-                <div className="absolute left-[3px] top-[10px] bottom-[10px] w-[5px] rounded-full"
+                {/* Left shine */}
+                <div className="absolute left-[5px] top-[8px] bottom-[8px] w-[7px] rounded-full"
                   style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.6) 100%)" }}
                 />
                 {/* Right edge shadow */}
-                <div className="absolute right-[2px] top-[10px] bottom-[10px] w-[3px] rounded-full bg-black/[0.04]" />
+                <div className="absolute right-[3px] top-[8px] bottom-[8px] w-[4px] rounded-full bg-black/[0.04]" />
               </div>
 
-              {/* Silver band — subtle divider */}
-              <div className="w-[27px] h-[5px] mx-auto"
+              {/* Silver band */}
+              <div className="w-[42px] h-[6px] mx-auto"
                 style={{
                   background: "linear-gradient(180deg, #c0c0cc 0%, #9a9aa8 40%, #b0b0bc 100%)",
                   boxShadow: "0 1px 3px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.15)",
                 }}
               />
 
-              {/* Dark matte body — long & smooth */}
-              <div className="w-[26px] h-[380px] mx-auto relative overflow-hidden"
+              {/* Dark body — wide & taller */}
+              <div className="w-[40px] h-[200px] mx-auto relative overflow-hidden"
                 style={{
                   background: "linear-gradient(to right, #303040 0%, #222230 15%, #1a1a26 35%, #141420 50%, #18182a 65%, #1e1e2c 85%, #2a2a38 100%)",
                   boxShadow: "4px 0 14px rgba(0,0,0,0.3), -3px 0 10px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.25)",
-                  borderRadius: "0 0 4px 4px",
+                  borderRadius: "0 0 6px 6px",
                 }}
               >
-                {/* Left edge highlight */}
-                <div className="absolute left-[2px] top-4 bottom-4 w-[3px] rounded-full"
+                <div className="absolute left-[3px] top-4 bottom-4 w-[4px] rounded-full"
                   style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 50%, rgba(255,255,255,0.05) 100%)" }}
                 />
-                {/* Right edge shadow */}
-                <div className="absolute right-[2px] top-4 bottom-4 w-[3px] rounded-full bg-black/[0.12]" />
+                <div className="absolute right-[3px] top-4 bottom-4 w-[4px] rounded-full bg-black/[0.12]" />
               </div>
 
               {/* Bottom cap */}
-              <div className="w-[26px] h-[4px] rounded-b-[6px] mx-auto"
+              <div className="w-[40px] h-[5px] rounded-b-[8px] mx-auto"
                 style={{ background: "linear-gradient(180deg, #1e1e2a 0%, #121218 100%)" }}
               />
             </div>
           </motion.div>
-        )}
-      </AnimatePresence>
 
-      <div className="max-w-[1080px] mx-auto px-4 sm:px-7 relative z-[1]">
-        {/* Stylus zone — full section width triggers the wand cursor */}
-        <div>
           {/* Section header */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
-            className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-3"
+            className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-3 relative z-[2]"
           >
             Know About Me
           </motion.p>
 
           {/* ── Typewriter Roles ─────────────────────── */}
-          <TypewriterHeading />
+          <div className="relative z-[2]">
+            <TypewriterHeading />
+          </div>
 
           {/* Two-column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-12 items-start">
+          <div
+            className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-12 items-start relative z-[2]"
+          >
+
             {/* Left: Bio */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -310,8 +451,8 @@ export default function KnowAboutMe() {
                 I believe in waking up each day eager to learn, build, and make an impact!
               </p>
 
-              {/* Social icons */}
-              <div className="flex items-center gap-4 mb-8">
+              {/* Social icons — restore normal cursor here */}
+              <div className="flex items-center gap-4 mb-8" style={{ cursor: "auto" }}>
                 {/* LinkedIn */}
                 <a href="https://linkedin.com/in/janavi-zala-226117288" target="_blank" rel="noopener noreferrer"
                   aria-label="LinkedIn" className="galaxy-icon">
@@ -441,19 +582,9 @@ export default function KnowAboutMe() {
               </div>
 
               {/* Hint */}
-              <AnimatePresence>
-                {!isInSection && (
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.4 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute bottom-2 text-[11px] text-white/30 tracking-wide"
-                  >
-                    ← Hover to reveal →
-                  </motion.p>
-                )}
-              </AnimatePresence>
+              <p className="absolute bottom-2 text-[11px] text-white/30 tracking-wide opacity-40">
+                ← Hover to reveal →
+              </p>
             </motion.div>
           </div>
         </div>{/* end existing bento */}
@@ -486,8 +617,27 @@ export default function KnowAboutMe() {
               <div className="flex flex-col items-start relative overflow-hidden min-h-[380px] bg-black">
                 {/* Top label */}
                 <div className="relative z-10 text-center w-full pt-5 px-4">
-                  <p className="text-[9px] uppercase tracking-[0.2em] text-blue-300/70 mb-1">FLEXIBLE WITH TIMEZONES</p>
-                  <p className="text-[11px] text-white/50">Based in India, available globally</p>
+                  <p
+                    className="text-[clamp(18px,3vw,28px)] uppercase font-black tracking-[0.08em] leading-[1.1] mb-1"
+                    style={{
+                      background: "linear-gradient(180deg, #e8eef8 0%, #a8bcd8 40%, #6e92b8 70%, #4a6fa0 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                      filter: "drop-shadow(0 2px 8px rgba(82,160,255,0.45))",
+                      textShadow: "none",
+                    }}
+                  >FLEXIBLE WITH TIMEZONES</p>
+                  <p
+                    className="text-[clamp(14px,2.2vw,20px)] uppercase font-black tracking-[0.06em] leading-[1.1]"
+                    style={{
+                      background: "linear-gradient(180deg, #c8d8f0 0%, #7aa0cc 45%, #3a6899 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                      filter: "drop-shadow(0 1px 5px rgba(82,140,220,0.35))",
+                    }}
+                  >Based in India, available globally</p>
                 </div>
                 {/* Earth Globe - centered, rotating */}
                 <div className="relative z-10 w-full px-4 flex justify-center mt-4">
@@ -519,13 +669,13 @@ export default function KnowAboutMe() {
                 </div>
               </div>
               <div className="p-6 sm:p-8 flex flex-col justify-center border-l border-white/[0.06]">
-                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] text-[#f0f0f5] mb-4">Education</h3>
+                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-4 w-max">Education</h3>
                 <h4 className="text-[22px] sm:text-[26px] font-bold text-white mb-1">CVM University, MBIT</h4>
                 <p className="text-[15px] text-white/70 mb-1">B.Tech - Computer Engineering</p>
                 <p className="text-[13px] text-white/40 mb-5">2023 - 2027</p>
 
                 <div className="mb-6">
-                  <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] text-[#f0f0f5] mb-2">Location</h3>
+                  <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-2 w-max">Location</h3>
                   <h4 className="text-[22px] sm:text-[26px] font-bold text-white mb-1">Anand, Gujarat 🇮🇳</h4>
                 </div>
 
@@ -539,6 +689,7 @@ export default function KnowAboutMe() {
 
           {/* Card 2: Stats Row */}
           <SpotLightItem className="mb-3.5">
+            <WibHoverCard>
             <motion.div
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.1 }}
@@ -546,56 +697,68 @@ export default function KnowAboutMe() {
             >
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
                 {[
-                  { value: "5+", label: "Projects" },
-                  { value: "15+", label: "Technologies" },
-                  { value: "9.05", label: "CGPA / 10" },
-                  { value: "9.43", label: "SGPA / 10" },
-                  { value: "\u221E", label: "Curiosity" },
+                  { value: "5+", label: "Projects", color: "text-red-500", glow: "hover:border-red-500/50 hover:shadow-red-500/30 hover:from-red-500/10", via: "via-red-400/20" },
+                  { value: "15+", label: "Technologies", color: "text-orange-500", glow: "hover:border-orange-500/50 hover:shadow-orange-500/30 hover:from-orange-500/10", via: "via-orange-400/20" },
+                  { value: "9.05", label: "CGPA / 10", color: "text-yellow-500", glow: "hover:border-yellow-500/50 hover:shadow-yellow-500/30 hover:from-yellow-500/10", via: "via-yellow-400/20" },
+                  { value: "9.43", label: "SGPA / 10", color: "text-pink-500", glow: "hover:border-pink-500/50 hover:shadow-pink-500/30 hover:from-pink-500/10", via: "via-pink-400/20" },
+                  { value: <div className="infinity-symbol"></div>, label: "Curiosity", color: "text-purple-500", glow: "hover:border-purple-500/50 hover:shadow-purple-500/30 hover:from-purple-500/10", via: "via-purple-400/20" },
                 ].map((s) => (
-                  <div key={s.label} className="flex flex-col items-center text-center p-4 rounded-2xl bg-black border border-white/[0.05] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_10px_rgba(0,0,0,0.3)] relative overflow-hidden">
-                    <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                    <span className="text-[28px] sm:text-[32px] font-bold mb-1 gradient-text-animated">{s.value}</span>
-                    <span className="text-[11px] text-white/40 uppercase tracking-[0.08em]">{s.label}</span>
+                  <div key={s.label} className={`flex flex-col items-center text-center p-4 rounded-2xl bg-black border border-white/[0.05] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_10px_rgba(0,0,0,0.3)] relative overflow-hidden group transition-all duration-300 ease-out cursor-pointer hover:shadow-2xl hover:bg-gradient-to-tr from-transparent to-transparent hover:to-black/40 ${s.glow}`}>
+                    <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${s.via} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out z-0`}></div>
+                    <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-10" />
+                    <span className={`relative z-10 text-[28px] sm:text-[32px] font-bold mb-1 drop-shadow-md group-hover:scale-110 transition-transform duration-300 ${s.color}`}>{s.value}</span>
+                    <span className="relative z-10 text-[11px] text-white/40 uppercase tracking-[0.08em] group-hover:text-white transition-colors duration-300">{s.label}</span>
                   </div>
                 ))}
               </div>
             </motion.div>
+            </WibHoverCard>
           </SpotLightItem>
 
           {/* Card 3: Achievements */}
           <SpotLightItem className="mb-3.5">
+            <WibHoverCard>
             <motion.div
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.15 }}
               className="wib-card p-5 sm:p-6"
             >
-              <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] text-[#f0f0f5] mb-5">Achievements &amp; Recognition</h3>
+              <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-5 w-max">Achievements &amp; Recognition</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 {[
-                  { icon: "\uD83E\uDD49", title: "DevSummit 2026", sub: "2nd Runner-Up, 10K Prize" },
-                  { icon: "\u2B50", title: "Flaunch Top 20", sub: "Level 2 Promotion, 5K Stipend" },
-                  { icon: "\uD83D\uDE80", title: "Unleash LLM", sub: "Direct Finalist, Flaunch Excellence" },
-                  { icon: "\uD83C\uDFE2", title: "IBM Recognition", sub: "Selected for GIFT City Visit" },
+                  { icon: "🥉", title: "DevSummit 2026", sub: "2nd Runner-Up, 10K Prize",
+                    glow: "hover:border-orange-500/50 hover:shadow-orange-500/30 hover:from-orange-500/10", via: "via-orange-400/20" },
+                  { icon: "⭐", title: "Flaunch Top 20", sub: "Level 2 Promotion, 5K Stipend",
+                    glow: "hover:border-yellow-500/50 hover:shadow-yellow-500/30 hover:from-yellow-500/10", via: "via-yellow-400/20" },
+                  { icon: "🚀", title: "Unleash LLM", sub: "Direct Finalist, Flaunch Excellence",
+                    glow: "hover:border-pink-500/50 hover:shadow-pink-500/30 hover:from-pink-500/10", via: "via-pink-400/20" },
+                  { icon: "🏢", title: "IBM Recognition", sub: "Selected for GIFT City Visit",
+                    glow: "hover:border-purple-500/50 hover:shadow-purple-500/30 hover:from-purple-500/10", via: "via-purple-400/20" },
                 ].map((a) => (
-                  <div key={a.title} className="wib-card-inner flex flex-col items-center text-center p-5 rounded-xl">
-                    <span className="text-[28px] mb-2">{a.icon}</span>
-                    <div className="text-[13px] font-semibold text-white/85 mb-1">{a.title}</div>
-                    <div className="text-[11px] text-white/40 leading-relaxed">{a.sub}</div>
+                  <div key={a.title} className={`wib-card-inner flex flex-col items-center text-center p-5 rounded-xl group relative overflow-hidden transition-all duration-300 ease-out cursor-pointer border border-white/5 bg-gradient-to-tr from-transparent to-transparent hover:shadow-2xl hover:bg-gradient-to-tr hover:to-black/40 ${a.glow}`}>
+                    <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${a.via} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out`}></div>
+                    <div className="relative z-10 flex flex-col items-center">
+                      <span className="text-[28px] mb-2 drop-shadow-md group-hover:scale-110 transition-transform duration-300">{a.icon}</span>
+                      <div className="text-[13px] font-semibold text-white/85 mb-1 group-hover:text-white transition-colors duration-300">{a.title}</div>
+                      <div className="text-[11px] text-white/40 leading-relaxed">{a.sub}</div>
+                    </div>
                   </div>
                 ))}
               </div>
             </motion.div>
+            </WibHoverCard>
           </SpotLightItem>
 
           {/* Cards 4 and 5: Experience + Leadership */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+          <div className="grid grid-cols-1 md:grid-cols-[4fr_6fr] gap-3.5">
             <SpotLightItem>
+              <WibHoverCard>
               <motion.div
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.2 }}
                 className="wib-card p-6 sm:p-7 relative overflow-hidden"
               >
-                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] text-[#f0f0f5] mb-6">Experience</h3>
+                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Experience</h3>
                 <div className="space-y-5">
                   {[
                     { company: "Hi Lab Solution", role: "Full Stack Intern", year: "2026" },
@@ -616,33 +779,35 @@ export default function KnowAboutMe() {
                   ))}
                 </div>
               </motion.div>
+              </WibHoverCard>
             </SpotLightItem>
 
             <SpotLightItem>
+              <WibHoverCard>
               <motion.div
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.25 }}
                 className="wib-card p-6 sm:p-7"
               >
-                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] text-[#f0f0f5] mb-5">Leadership &amp; Volunteering</h3>
+                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-5 w-max">Leadership &amp; Volunteering</h3>
                 <div className="space-y-4">
                   {[
-                    { role: "Chairperson, ISTE Student Branch", org: "MBIT, 2025-Present", desc: "Led technical workshops and anchored large-scale college events as branch head." },
-                    { role: "Design Coordinator", org: "MBIT, 2024-Present", desc: "Created posters, banners and digital creatives; led visual identity for student initiatives." },
-                    { role: "Social Media Coordinator", org: "NSS, 2024-2025", desc: "Managed NSS social media; promoted community outreach and volunteer programs online." },
-                    { role: "Robotics Developer", org: "Gyanotsav 1.0, CVM, Dec 2023-Jan 2024", desc: "Built and demonstrated an Arduino UNO robotics project with a multidisciplinary team." },
+                    { role: "Chairperson, ISTE Student Branch", org: "MBIT, 2025-Present" },
+                    { role: "Design Coordinator", org: "MBIT, 2024-Present" },
+                    { role: "Social Media Coordinator", org: "NSS, 2024-2025" },
+                    { role: "Robotics Developer", org: "Gyanotsav 1.0, CVM, Dec 2023-Jan 2024" },
                   ].map((v) => (
                     <div key={v.role} className="flex gap-3 items-start">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/30 flex-shrink-0 mt-[6px]" />
                       <div>
                         <div className="text-[12.5px] font-semibold text-white/80 leading-tight">{v.role}</div>
-                        <div className="text-[11px] text-white/50 mb-0.5">{v.org}</div>
-                        <div className="text-[11px] text-white/40 leading-relaxed">{v.desc}</div>
+                        <div className="text-[11px] text-white/50">{v.org}</div>
                       </div>
                     </div>
                   ))}
                 </div>
               </motion.div>
+              </WibHoverCard>
             </SpotLightItem>
           </div>
         </Spotlight>{/* end resume highlights */}
@@ -659,47 +824,9 @@ export default function KnowAboutMe() {
             Builder, not just <em className="italic gradient-text-animated">a coder</em>
           </motion.h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
-            {/* Connect — 2-col span */}
-            <BentoCard className="md:col-span-2">
-              <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-white/30 mb-3">Connect</div>
-              <h4 className="font-serif text-[clamp(22px,2.8vw,32px)] font-normal tracking-[-0.02em] leading-[1.25] text-[#f0f0f5] mb-2">
-                Always open to new <em className="italic gradient-text-animated">opportunities</em>
-              </h4>
-              <p className="text-[13px] text-white/55 leading-[1.7]">
-                I build AI-powered platforms and full-stack web apps. Open to internships, collaborations, and exciting opportunities.
-              </p>
-              <EmailCopy />
-            </BentoCard>
-
-            {/* Location */}
-            <BentoCard delay={0.1}>
-              <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-white/30 mb-3">Location</div>
-              <h4 className="font-serif text-[clamp(22px,2.8vw,32px)] font-normal tracking-[-0.02em] leading-[1.25] text-[#f0f0f5] mb-2">
-                Anand, Gujarat 🇮🇳
-              </h4>
-              <p className="text-[13px] text-white/55 leading-[1.7]">
-                MBIT, CVM University<br />Available for remote & on-site work.
-              </p>
-            </BentoCard>
-
-            {/* Stack — full width */}
-            <BentoCard className="md:col-span-3" delay={0.2}>
-              <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-white/30 mb-3">Stack</div>
-              <h4 className="font-serif text-[clamp(22px,2.8vw,32px)] font-normal tracking-[-0.02em] leading-[1.25] text-[#f0f0f5] mb-2">
-                Tools I <em className="italic gradient-text-animated">actually use</em>
-              </h4>
-              <div className="flex flex-wrap gap-2 mt-2.5">
-                {stackItems.map((s) => (
-                  <span key={s.name}
-                    className="flex items-center gap-[7px] px-3.5 py-[7px] rounded-pill bg-[#0a0a12] border border-white/[0.06] text-[12.5px] font-medium text-white/55
-                      hover:bg-[#111120] hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(0,0,0,0.3)]
-                      transition-all duration-300">
-                    <span className="text-[16px]">{s.emoji}</span>{s.name}
-                  </span>
-                ))}
-              </div>
-            </BentoCard>
+          <div className="grid grid-cols-1 gap-3.5">
+            {/* Stack — full width with luminous light effect */}
+            <LuminousStackCard />
           </div>
         </div>
       </div>

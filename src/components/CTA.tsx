@@ -19,7 +19,7 @@ export default function CTA() {
   const otwItems = Array(12).fill("OPEN TO WORK ·");
 
   return (
-    <section id="cta" className="py-[60px] sm:py-[120px] px-4 sm:px-6 flex flex-col items-center justify-center text-center overflow-hidden relative section-blend">
+    <section id="cta" className="pt-[60px] sm:pt-[120px] pb-4 sm:pb-6 px-4 sm:px-6 flex flex-col items-center justify-center text-center overflow-hidden relative section-blend">
       {/* CTA mesh glow */}
       <div className="absolute -inset-[30%] z-0 pointer-events-none blur-[50px] animate-mesh"
         style={{
@@ -37,8 +37,13 @@ export default function CTA() {
       </motion.div>
 
       <motion.h2 variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
-        className="relative z-[2] font-serif text-[clamp(40px,7vw,80px)] font-normal tracking-[-0.03em] leading-[1.05] text-white mb-[18px]">
-        From concept<br />to <em className="italic gradient-text-animated">creation.</em><br />Let&apos;s make it happen!
+        className="relative z-[2] font-serif text-[clamp(40px,7vw,80px)] font-normal tracking-[-0.03em] leading-[1.1] mb-[18px] flex flex-col items-center">
+        <span className="shimmer-text" style={{ '--placeholder-length': 12 } as React.CSSProperties}>From concept</span>
+        <span className="flex items-center gap-2">
+          <span className="shimmer-text" style={{ '--placeholder-length': 3 } as React.CSSProperties}>to</span>
+          <em className="italic shimmer-text" style={{ '--placeholder-length': 9, '--chosen': 'var(--clock)' } as React.CSSProperties}>creation.</em>
+        </span>
+        <span className="shimmer-text" style={{ '--placeholder-length': 21 } as React.CSSProperties}>Let&apos;s make it happen!</span>
       </motion.h2>
 
       <motion.p variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
@@ -48,16 +53,20 @@ export default function CTA() {
 
       <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
         className="relative z-[2] flex gap-3 flex-wrap justify-center">
-        <a href="mailto:janavizala0612@gmail.com"
-          className="inline-flex items-center gap-[7px] px-[22px] py-[11px] rounded-pill text-sm font-medium no-underline bg-white text-black
-            hover:bg-white/90 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,0,0,0.25)] transition-all duration-300">
-          <MailIcon /> Get In Touch
-        </a>
-        <a href="#projects"
-          className="inline-flex items-center gap-[7px] px-[22px] py-[11px] rounded-pill text-sm font-medium no-underline
-            bg-white/[0.08] text-white border border-white/[0.18]
-            hover:bg-white/[0.14] hover:-translate-y-0.5 transition-all duration-300">
-          View work →
+        <span className="connect-btn-wrap">
+          <a
+            href="mailto:janavizala0612@gmail.com"
+            className="connect-btn-inner inline-flex items-center gap-[7px] px-[22px] py-[11px] rounded-pill text-sm font-medium no-underline bg-white text-[#050505]"
+          >
+            <MailIcon /> Get In Touch
+          </a>
+        </span>
+        <a href="#projects" className="sparkle-btn">
+          <span>
+            {"View work →".split("").map((ch, i) => (
+              <span key={i} className="sparkle-letter">{ch === " " ? "\u00A0" : ch}</span>
+            ))}
+          </span>
         </a>
       </motion.div>
 
@@ -65,7 +74,7 @@ export default function CTA() {
       <div className="overflow-hidden w-full mt-[72px] relative z-[2]">
         <div className="flex w-max animate-marquee">
           {otwItems.map((t, i) => (
-            <span key={i} className="font-serif text-[13px] italic text-white/[0.25] whitespace-nowrap px-7 border-r border-white/[0.08]">
+            <span key={i} className="font-serif text-[13px] italic text-white/70 whitespace-nowrap px-7 border-r border-white/20">
               {t}
             </span>
           ))}

@@ -95,14 +95,18 @@ export default function About() {
             <h3 className="font-serif text-[clamp(22px,2.8vw,32px)] font-normal tracking-[-0.02em] leading-[1.25] text-[#f0f0f5] mb-2">
               Tools I <em className="italic text-white/55">actually use</em>
             </h3>
-            <div className="flex flex-wrap gap-2 mt-2.5">
-              {stackItems.map((s) => (
-                <span key={s.name}
-                  className="flex items-center gap-[7px] px-3.5 py-[7px] rounded-pill bg-[#0a0a12] border border-white/[0.06] text-[12.5px] font-medium text-white/55
-                    hover:bg-[#111120] hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(0,0,0,0.3)]
-                    transition-all duration-300">
-                  <span className="text-[16px]">{s.emoji}</span>{s.name}
-                </span>
+            <div className="flex flex-col gap-2 mt-2.5">
+              {stackItems.map((row, r) => (
+                <div key={r} className="flex flex-wrap gap-2">
+                  {row.map((s) => (
+                    <span key={s.name}
+                      className="flex items-center gap-[7px] px-3.5 py-[7px] rounded-pill bg-[#0a0a12] border border-white/[0.06] text-[12.5px] font-medium text-white/55
+                        hover:bg-[#111120] hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(0,0,0,0.3)]
+                        transition-all duration-300">
+                      <span className="text-[16px]">{s.emoji}</span>{s.name}
+                    </span>
+                  ))}
+                </div>
               ))}
             </div>
           </BentoCard>

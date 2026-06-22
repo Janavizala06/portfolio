@@ -12,8 +12,6 @@ import Projects from "@/components/Projects";
 //import Testimonials from "@/components/Testimonials";
 import Explore from "@/components/Explore";
 import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
-
 export default function Home() {
   const scrollPct = useScrollProgress();
   const [loading, setLoading] = useState(true);
@@ -51,7 +49,6 @@ export default function Home() {
           {/* <Testimonials /> */}
           <Explore />
           <CTA />
-          <Footer />
         </div>
       </main>
     </>
