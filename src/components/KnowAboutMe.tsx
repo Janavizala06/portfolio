@@ -6,7 +6,7 @@ import { stackItems } from "@/data";
 import { useTilt3d } from "@/hooks/useTilt3d";
 import AuroraBackground from "./AuroraBackground";
 import dynamic from "next/dynamic";
-const Earth = dynamic(() => import('./ui/Earth').then(m => m.Earth), { ssr: false });
+const Globe = dynamic(() => import("./ui/Earth").then((mod) => mod.Earth), { ssr: false });
 import { Sparkles } from "./ui/Sparkles";
 import { Spotlight, SpotLightItem } from "./ui/spotlight";
 
@@ -641,7 +641,7 @@ export default function KnowAboutMe() {
                 </div>
                 {/* Earth Globe - centered, rotating */}
                 <div className="relative z-10 w-full px-4 flex justify-center mt-4">
-                  <Earth className="w-[280px] max-w-full" />
+                  <Globe className="w-[280px] max-w-full" />
                 </div>
                 {/* Sparkles at bottom */}
                 <div
