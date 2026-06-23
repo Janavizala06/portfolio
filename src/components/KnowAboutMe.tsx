@@ -697,14 +697,13 @@ export default function KnowAboutMe() {
             >
               <div className="wib-grid-stats">
                 {[
-                  { value: "5+", label: "Projects", color: "text-red-500", glow: "stat-card-red", via: "via-red-400/20" },
-                  { value: "15+", label: "Technologies", color: "text-orange-500", glow: "stat-card-orange", via: "via-orange-400/20" },
-                  { value: "9.05", label: "CGPA / 10", color: "text-yellow-500", glow: "stat-card-yellow", via: "via-yellow-400/20" },
-                  { value: "9.43", label: "SGPA / 10", color: "text-pink-500", glow: "stat-card-pink", via: "via-pink-400/20" },
-                  { value: <div className="infinity-symbol"></div>, label: "Curiosity", color: "text-purple-500", glow: "stat-card-purple", via: "via-purple-400/20" },
+                  { value: "5+", label: "Projects", color: "color-red", glow: "stat-card-red" },
+                  { value: "15+", label: "Technologies", color: "color-orange", glow: "stat-card-orange" },
+                  { value: "9.05", label: "CGPA / 10", color: "color-yellow", glow: "stat-card-yellow" },
+                  { value: "9.43", label: "SGPA / 10", color: "color-pink", glow: "stat-card-pink" },
+                  { value: <div className="infinity-symbol"></div>, label: "Curiosity", color: "color-purple", glow: "stat-card-purple" },
                 ].map((s) => (
                   <div key={s.label} className={`stat-card flex flex-col items-center text-center p-4 rounded-2xl bg-black border border-white/[0.05] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_10px_rgba(0,0,0,0.3)] relative overflow-hidden group transition-all duration-300 ease-out cursor-pointer hover:bg-white/[0.02] ${s.glow}`}>
-                    <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${s.via} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out z-0`}></div>
                     <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-10" />
                     <span className={`stat-value relative z-10 text-[28px] sm:text-[32px] font-bold mb-1 drop-shadow-md transition-transform duration-300 ${s.color}`}>{s.value}</span>
                     <span className="relative z-10 text-[11px] text-white/40 uppercase tracking-[0.08em] transition-colors duration-300 group-hover:text-white">{s.label}</span>
@@ -727,16 +726,15 @@ export default function KnowAboutMe() {
               <div className="wib-grid-achievements">
                 {[
                   { icon: "🥉", title: "DevSummit 2026", sub: "2nd Runner-Up, 10K Prize",
-                    glow: "stat-card-orange", via: "via-orange-400/20" },
+                    glow: "stat-card-orange" },
                   { icon: "⭐", title: "Flaunch Top 20", sub: "Level 2 Promotion, 5K Stipend",
-                    glow: "stat-card-yellow", via: "via-yellow-400/20" },
+                    glow: "stat-card-yellow" },
                   { icon: "🚀", title: "Unleash LLM", sub: "Direct Finalist, Flaunch Excellence",
-                    glow: "stat-card-pink", via: "via-pink-400/20" },
+                    glow: "stat-card-pink" },
                   { icon: "🏢", title: "IBM Recognition", sub: "Selected for GIFT City Visit",
-                    glow: "stat-card-purple", via: "via-purple-400/20" },
+                    glow: "stat-card-purple" },
                 ].map((a) => (
                   <div key={a.title} className={`ach-card flex flex-col items-center text-center p-5 rounded-xl group relative overflow-hidden transition-all duration-300 ease-out cursor-pointer border border-white/5 bg-transparent hover:bg-white/[0.02] ${a.glow}`}>
-                    <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${a.via} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out z-0`}></div>
                     <div className="relative z-10 flex flex-col items-center">
                       <span className="ach-icon text-[28px] mb-2 drop-shadow-md transition-transform duration-300">{a.icon}</span>
                       <div className="text-[13px] font-semibold text-white/85 mb-1 transition-colors duration-300 group-hover:text-white">{a.title}</div>
