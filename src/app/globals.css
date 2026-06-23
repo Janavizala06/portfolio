@@ -190,12 +190,7 @@ body {
 
 /* ── HERO BROWSER MOCKUPS ──────────────────── */
 .hero-mockups-wrap {
-  display: none;
-}
-@media (min-width: 768px) {
-  .hero-mockups-wrap {
-    display: block;
-  }
+  display: block;
 }
 
 .hero-card {
@@ -228,12 +223,7 @@ body {
 }
 
 .about-stylus-wrap {
-  display: none;
-}
-@media (min-width: 1024px) {
-  .about-stylus-wrap {
-    display: block;
-  }
+  display: block;
 }
 
 .about-photo-card {
