@@ -685,10 +685,7 @@ export default function KnowAboutMe() {
                   <h4 className="text-[26px] sm:text-[30px] font-bold text-white mb-1">Anand, Gujarat 🇮🇳</h4>
                 </div>
 
-                <div className="flex gap-3 flex-wrap">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.07] text-[11px] text-white/60 font-medium">CGPA 9.05</span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.07] text-[11px] text-white/60 font-medium">SGPA 9.43</span>
-                </div>
+                <h4 className="text-[26px] sm:text-[30px] font-bold text-white mb-1">22°36′N 72°54′E</h4>
               </div>
             </motion.div>
           </SpotLightItem>
