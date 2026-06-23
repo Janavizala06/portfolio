@@ -1296,24 +1296,23 @@ body {
 
 /* ── Custom Infinity Symbol ───────────────────── */
 .infinity-symbol {
-  --s: 36px; /* Size to match the large font */
-  --b: 6px; /* Border thickness */
+  --s: 36px;
+  --b: 6px;
   display: inline-flex;
-  gap: calc((1.4142 - 1)*var(--s) - 1.4142*var(--b));
-  color: currentColor; /* inherit the text color */
+  gap: calc((1.414 - 1)*var(--s) - 1.414*var(--b));
   margin-bottom: 4px;
 }
 .infinity-symbol::before,
 .infinity-symbol::after {
   content: "";
-  box-shadow: 0 0 0 var(--b) inset currentColor;
+  box-shadow: 0 0 0 var(--b) inset #a855f7;
   height: var(--s);
   aspect-ratio: 1;
   border-radius: 50% 50% 0 50%;
-  transform: rotate(-45deg);
+  rotate: -45deg;
 }
 .infinity-symbol::after {
-  transform: rotate(-45deg) scale(-1);
+  scale: -1;
 }
 
 /* -- GALAXY BUTTON (Tech Stack) ----------------------- */
