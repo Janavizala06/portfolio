@@ -367,7 +367,7 @@ export default function KnowAboutMe() {
               style={{ transform: "translate(-20px, 0) scale(1.6)", transformOrigin: "top center" }}
             >
               {/* White tip — wide, taller */}
-              <div className="w-[41px] h-[90px] rounded-t-full mx-auto relative overflow-hidden"
+              <div className="w-[40px] h-[90px] rounded-t-full mx-auto relative overflow-hidden"
                 style={{
                   background: "linear-gradient(to right, #f2f2f8 0%, #ffffff 25%, #f5f5fa 50%, #e8e8f0 75%, #dcdce5 100%)",
                   boxShadow: "3px 0 10px rgba(0,0,0,0.08), -2px 0 8px rgba(0,0,0,0.06), 0 -2px 6px rgba(255,255,255,0.3)",
