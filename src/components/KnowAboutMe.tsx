@@ -167,6 +167,16 @@ function GalaxyButton({ s, index }: { s: { name: string; emoji: string }, index:
   const RANDOM = (min: number, max: number, seed: number) => Math.floor(seededRandom(seed) * (max - min + 1) + min);
   
   return (
+    <div className="galaxy-button">
+      <button type="button">
+        <span className="spark"></span>
+        <span className="backdrop"></span>
+        <span className="galaxy__container">
+          {[...Array(4)].map((_, i) => {
+            const seed = index * 100 + i;
+            return (
+              <span key={i} className="star star--static" style={{
+                '--angle': RANDOM(0, 360, seed),
                 '--duration': RANDOM(6, 20, seed + 1),
                 '--delay': RANDOM(1, 10, seed + 2),
                 '--alpha': RANDOM(40, 90, seed + 3) / 100,
@@ -405,7 +415,23 @@ export default function KnowAboutMe() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as cons            {/* Left: Bio */}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
+            className="text-[13px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-4 relative z-[2]"
+          >
+            Know About Me
+          </motion.p>
+
+          {/* ── Typewriter Roles ─────────────────────── */}
+          <div className="relative z-[2]">
+            <TypewriterHeading />
+          </div>
+
+          {/* Two-column layout */}
+          <div
+            className="about-grid-wrap items-start relative z-[2]"
+          >
+
+            {/* Left: Bio */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
