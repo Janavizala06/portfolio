@@ -167,16 +167,6 @@ function GalaxyButton({ s, index }: { s: { name: string; emoji: string }, index:
   const RANDOM = (min: number, max: number, seed: number) => Math.floor(seededRandom(seed) * (max - min + 1) + min);
   
   return (
-    <div className="galaxy-button">
-      <button type="button">
-        <span className="spark"></span>
-        <span className="backdrop"></span>
-        <span className="galaxy__container">
-          {[...Array(4)].map((_, i) => {
-            const seed = index * 100 + i;
-            return (
-              <span key={i} className="star star--static" style={{
-                '--angle': RANDOM(0, 360, seed),
                 '--duration': RANDOM(6, 20, seed + 1),
                 '--delay': RANDOM(1, 10, seed + 2),
                 '--alpha': RANDOM(40, 90, seed + 3) / 100,
@@ -353,7 +343,7 @@ export default function KnowAboutMe() {
       ]} />
 
 
-      <div className="max-w-[1080px] mx-auto px-4 sm:px-7 relative z-[1]">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-10 relative z-[1]">
         {/* Stylus zone — full section width triggers the wand cursor */}
         <div ref={stylusZoneRef} className="relative" style={{ cursor: "none" }}>
           {/* ── Magician's Wand Cursor ─────────────── */}
@@ -415,35 +405,27 @@ export default function KnowAboutMe() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
-            className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-3 relative z-[2]"
-          >
-            Know About Me
-          </motion.p>
-
-          {/* ── Typewriter Roles ─────────────────────── */}
-          <div className="relative z-[2]">
-            <TypewriterHeading />
-          </div>
-
-          {/* Two-column layout */}
-          <div
-            className="about-grid-wrap items-start relative z-[2]"
-          >
-
-            {/* Left: Bio */}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as cons            {/* Left: Bio */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
             >
-              <p className="text-[14.5px] text-white/60 leading-[1.8] mb-5">
+              <p className="text-[16px] md:text-[18px] text-white/60 leading-[1.9] mb-6">
                 I&apos;m Janavi Zala, a proactive full-stack developer and AI enthusiast
                 passionate about building intelligent web experiences. From MERN stack apps
                 to LLM-powered platforms, I thrive on turning complex problems into elegant solutions.
               </p>
-              <p className="text-[14.5px] text-white/60 leading-[1.8] mb-5">
+              <p className="text-[16px] md:text-[18px] text-white/60 leading-[1.9] mb-6">
+                Currently pursuing B.Tech in Computer Engineering at MBIT (CVM University)
+                with a CGPA of 8.98. Former AI intern at Flaunch and Full Stack trainee at IBM.
+              </p>
+              <p className="text-[16px] md:text-[18px] text-white/60 leading-[1.9] mb-8">
+                I believe in waking up each day eager to learn, build, and make an impact!
+              </p>
+
+              {/* Social icons - restore normal cursor here */}    <p className="text-[14.5px] text-white/60 leading-[1.8] mb-5">
                 Currently pursuing B.Tech in Computer Engineering at MBIT (CVM University)
                 with a CGPA of 8.98. Former AI intern at Flaunch and Full Stack trainee at IBM.
               </p>
@@ -601,7 +583,7 @@ export default function KnowAboutMe() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }}
-            className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
+            className="font-serif text-[clamp(40px,5vw,64px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
           >
             Where I&apos;ve{" "}
             <em className="italic gradient-text-animated">been</em>
@@ -641,7 +623,7 @@ export default function KnowAboutMe() {
                 </div>
                 {/* Earth Globe - centered, rotating */}
                 <div className="relative z-10 w-full px-4 flex justify-center mt-4">
-                  <Globe className="w-[280px] max-w-full" />
+                  <Globe className="w-[360px] max-w-full" />
                 </div>
                 {/* Sparkles at bottom */}
                 <div
@@ -669,14 +651,14 @@ export default function KnowAboutMe() {
                 </div>
               </div>
               <div className="p-6 sm:p-8 flex flex-col justify-center border-l border-white/[0.06]">
-                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-4 w-max">Education</h3>
-                <h4 className="text-[22px] sm:text-[26px] font-bold text-white mb-1">CVM University, MBIT</h4>
-                <p className="text-[15px] text-white/70 mb-1">B.Tech - Computer Engineering</p>
+                <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-4 w-max">Education</h3>
+                <h4 className="text-[26px] sm:text-[30px] font-bold text-white mb-1">CVM University, MBIT</h4>
+                <p className="text-[17px] text-white/70 mb-1">B.Tech - Computer Engineering</p>
                 <p className="text-[13px] text-white/40 mb-5">2023 - 2027</p>
 
                 <div className="mb-6">
-                  <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-2 w-max">Location</h3>
-                  <h4 className="text-[22px] sm:text-[26px] font-bold text-white mb-1">Anand, Gujarat 🇮🇳</h4>
+                  <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-2 w-max">Location</h3>
+                  <h4 className="text-[26px] sm:text-[30px] font-bold text-white mb-1">Anand, Gujarat 🇮🇳</h4>
                 </div>
 
                 <div className="flex gap-3 flex-wrap">
@@ -703,10 +685,10 @@ export default function KnowAboutMe() {
                   { value: "9.43", label: "SGPA / 10", color: "color-pink", glow: "stat-card-pink" },
                   { value: <span className="infinity-symbol"></span>, label: "Curiosity", color: "color-purple", glow: "stat-card-purple" },
                 ].map((s) => (
-                  <div key={s.label} className={`stat-card flex flex-col items-center text-center p-4 rounded-2xl bg-black border border-white/[0.05] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_10px_rgba(0,0,0,0.3)] relative overflow-hidden group transition-all duration-300 ease-out cursor-pointer hover:bg-white/[0.02] ${s.glow}`}>
+                  <div key={s.label} className={`stat-card flex flex-col items-center text-center p-4 sm:p-6 rounded-2xl bg-black border border-white/[0.05] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_10px_rgba(0,0,0,0.3)] relative overflow-hidden group transition-all duration-300 ease-out cursor-pointer hover:bg-white/[0.02] ${s.glow}`}>
                     <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-10" />
-                    <div className={`stat-value relative z-10 text-[28px] sm:text-[32px] font-bold mb-1 drop-shadow-md transition-transform duration-300 ${s.color}`}>{s.value}</div>
-                    <span className="relative z-10 text-[11px] text-white/40 uppercase tracking-[0.08em] transition-colors duration-300 group-hover:text-white">{s.label}</span>
+                    <div className={`stat-value relative z-10 text-[32px] sm:text-[42px] font-bold mb-2 drop-shadow-md transition-transform duration-300 ${s.color}`}>{s.value}</div>
+                    <span className="relative z-10 text-[13px] text-white/40 uppercase tracking-[0.08em] transition-colors duration-300 group-hover:text-white">{s.label}</span>
                   </div>
                 ))}
               </div>
@@ -720,9 +702,9 @@ export default function KnowAboutMe() {
             <motion.div
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.15 }}
-              className="wib-card p-5 sm:p-6"
+              className="wib-card p-5 sm:p-8"
             >
-              <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-5 w-max">Achievements &amp; Recognition</h3>
+              <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Achievements &amp; Recognition</h3>
               <div className="wib-grid-achievements">
                 {[
                   { icon: "🥉", title: "DevSummit 2026", sub: "2nd Runner-Up, 10K Prize",
@@ -734,11 +716,11 @@ export default function KnowAboutMe() {
                   { icon: "🏢", title: "IBM Recognition", sub: "Selected for GIFT City Visit",
                     glow: "stat-card-purple" },
                 ].map((a) => (
-                  <div key={a.title} className={`ach-card flex flex-col items-center text-center p-5 rounded-xl group relative overflow-hidden transition-all duration-300 ease-out cursor-pointer border border-white/5 bg-transparent hover:bg-white/[0.02] ${a.glow}`}>
+                  <div key={a.title} className={`ach-card flex flex-col items-center text-center p-6 rounded-xl group relative overflow-hidden transition-all duration-300 ease-out cursor-pointer border border-white/5 bg-transparent hover:bg-white/[0.02] ${a.glow}`}>
                     <div className="relative z-10 flex flex-col items-center">
-                      <span className="ach-icon text-[28px] mb-2 drop-shadow-md transition-transform duration-300">{a.icon}</span>
-                      <div className="text-[13px] font-semibold text-white/85 mb-1 transition-colors duration-300 group-hover:text-white">{a.title}</div>
-                      <div className="text-[11px] text-white/40 leading-relaxed">{a.sub}</div>
+                      <span className="ach-icon text-[34px] mb-3 drop-shadow-md transition-transform duration-300">{a.icon}</span>
+                      <div className="text-[15px] font-semibold text-white/85 mb-1.5 transition-colors duration-300 group-hover:text-white">{a.title}</div>
+                      <div className="text-[13px] text-white/40 leading-relaxed">{a.sub}</div>
                     </div>
                   </div>
                 ))}
@@ -769,10 +751,10 @@ export default function KnowAboutMe() {
                         {i < 2 && <div className="w-[1px] flex-1 bg-white/10 mt-1 min-h-[24px]" />}
                       </div>
                       <div className="flex-1">
-                        <div className="text-[14px] font-bold text-white/90">{exp.company}</div>
-                        <div className="text-[12px] uppercase tracking-[0.06em] text-white/60 font-semibold">{exp.role}</div>
+                        <div className="text-[18px] font-bold text-white/90">{exp.company}</div>
+                        <div className="text-[14px] uppercase tracking-[0.06em] text-white/60 font-semibold">{exp.role}</div>
                       </div>
-                      <span className="text-[13px] text-white/40 font-mono mt-0.5">{exp.year}</span>
+                      <span className="text-[15px] text-white/40 font-mono mt-0.5">{exp.year}</span>
                     </div>
                   ))}
                 </div>
@@ -785,21 +767,21 @@ export default function KnowAboutMe() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.25 }}
-                className="wib-card p-6 sm:p-7"
+                className="wib-card p-6 sm:p-8"
               >
-                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-5 w-max">Leadership &amp; Volunteering</h3>
-                <div className="space-y-4">
+                <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Leadership &amp; Volunteering</h3>
+                <div className="space-y-5">
                   {[
                     { role: "Chairperson, ISTE Student Branch", org: "MBIT, 2025-Present" },
                     { role: "Design Coordinator", org: "MBIT, 2024-Present" },
                     { role: "Social Media Coordinator", org: "NSS, 2024-2025" },
                     { role: "Robotics Developer", org: "Gyanotsav 1.0, CVM, Dec 2023-Jan 2024" },
                   ].map((v) => (
-                    <div key={v.role} className="flex gap-3 items-start">
-                      <div className="w-1.5 h-1.5 rounded-full bg-white/30 flex-shrink-0 mt-[6px]" />
+                    <div key={v.role} className="flex gap-4 items-start">
+                      <div className="w-2 h-2 rounded-full bg-white/30 flex-shrink-0 mt-[8px]" />
                       <div>
-                        <div className="text-[12.5px] font-semibold text-white/80 leading-tight">{v.role}</div>
-                        <div className="text-[11px] text-white/50">{v.org}</div>
+                        <div className="text-[16px] font-semibold text-white/80 leading-tight mb-1">{v.role}</div>
+                        <div className="text-[14px] text-white/50">{v.org}</div>
                       </div>
                     </div>
                   ))}
@@ -817,7 +799,7 @@ export default function KnowAboutMe() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }}
-            className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
+            className="font-serif text-[clamp(40px,5vw,64px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
           >
             Builder, not just <em className="italic gradient-text-animated">a coder</em>
           </motion.h3>
