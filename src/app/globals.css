@@ -1067,10 +1067,6 @@ body {
   .stacking-card-container {
     min-height: 720px;
   }
-
-  .stacking-project-card {
-    top: -18% !important;
-  }
 }
 /* -- Luminous Card -- */
 .luminous-card {
