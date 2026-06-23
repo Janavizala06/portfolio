@@ -1190,7 +1190,8 @@ body {
 	cursor: pointer; transition: all 0.4s ease-in-out;
 }
 .luminous-card .toggle::before {
-	content: "; display: block; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;
+	content: "";
+	display: block; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;
 	width: 3.4rem; height: 0.68rem; border-radius: 0.2rem; background: #000; transition: all 0.4s ease-in-out;
 }
 .luminous-card .toggle .handle {
@@ -1329,15 +1330,15 @@ body {
 	--bg:
 		radial-gradient(
 			120% 120% at 126% 126%,
-			hsl(var(--hue) calc(var(--active) * 97%) 98% / calc(var(--active) * 0.9)) 40%,
+			hsla(var(--hue), calc(var(--active) * 97%), 98%, calc(var(--active) * 0.9)) 40%,
 			transparent 50%
 		) calc(100px - (var(--active) * 100px)) 0 / 100% 100% no-repeat, 
 		radial-gradient(
 			120% 120% at 120% 120%,
-			hsl(var(--hue) calc(var(--active) * 97%) 70% / calc(var(--active) * 1)) 30%,
+			hsla(var(--hue), calc(var(--active) * 97%), 70%, calc(var(--active) * 1)) 30%,
 			transparent 70%
 		) calc(100px - (var(--active) * 100px)) 0 / 100% 100% no-repeat,
-		hsl(var(--hue) calc(var(--active) * 100%) calc(12% - (var(--active) * 8%)));
+		hsla(var(--hue), calc(var(--active) * 100%), calc(12% - (var(--active) * 8%)), 1);
 	background: var(--bg);
 	font-size: 13.5px;
 	font-weight: 500;
