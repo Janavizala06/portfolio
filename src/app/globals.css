@@ -247,6 +247,71 @@ body {
   }
 }
 
+/* ── WHERE I'VE BEEN ──────────────────────── */
+.wib-grid-edu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+@media (min-width: 768px) {
+  .wib-grid-edu { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.wib-grid-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .wib-grid-stats { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+.wib-grid-achievements {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 640px) {
+  .wib-grid-achievements { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .wib-grid-achievements { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.wib-grid-exp {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.875rem;
+}
+@media (min-width: 768px) {
+  .wib-grid-exp { grid-template-columns: 4fr 6fr; }
+}
+
+/* Hover effects for stat/achievement cards */
+.stat-card:hover .stat-value,
+.ach-card:hover .ach-icon {
+  transform: scale(1.1);
+}
+.stat-card-red:hover { border-color: rgba(239, 68, 68, 0.5); box-shadow: 0 4px 20px rgba(239, 68, 68, 0.3); }
+.stat-card-orange:hover { border-color: rgba(249, 115, 22, 0.5); box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3); }
+.stat-card-yellow:hover { border-color: rgba(234, 179, 8, 0.5); box-shadow: 0 4px 20px rgba(234, 179, 8, 0.3); }
+.stat-card-pink:hover { border-color: rgba(236, 72, 153, 0.5); box-shadow: 0 4px 20px rgba(236, 72, 153, 0.3); }
+.stat-card-purple:hover { border-color: rgba(168, 85, 247, 0.5); box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3); }
+.stat-card-blue:hover { border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3); }
+
+/* Projects Grid */
+.projects-grid-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .projects-grid-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .projects-grid-wrap { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 /* ── SCROLL PROGRESS ────────────────────────── */
 .scroll-progress {
   @apply fixed top-0 left-0 h-[2px] z-[8999];

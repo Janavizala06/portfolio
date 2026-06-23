@@ -612,7 +612,7 @@ export default function KnowAboutMe() {
             <motion.div
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.85 }}
-              className="wib-card grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden"
+              className="wib-card wib-grid-edu overflow-hidden"
             >
               <div className="flex flex-col items-start relative overflow-hidden min-h-[380px] bg-black">
                 {/* Top label */}
@@ -695,19 +695,19 @@ export default function KnowAboutMe() {
               viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.1 }}
               className="wib-card p-5 sm:p-6"
             >
-              <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+              <div className="wib-grid-stats">
                 {[
-                  { value: "5+", label: "Projects", color: "text-red-500", glow: "hover:border-red-500/50 hover:shadow-red-500/30 hover:from-red-500/10", via: "via-red-400/20" },
-                  { value: "15+", label: "Technologies", color: "text-orange-500", glow: "hover:border-orange-500/50 hover:shadow-orange-500/30 hover:from-orange-500/10", via: "via-orange-400/20" },
-                  { value: "9.05", label: "CGPA / 10", color: "text-yellow-500", glow: "hover:border-yellow-500/50 hover:shadow-yellow-500/30 hover:from-yellow-500/10", via: "via-yellow-400/20" },
-                  { value: "9.43", label: "SGPA / 10", color: "text-pink-500", glow: "hover:border-pink-500/50 hover:shadow-pink-500/30 hover:from-pink-500/10", via: "via-pink-400/20" },
-                  { value: <div className="infinity-symbol"></div>, label: "Curiosity", color: "text-purple-500", glow: "hover:border-purple-500/50 hover:shadow-purple-500/30 hover:from-purple-500/10", via: "via-purple-400/20" },
+                  { value: "5+", label: "Projects", color: "text-red-500", glow: "stat-card-red", via: "via-red-400/20" },
+                  { value: "15+", label: "Technologies", color: "text-orange-500", glow: "stat-card-orange", via: "via-orange-400/20" },
+                  { value: "9.05", label: "CGPA / 10", color: "text-yellow-500", glow: "stat-card-yellow", via: "via-yellow-400/20" },
+                  { value: "9.43", label: "SGPA / 10", color: "text-pink-500", glow: "stat-card-pink", via: "via-pink-400/20" },
+                  { value: <div className="infinity-symbol"></div>, label: "Curiosity", color: "text-purple-500", glow: "stat-card-purple", via: "via-purple-400/20" },
                 ].map((s) => (
-                  <div key={s.label} className={`flex flex-col items-center text-center p-4 rounded-2xl bg-black border border-white/[0.05] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_10px_rgba(0,0,0,0.3)] relative overflow-hidden group transition-all duration-300 ease-out cursor-pointer hover:shadow-2xl hover:bg-gradient-to-tr from-transparent to-transparent hover:to-black/40 ${s.glow}`}>
+                  <div key={s.label} className={`stat-card flex flex-col items-center text-center p-4 rounded-2xl bg-black border border-white/[0.05] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_10px_rgba(0,0,0,0.3)] relative overflow-hidden group transition-all duration-300 ease-out cursor-pointer hover:bg-white/[0.02] ${s.glow}`}>
                     <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${s.via} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out z-0`}></div>
                     <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-10" />
-                    <span className={`relative z-10 text-[28px] sm:text-[32px] font-bold mb-1 drop-shadow-md group-hover:scale-110 transition-transform duration-300 ${s.color}`}>{s.value}</span>
-                    <span className="relative z-10 text-[11px] text-white/40 uppercase tracking-[0.08em] group-hover:text-white transition-colors duration-300">{s.label}</span>
+                    <span className={`stat-value relative z-10 text-[28px] sm:text-[32px] font-bold mb-1 drop-shadow-md transition-transform duration-300 ${s.color}`}>{s.value}</span>
+                    <span className="relative z-10 text-[11px] text-white/40 uppercase tracking-[0.08em] transition-colors duration-300 group-hover:text-white">{s.label}</span>
                   </div>
                 ))}
               </div>
@@ -724,22 +724,22 @@ export default function KnowAboutMe() {
               className="wib-card p-5 sm:p-6"
             >
               <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-5 w-max">Achievements &amp; Recognition</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <div className="wib-grid-achievements">
                 {[
                   { icon: "🥉", title: "DevSummit 2026", sub: "2nd Runner-Up, 10K Prize",
-                    glow: "hover:border-orange-500/50 hover:shadow-orange-500/30 hover:from-orange-500/10", via: "via-orange-400/20" },
+                    glow: "stat-card-orange", via: "via-orange-400/20" },
                   { icon: "⭐", title: "Flaunch Top 20", sub: "Level 2 Promotion, 5K Stipend",
-                    glow: "hover:border-yellow-500/50 hover:shadow-yellow-500/30 hover:from-yellow-500/10", via: "via-yellow-400/20" },
+                    glow: "stat-card-yellow", via: "via-yellow-400/20" },
                   { icon: "🚀", title: "Unleash LLM", sub: "Direct Finalist, Flaunch Excellence",
-                    glow: "hover:border-pink-500/50 hover:shadow-pink-500/30 hover:from-pink-500/10", via: "via-pink-400/20" },
+                    glow: "stat-card-pink", via: "via-pink-400/20" },
                   { icon: "🏢", title: "IBM Recognition", sub: "Selected for GIFT City Visit",
-                    glow: "hover:border-purple-500/50 hover:shadow-purple-500/30 hover:from-purple-500/10", via: "via-purple-400/20" },
+                    glow: "stat-card-purple", via: "via-purple-400/20" },
                 ].map((a) => (
-                  <div key={a.title} className={`wib-card-inner flex flex-col items-center text-center p-5 rounded-xl group relative overflow-hidden transition-all duration-300 ease-out cursor-pointer border border-white/5 bg-gradient-to-tr from-transparent to-transparent hover:shadow-2xl hover:bg-gradient-to-tr hover:to-black/40 ${a.glow}`}>
-                    <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${a.via} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out`}></div>
+                  <div key={a.title} className={`ach-card flex flex-col items-center text-center p-5 rounded-xl group relative overflow-hidden transition-all duration-300 ease-out cursor-pointer border border-white/5 bg-transparent hover:bg-white/[0.02] ${a.glow}`}>
+                    <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${a.via} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out z-0`}></div>
                     <div className="relative z-10 flex flex-col items-center">
-                      <span className="text-[28px] mb-2 drop-shadow-md group-hover:scale-110 transition-transform duration-300">{a.icon}</span>
-                      <div className="text-[13px] font-semibold text-white/85 mb-1 group-hover:text-white transition-colors duration-300">{a.title}</div>
+                      <span className="ach-icon text-[28px] mb-2 drop-shadow-md transition-transform duration-300">{a.icon}</span>
+                      <div className="text-[13px] font-semibold text-white/85 mb-1 transition-colors duration-300 group-hover:text-white">{a.title}</div>
                       <div className="text-[11px] text-white/40 leading-relaxed">{a.sub}</div>
                     </div>
                   </div>
@@ -750,7 +750,7 @@ export default function KnowAboutMe() {
           </SpotLightItem>
 
           {/* Cards 4 and 5: Experience + Leadership */}
-          <div className="grid grid-cols-1 md:grid-cols-[4fr_6fr] gap-3.5">
+          <div className="wib-grid-exp">
             <SpotLightItem>
               <WibHoverCard>
               <motion.div
