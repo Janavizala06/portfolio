@@ -223,7 +223,7 @@ function LuminousStackCard() {
       className="w-full relative px-2"
     >
       <div className={`luminous-card w-full ${active ? "active" : ""}`}>
-        <div className="light-layer" style={{ top: 'auto', bottom: '0px', height: '260px' }}>
+        <div className="light-layer">
           <div className="slit"></div>
           <div className="lumen">
             <div className="min"></div>
