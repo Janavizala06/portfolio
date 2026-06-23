@@ -287,11 +287,9 @@ export default function KnowAboutMe() {
       const zone = stylusZoneRef.current;
       if (!zone) return;
       const rect = zone.getBoundingClientRect();
-      // Mouse coordinates relative to the stylusZone
       wandX.set(e.clientX - rect.left);
       wandY.set(e.clientY - rect.top);
 
-      // Calculate reveal based on cursor position relative to card
       const card = cardRef.current;
       if (card) {
         const cardRect = card.getBoundingClientRect();
@@ -302,42 +300,84 @@ export default function KnowAboutMe() {
     [wandX, wandY, revealRaw]
   );
 
+  const handleTouchMove = useCallback(
+    (e: TouchEvent) => {
+      const zone = stylusZoneRef.current;
+      if (!zone || e.touches.length === 0) return;
+      const touch = e.touches[0];
+      const rect = zone.getBoundingClientRect();
+      wandX.set(touch.clientX - rect.left);
+      wandY.set(touch.clientY - rect.top);
+
+      const card = cardRef.current;
+      if (card) {
+        const cardRect = card.getBoundingClientRect();
+        const relX = (touch.clientX - cardRect.left) / cardRect.width;
+        revealRaw.set(Math.max(0, Math.min(1, relX)));
+      }
+    },
+    [wandX, wandY, revealRaw]
+  );
+
   const handleEnter = useCallback(() => {
-    // Hide default custom cursor
     document.body.classList.add("hide-cursor");
   }, []);
 
-  const handleLeave = useCallback(() => {
-    document.body.classList.remove("hide-cursor");
-    revealRaw.set(0); // Reset to initials
-    
-    // Smoothly return to the default resting position
+  const resetWandPosition = useCallback(() => {
     const zone = stylusZoneRef.current;
     if (zone) {
-      wandX.set(zone.clientWidth / 2);
-      wandY.set(50);
+      if (typeof window !== "undefined" && window.innerWidth < 640) {
+        const card = cardRef.current;
+        if (card) {
+          const zoneRect = zone.getBoundingClientRect();
+          const cardRect = card.getBoundingClientRect();
+          wandX.set(cardRect.left - zoneRect.left - 20);
+          wandY.set(cardRect.top - zoneRect.top + cardRect.height / 2);
+        } else {
+          wandX.set(20);
+          wandY.set(100);
+        }
+      } else {
+        wandX.set(zone.clientWidth / 2);
+        wandY.set(50);
+      }
     }
-  }, [revealRaw, wandX, wandY]);
+  }, [wandX, wandY]);
+
+  const handleLeave = useCallback(() => {
+    document.body.classList.remove("hide-cursor");
+    revealRaw.set(0);
+    resetWandPosition();
+  }, [revealRaw, resetWandPosition]);
 
   useEffect(() => {
     const zone = stylusZoneRef.current;
     if (!zone) return;
 
-    // Set initial resting position on mount
-    wandX.set(zone.clientWidth / 2);
-    wandY.set(50);
+    resetWandPosition();
+    
+    // Add resize listener to handle orientation changes
+    window.addEventListener("resize", resetWandPosition);
 
     zone.addEventListener("mousemove", handleMouseMove);
     zone.addEventListener("mouseenter", handleEnter);
     zone.addEventListener("mouseleave", handleLeave);
+    
+    zone.addEventListener("touchmove", handleTouchMove, { passive: true });
+    zone.addEventListener("touchend", handleLeave);
 
     return () => {
+      window.removeEventListener("resize", resetWandPosition);
       zone.removeEventListener("mousemove", handleMouseMove);
       zone.removeEventListener("mouseenter", handleEnter);
       zone.removeEventListener("mouseleave", handleLeave);
+      
+      zone.removeEventListener("touchmove", handleTouchMove);
+      zone.removeEventListener("touchend", handleLeave);
+      
       document.body.classList.remove("hide-cursor");
     };
-  }, [handleMouseMove, handleEnter, handleLeave, wandX, wandY]);
+  }, [handleMouseMove, handleTouchMove, handleEnter, handleLeave, resetWandPosition]);
 
   return (
     <section
