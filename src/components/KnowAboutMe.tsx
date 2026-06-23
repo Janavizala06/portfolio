@@ -678,14 +678,13 @@ export default function KnowAboutMe() {
                 <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-4 w-max">Education</h3>
                 <h4 className="text-[26px] sm:text-[30px] font-bold text-white mb-1">CVM University, MBIT</h4>
                 <p className="text-[17px] text-white/70 mb-1">B.Tech - Computer Engineering</p>
-                <p className="text-[13px] text-white/40 mb-5">2023 - 2027</p>
+                <p className="text-[13px] text-white/40 mb-10">2023 - 2027</p>
 
-                <div className="mb-6">
-                  <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-2 w-max">Location</h3>
-                  <h4 className="text-[26px] sm:text-[30px] font-bold text-white mb-1">Anand, Gujarat 🇮🇳</h4>
+                <div className="mb-6 flex flex-col">
+                  <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-1 w-max">Location</h3>
+                  <h4 className="text-[26px] sm:text-[30px] font-bold text-white leading-[1.2]">Anand, Gujarat 🇮🇳</h4>
+                  <h4 className="text-[26px] sm:text-[30px] font-bold text-white leading-[1.2]">22°36′N 72°54′E</h4>
                 </div>
-
-                <h4 className="text-[26px] sm:text-[30px] font-bold text-white mb-1">22°36′N 72°54′E</h4>
               </div>
             </motion.div>
           </SpotLightItem>
