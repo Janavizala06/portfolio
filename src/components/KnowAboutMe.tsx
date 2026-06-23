@@ -358,7 +358,7 @@ export default function KnowAboutMe() {
         <div ref={stylusZoneRef} className="relative" style={{ cursor: "none" }}>
           {/* ── Magician's Wand Cursor ─────────────── */}
           <motion.div
-            className="absolute z-[9999] pointer-events-none hidden lg:block"
+            className="absolute z-[9999] pointer-events-none about-stylus-wrap"
             style={{ left: springX, top: springY }}
           >
             {/* Stylus — wide & stubby (Apple Pencil style) */}
@@ -428,7 +428,7 @@ export default function KnowAboutMe() {
 
           {/* Two-column layout */}
           <div
-            className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-12 items-start relative z-[2]"
+            className="about-grid-wrap items-start relative z-[2]"
           >
 
             {/* Left: Bio */}
@@ -528,7 +528,7 @@ export default function KnowAboutMe() {
             >
               <div
                 ref={cardRef}
-                className="relative w-[280px] h-[320px] sm:w-[340px] sm:h-[380px] rounded-[28px] overflow-hidden bg-[#060614]"
+                className="relative about-photo-card rounded-[28px] overflow-hidden bg-[#060614]"
                 style={{
                   boxShadow: "0 20px 60px rgba(0,0,0,0.6), 0 0 0 2.5px rgba(60,120,255,0.45), 0 0 40px rgba(60,120,255,0.12), 0 0 80px rgba(60,120,255,0.06)",
                 }}

@@ -214,6 +214,39 @@ body {
   transform: scale(1.03);
 }
 
+/* ── KNOW ABOUT ME ──────────────────────────── */
+.about-grid-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 1024px) {
+  .about-grid-wrap {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.about-stylus-wrap {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .about-stylus-wrap {
+    display: block;
+  }
+}
+
+.about-photo-card {
+  width: 280px;
+  height: 320px;
+}
+@media (min-width: 640px) {
+  .about-photo-card {
+    width: 340px;
+    height: 380px;
+  }
+}
+
 /* ── SCROLL PROGRESS ────────────────────────── */
 .scroll-progress {
   @apply fixed top-0 left-0 h-[2px] z-[8999];
