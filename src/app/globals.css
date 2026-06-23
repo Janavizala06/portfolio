@@ -1132,7 +1132,7 @@ body {
 }
 .luminous-card .slit {
 	position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;
-	width: 64%; height: 1.2rem;
+	width: 68%; height: 1.2rem;
 	transform: rotateX(-76deg);
 	background: #121212;
 	box-shadow: 0 0 4px 0 #fff0;
@@ -1145,17 +1145,17 @@ body {
 	opacity: 0; transition: opacity 0.4s ease-in-out;
 }
 .luminous-card .lumen .min {
-	width: 70%; height: 3rem; background: linear-gradient(#fff0, #fffa);
+	width: 74%; height: 3rem; background: linear-gradient(#fff0, #fffa);
 	position: absolute; left: 0; right: 0; top: 0; bottom: 2.5rem; margin: auto;
 	transform: rotateX(-42deg); opacity: 0.4;
 }
 .luminous-card .lumen .mid {
-	width: 74%; height: 13rem; background: linear-gradient(#fff0, #fffa);
+	width: 78%; height: 13rem; background: linear-gradient(#fff0, #fffa);
 	position: absolute; left: 0; right: 0; top: 0; bottom: 10em; margin: auto;
 	transform: rotateX(-42deg); filter: blur(1rem); opacity: 0.8; border-radius: 100% 100% 0 0;
 }
 .luminous-card .lumen .hi {
-	width: 50%; height: 13rem; background: linear-gradient(#fff0, #fffa);
+	width: 54%; height: 13rem; background: linear-gradient(#fff0, #fffa);
 	position: absolute; left: 0; right: 0; top: 0; bottom: 12em; margin: auto;
 	transform: rotateX(22deg); filter: blur(1rem); opacity: 0.6; border-radius: 100% 100% 0 0;
 }

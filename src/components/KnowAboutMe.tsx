@@ -233,8 +233,6 @@ function LuminousStackCard() {
           <div className="darken">
             <div className="sl"></div>
             <div className="ll"></div>
-            <div className="slt"></div>
-            <div className="srt"></div>
           </div>
         </div>
         <div className="content-layer pointer-events-none flex flex-col items-center pt-2">
