@@ -331,8 +331,8 @@ export default function KnowAboutMe() {
         if (card) {
           const zoneRect = zone.getBoundingClientRect();
           const cardRect = card.getBoundingClientRect();
-          wandX.set(cardRect.left - zoneRect.left - 20);
-          wandY.set(cardRect.top - zoneRect.top + cardRect.height / 2);
+          wandX.set(cardRect.left - zoneRect.left - 5);
+          wandY.set(cardRect.top - zoneRect.top + 40);
         } else {
           wandX.set(20);
           wandY.set(100);
