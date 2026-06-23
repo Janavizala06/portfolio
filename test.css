@@ -1,8 +1,561 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+/*
+! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com
+*/
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: var(--font-sans), system-ui, sans-serif;
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-feature-settings: normal;
+  /* 2 */
+  font-variation-settings: normal;
+  /* 3 */
+  font-size: 1em;
+  /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  letter-spacing: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
 
 /* ── GLOBAL TOKENS ──────────────────────────── */
+
 :root {
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ease2: cubic-bezier(0.4, 0, 0.2, 1);
@@ -11,10 +564,19 @@
 /* ── LOADING SCREEN ────────────────────────────── */
 
 /* Sparkling stars */
+
 @keyframes star-twinkle {
-  0%, 100% { opacity: 0.1; transform: scale(0.8); }
-  50%      { opacity: 1;   transform: scale(1.3); }
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(0.8);
+  }
+
+  50%      {
+    opacity: 1;
+    transform: scale(1.3);
+  }
 }
+
 .loading-star {
   position: absolute;
   border-radius: 50%;
@@ -24,6 +586,7 @@
 }
 
 /* Loader wrapper — circular container for orb + text */
+
 .loader-wrapper {
   position: relative;
   display: flex;
@@ -37,10 +600,13 @@
   color: white;
   border-radius: 50%;
   background-color: transparent;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 /* Rotating orb */
+
 .loader-orb {
   position: absolute;
   top: 0;
@@ -52,6 +618,7 @@
   animation: loader-orb-rotate 2s linear infinite;
   z-index: 0;
 }
+
 @keyframes loader-orb-rotate {
   0% {
     transform: rotate(90deg);
@@ -60,6 +627,7 @@
       0 20px 30px 0 #ad5fff inset,
       0 60px 60px 0 #471eec inset;
   }
+
   50% {
     transform: rotate(270deg);
     box-shadow:
@@ -67,6 +635,7 @@
       0 20px 10px 0 #d60a47 inset,
       0 40px 60px 0 #311e80 inset;
   }
+
   100% {
     transform: rotate(450deg);
     box-shadow:
@@ -77,6 +646,7 @@
 }
 
 /* Letter wave animation */
+
 .loader-letter {
   display: inline-block;
   opacity: 0.4;
@@ -86,38 +656,95 @@
   border-radius: 50ch;
   border: none;
 }
-.loader-letter:nth-child(1)  { animation-delay: 0s; }
-.loader-letter:nth-child(2)  { animation-delay: 0.1s; }
-.loader-letter:nth-child(3)  { animation-delay: 0.2s; }
-.loader-letter:nth-child(4)  { animation-delay: 0.3s; }
-.loader-letter:nth-child(5)  { animation-delay: 0.4s; }
-.loader-letter:nth-child(6)  { animation-delay: 0.5s; }
-.loader-letter:nth-child(7)  { animation-delay: 0.6s; }
-.loader-letter:nth-child(8)  { animation-delay: 0.7s; }
-.loader-letter:nth-child(9)  { animation-delay: 0.8s; }
-.loader-letter:nth-child(10) { animation-delay: 0.9s; }
+
+.loader-letter:nth-child(1)  {
+  animation-delay: 0s;
+}
+
+.loader-letter:nth-child(2)  {
+  animation-delay: 0.1s;
+}
+
+.loader-letter:nth-child(3)  {
+  animation-delay: 0.2s;
+}
+
+.loader-letter:nth-child(4)  {
+  animation-delay: 0.3s;
+}
+
+.loader-letter:nth-child(5)  {
+  animation-delay: 0.4s;
+}
+
+.loader-letter:nth-child(6)  {
+  animation-delay: 0.5s;
+}
+
+.loader-letter:nth-child(7)  {
+  animation-delay: 0.6s;
+}
+
+.loader-letter:nth-child(8)  {
+  animation-delay: 0.7s;
+}
+
+.loader-letter:nth-child(9)  {
+  animation-delay: 0.8s;
+}
+
+.loader-letter:nth-child(10) {
+  animation-delay: 0.9s;
+}
 
 @keyframes loader-letter-anim {
-  0%, 100% { opacity: 0.4; transform: translateY(0); }
-  20%      { opacity: 1;   transform: scale(1.15); }
-  40%      { opacity: 0.7; transform: translateY(0); }
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+
+  20%      {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  40%      {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
 }
 
 /* ── BORDER SPIN PROPERTY (enables smooth conic animation) ── */
+
 @property --connect-angle {
   syntax: '<angle>';
+
   initial-value: 0deg;
+
   inherits: false;
 }
 
 @keyframes connect-border-spin {
-  from { --connect-angle: 0deg; }
-  to   { --connect-angle: 360deg; }
+  from {
+    --connect-angle: 0deg;
+  }
+
+  to   {
+    --connect-angle: 360deg;
+  }
 }
 
 /* ── RESET ──────────────────────────────────── */
-* { cursor: none; }
-html { scroll-behavior: auto; /* Lenis handles smooth scroll */ }
+
+* {
+  cursor: none;
+}
+
+html {
+  scroll-behavior: auto;
+  /* Lenis handles smooth scroll */
+}
+
 body {
   background: #050505;
   -webkit-font-smoothing: antialiased;
@@ -125,6 +752,7 @@ body {
 }
 
 /* ── ANIMATED GRADIENT TEXT ─────────────────── */
+
 .gradient-text-animated {
   background: linear-gradient(
     270deg,
@@ -136,17 +764,33 @@ body {
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 18s ease infinite;
 }
+
 @keyframes gradient-shift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0%   {
+    background-position: 0% 50%;
+  }
+
+  50%  {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* ── TYPEWRITER CURSOR ─────────────────────── */
+
 @keyframes blink-caret {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0; }
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50%      {
+    opacity: 0;
+  }
 }
+
 .typewriter-cursor {
   display: inline-block;
   width: 3px;
@@ -161,69 +805,78 @@ body {
    translateX(-50%) works because each row has 2×
    identical card sets, so half the total width = 1 set.
    CSS animations loop with zero flash / jump. ──── */
+
 @keyframes marquee-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to   {
+    transform: translateX(-50%);
+  }
 }
+
 @keyframes marquee-right {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+
+  to   {
+    transform: translateX(0);
+  }
 }
+
 /* 3-set hero card marquee — translate 1/3 for seamless loop */
+
 @keyframes marquee-left-3 {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-33.333%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to   {
+    transform: translateX(-33.333%);
+  }
 }
+
 @keyframes marquee-right-3 {
-  from { transform: translateX(-33.333%); }
-  to   { transform: translateX(0); }
+  from {
+    transform: translateX(-33.333%);
+  }
+
+  to   {
+    transform: translateX(0);
+  }
 }
 
 /* ── CURSOR VISIBILITY ──────────────────────────
    hide-cursor: used by KnowAboutMe wand cursor to
    hide all custom cursors when wand is active
 ─────────────────────────────────────────────── */
+
 .hide-cursor .neon-cursor-container,
 .hide-cursor #canvas {
   opacity: 0 !important;
 }
 
-/* ── HERO BROWSER MOCKUPS ──────────────────── */
-.hero-mockups-wrap {
-  display: none;
-}
-@media (min-width: 768px) {
-  .hero-mockups-wrap {
-    display: block;
-  }
-}
-
-.hero-card {
-  width: 360px;
-  flex-shrink: 0;
-  border-radius: 11px;
-  overflow: hidden;
-  opacity: 0.4;
-  cursor: pointer;
-  pointer-events: auto;
-  transition: all 0.2s ease;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.05);
-}
-.hero-card:hover {
-  opacity: 0.9;
-  transform: scale(1.03);
-}
-
 /* ── SCROLL PROGRESS ────────────────────────── */
+
 .scroll-progress {
-  @apply fixed top-0 left-0 h-[2px] z-[8999];
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 8999;
+  height: 2px;
   background: linear-gradient(90deg, #3b6cf5, #7c3aed);
   transition: width 0.06s linear;
 }
 
 /* ── NOISE TEXTURE ──────────────────────────── */
+
 .noise-overlay {
-  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
@@ -231,6 +884,7 @@ body {
 }
 
 /* ── GLASSMORPHISM CARD ─────────────────────── */
+
 .glass-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -238,6 +892,7 @@ body {
   backdrop-filter: blur(16px) saturate(1.3);
   transition: border-color 0.3s, transform 0.5s var(--ease), box-shadow 0.4s;
 }
+
 .glass-card:hover {
   border-color: rgba(255, 255, 255, 0.12);
   transform: translateY(-5px);
@@ -245,47 +900,80 @@ body {
 }
 
 /* ── HERO CARD POSITIONS ────────────────────── */
-.hc-c1 { top: 14%; left: 1%; }
-.hc-c2 { top: 10%; right: 1%; }
-.hc-c3 { top: 48%; left: 0%; }
-.hc-c4 { top: 48%; right: 0%; }
-.hc-c5 { bottom: 16%; left: 1%; }
-.hc-c6 { bottom: 12%; right: 1%; }
+
+.hc-c1 {
+  top: 14%;
+  left: 1%;
+}
+
+.hc-c2 {
+  top: 10%;
+  right: 1%;
+}
+
+.hc-c3 {
+  top: 48%;
+  left: 0%;
+}
+
+.hc-c4 {
+  top: 48%;
+  right: 0%;
+}
+
+.hc-c5 {
+  bottom: 16%;
+  left: 1%;
+}
+
+.hc-c6 {
+  bottom: 12%;
+  right: 1%;
+}
 
 /* ── SECTION DIVIDERS ───────────────────────── */
+
 /* Removed hard border — sections now flow continuously */
+
 .sec-divider {
   border-top: none;
 }
 
 /* ── SECTION BLEND — gradient fade top & bottom so aurora bleeds through ── */
+
 .section-blend::before,
 .section-blend::after {
   content: "";
   position: absolute;
-  left: 0; right: 0;
+  left: 0;
+  right: 0;
   height: 140px;
   pointer-events: none;
   z-index: 2;
 }
+
 .section-blend::before {
   top: 0;
   background: linear-gradient(to bottom, #050505 0%, transparent 100%);
 }
+
 .section-blend::after {
   bottom: 0;
   background: linear-gradient(to top, #050505 0%, transparent 100%);
 }
 
 /* ── MARQUEE EDGE FADES ─────────────────────── */
+
 .marquee-fade-l {
   background: linear-gradient(90deg, #050505, transparent);
 }
+
 .marquee-fade-r {
   background: linear-gradient(-90deg, #050505, transparent);
 }
 
 /* ── PROJECT STACKED CARDS ─────────────────────── */
+
 .project-stack {
   display: grid;
   grid-template-areas: "stack";
@@ -303,6 +991,7 @@ body {
   overflow: hidden;
   transition: box-shadow 0.4s;
 }
+
 .project-card:first-child {
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
 }
@@ -327,10 +1016,12 @@ body {
   overflow: hidden;
   background: rgba(0, 0, 0, 0.2);
 }
+
 .project-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 
@@ -346,21 +1037,26 @@ body {
     grid-template-columns: 1fr;
     min-height: auto;
   }
+
   .project-card-image {
     max-height: 220px;
   }
+
   .project-card-header {
     padding: 12px 16px;
   }
+
   .project-card-content {
     padding: 20px 16px;
   }
+
   .project-stack {
     min-height: 500px;
   }
 }
 
 /* ── SPARKLE BUTTON ────────────────────────────── */
+
 .sparkle-btn {
   --border-radius: 24px;
   --padding: 4px;
@@ -368,7 +1064,9 @@ body {
   --button-color: rgba(255, 255, 255, 0.06);
   --highlight-color-hue: 240deg;
   position: relative;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -391,6 +1089,7 @@ body {
   transition: box-shadow var(--transition), border var(--transition),
     background-color var(--transition), transform 0.3s;
 }
+
 .sparkle-btn::before {
   content: "";
   position: absolute;
@@ -406,19 +1105,25 @@ body {
   box-shadow: 0 -8px 8px -6px transparent inset, 0 -16px 16px -8px transparent inset,
     1px 1px 1px rgba(255,255,255,0.12), 2px 2px 2px rgba(255,255,255,0.06);
 }
+
 .sparkle-btn::after {
   content: "";
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border-radius: inherit;
   pointer-events: none;
   background-image: linear-gradient(0deg, #fff, hsl(var(--highlight-color-hue),100%,70%), hsla(var(--highlight-color-hue),100%,70%,50%) 8%, transparent);
   opacity: 0;
   transition: opacity var(--transition);
 }
+
 .sparkle-btn .sparkle-svg {
   flex-shrink: 0;
-  height: 18px; width: 18px;
+  height: 18px;
+  width: 18px;
   margin-right: 0.4rem;
   fill: none;
   stroke: rgba(255,255,255,0.45);
@@ -427,7 +1132,12 @@ body {
   filter: drop-shadow(0 0 2px rgba(255,255,255,0.5));
   transition: stroke var(--transition), filter var(--transition);
 }
-@keyframes sparkle-flicker { 50% { opacity: 0.35; } }
+
+@keyframes sparkle-flicker {
+  50% {
+    opacity: 0.35;
+  }
+}
 
 .sparkle-letter {
   display: inline-block;
@@ -435,51 +1145,96 @@ body {
   animation: sparkle-letter-anim 2s ease-in-out infinite;
   transition: color var(--transition), text-shadow var(--transition);
 }
+
 @keyframes sparkle-letter-anim {
-  50% { text-shadow: 0 0 3px rgba(255,255,255,0.5); color: #fff; }
+  50% {
+    text-shadow: 0 0 3px rgba(255,255,255,0.5);
+    color: #fff;
+  }
 }
-.sparkle-letter:nth-child(1) { animation-delay: 0s; }
-.sparkle-letter:nth-child(2) { animation-delay: 0.08s; }
-.sparkle-letter:nth-child(3) { animation-delay: 0.16s; }
-.sparkle-letter:nth-child(4) { animation-delay: 0.24s; }
-.sparkle-letter:nth-child(5) { animation-delay: 0.32s; }
-.sparkle-letter:nth-child(6) { animation-delay: 0.40s; }
-.sparkle-letter:nth-child(7) { animation-delay: 0.48s; }
-.sparkle-letter:nth-child(8) { animation-delay: 0.56s; }
-.sparkle-letter:nth-child(9) { animation-delay: 0.64s; }
-.sparkle-letter:nth-child(10) { animation-delay: 0.72s; }
+
+.sparkle-letter:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.sparkle-letter:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.sparkle-letter:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.sparkle-letter:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.sparkle-letter:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+.sparkle-letter:nth-child(6) {
+  animation-delay: 0.40s;
+}
+
+.sparkle-letter:nth-child(7) {
+  animation-delay: 0.48s;
+}
+
+.sparkle-letter:nth-child(8) {
+  animation-delay: 0.56s;
+}
+
+.sparkle-letter:nth-child(9) {
+  animation-delay: 0.64s;
+}
+
+.sparkle-letter:nth-child(10) {
+  animation-delay: 0.72s;
+}
 
 .sparkle-btn:hover {
   border-color: hsla(var(--highlight-color-hue),100%,80%,40%);
   transform: translateY(-2px);
 }
+
 .sparkle-btn:hover::before {
   box-shadow: 0 -8px 8px -6px rgba(255,255,255,0.6) inset,
     0 -16px 16px -8px hsla(var(--highlight-color-hue),100%,70%,30%) inset,
     1px 1px 1px rgba(255,255,255,0.12), 2px 2px 2px rgba(255,255,255,0.06);
 }
+
 .sparkle-btn:hover::after {
   opacity: 1;
-  mask-image: linear-gradient(0deg, #fff, transparent);
+  -webkit-mask-image: linear-gradient(0deg, #fff, transparent);
+          mask-image: linear-gradient(0deg, #fff, transparent);
 }
+
 .sparkle-btn:hover .sparkle-svg {
   stroke: #fff;
   filter: drop-shadow(0 0 3px hsl(var(--highlight-color-hue),100%,70%))
     drop-shadow(0 -4px 6px rgba(0,0,0,0.6));
   animation: none;
 }
+
 .sparkle-btn:hover .sparkle-letter {
   color: #fff;
   text-shadow: 0 0 6px hsla(var(--highlight-color-hue),100%,80%,0.5);
 }
+
 .sparkle-btn:active {
   border-color: hsla(var(--highlight-color-hue),100%,80%,70%);
   background-color: hsla(var(--highlight-color-hue),50%,20%,0.5);
   transform: translateY(0);
 }
-.sparkle-btn:active::after { opacity: 1; filter: brightness(200%); }
+
+.sparkle-btn:active::after {
+  opacity: 1;
+  filter: brightness(200%);
+}
 
 /* ── GALAXY ICON BUTTON ────────────────────────── */
+
 .galaxy-icon {
   --spark: 1.8s;
   --hue: 245;
@@ -516,21 +1271,29 @@ body {
 .galaxy-icon:is(:hover, :focus-visible) {
   --active: 1;
 }
+
 .galaxy-icon:active {
   scale: 1;
 }
 
 /* Spinning spark border */
+
 .galaxy-icon > .gi-spark {
   position: absolute;
   inset: 0;
   border-radius: 14px;
   rotate: 0deg;
   overflow: hidden;
-  mask: linear-gradient(white, transparent 50%);
+  -webkit-mask: linear-gradient(white, transparent 50%);
+          mask: linear-gradient(white, transparent 50%);
   animation: gi-flip calc(var(--spark) * 2) infinite steps(2, end);
 }
-@keyframes gi-flip { to { rotate: 360deg; } }
+
+@keyframes gi-flip {
+  to {
+    rotate: 360deg;
+  }
+}
 
 .galaxy-icon > .gi-spark::before {
   content: "";
@@ -548,7 +1311,12 @@ body {
   transition: opacity 0.35s;
   animation: gi-rotate var(--spark) linear infinite both;
 }
-@keyframes gi-rotate { to { transform: rotate(90deg); } }
+
+@keyframes gi-rotate {
+  to {
+    transform: rotate(90deg);
+  }
+}
 
 .galaxy-icon > .gi-spark::after {
   content: "";
@@ -558,6 +1326,7 @@ body {
 }
 
 /* Backdrop (inner background) */
+
 .galaxy-icon > .gi-backdrop {
   position: absolute;
   inset: var(--cut);
@@ -574,15 +1343,18 @@ body {
 }
 
 /* Galaxy stars container */
+
 .galaxy-icon > .gi-stars {
   position: absolute;
   inset: 0;
   opacity: var(--active);
   transition: opacity 0.35s;
-  mask: radial-gradient(white, transparent);
+  -webkit-mask: radial-gradient(white, transparent);
+          mask: radial-gradient(white, transparent);
 }
 
 /* Galaxy ring with orbiting stars */
+
 .galaxy-icon > .gi-ring {
   position: absolute;
   width: 100%;
@@ -609,31 +1381,46 @@ body {
 }
 
 @keyframes gi-orbit {
-  to { transform: translate(-50%, -50%) rotate(calc(var(--angle, 0deg) + 360deg)) translateY(calc(var(--distance, 16) * 1px)); }
+  to {
+    transform: translate(-50%, -50%) rotate(calc(var(--angle, 0deg) + 360deg)) translateY(calc(var(--distance, 16) * 1px));
+  }
 }
 
 /* Icon z-index above effects */
+
 .galaxy-icon > .gi-icon {
   position: relative;
   z-index: 2;
 }
 
 /* ── BLOG ITEM HOVER ────────────────────────── */
-.blog-row { transition: padding-left 0.3s var(--ease); }
-.blog-row:hover { padding-left: 8px; }
-.blog-row:hover .blog-read-label { color: #f0f0f5; }
+
+.blog-row {
+  transition: padding-left 0.3s var(--ease);
+}
+
+.blog-row:hover {
+  padding-left: 8px;
+}
+
+.blog-row:hover .blog-read-label {
+  color: #f0f0f5;
+}
 
 /* ▪ WHERE I'VE BEEN CARDS ▪ */
+
 .wib-card {
   background: #0e0e14;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 16px;
   transition: border-color 0.3s, background 0.3s;
 }
+
 .wib-card:hover {
   border-color: rgba(255, 255, 255, 0.12);
   background: #121218;
 }
+
 .wib-card-inner {
   background: #000000;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -642,18 +1429,24 @@ body {
   overflow: hidden;
   transition: border-color 0.3s, background 0.3s;
 }
+
 .wib-card-inner::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; height: 1px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
   background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
 }
+
 .wib-card-inner:hover {
   background: #050505;
   border-color: rgba(255, 255, 255, 0.08);
 }
 
 /* ── WIB HOVER WRAP (spotlight mouse-follow effect) ── */
+
 .wib-hover-wrap {
   --x: -9999;
   --y: -9999;
@@ -664,6 +1457,7 @@ body {
 }
 
 /* Dim always-on glow at cursor position */
+
 .wib-hover-wrap::before {
   content: "";
   position: absolute;
@@ -679,6 +1473,7 @@ body {
 }
 
 /* Bright glow that appears on hover */
+
 .wib-hover-wrap::after {
   content: "";
   position: absolute;
@@ -700,13 +1495,14 @@ body {
 }
 
 /* Ensure card content sits above the glow overlays */
+
 .wib-hover-wrap > * {
   position: relative;
   z-index: 1;
 }
 
-
 /* ── SPOTLIGHT CARDS ────────────────────────── */
+
 .spotlight-item::before {
   content: "";
   position: absolute;
@@ -719,16 +1515,20 @@ body {
 }
 
 /* ── HERO CONNECT BUTTON — border-only circuit spin ── */
+
 /* Wrapper creates the 2px border space; inner <a> fills center with white */
+
 .connect-btn-wrap {
   position: relative;
   display: inline-flex;
   border-radius: 9999px;
-  padding: 2px;             /* <-- this gap is where the border ring shows */
+  padding: 2px;
+  /* <-- this gap is where the border ring shows */
   transition: transform 0.35s var(--ease), filter 0.35s;
 }
 
 /* Conic spinning ring fills the entire wrapper */
+
 .connect-btn-wrap::before {
   content: "";
   position: absolute;
@@ -747,6 +1547,7 @@ body {
 }
 
 /* On hover: spin the ring + subtle lift + soft glow */
+
 .connect-btn-wrap:hover {
   transform: translateY(-2px);
   filter: drop-shadow(0 8px 20px rgba(99, 102, 241, 0.25));
@@ -758,12 +1559,14 @@ body {
 }
 
 /* The inner button: white bg covers the conic center — only border ring visible */
+
 .connect-btn-inner {
   position: relative;
   z-index: 1;
   border-radius: 9999px;
   transition: background 0.35s;
 }
+
 .connect-btn-wrap:hover .connect-btn-inner {
   background: rgba(255, 255, 255, 0.85) !important;
 }
@@ -771,58 +1574,86 @@ body {
 /* ── RESPONSIVE ─────────────────────────────── */
 
 /* ── Hide custom cursors on touch / mobile devices ── */
+
 @media (hover: none), (pointer: coarse) {
-  * { cursor: auto !important; }
+  * {
+    cursor: auto !important;
+  }
+
   .neon-cursor-container,
   .cursor-main,
   .cursor-trail,
   .cursor-glow,
   .spotlight-cursor,
-  #canvas { display: none !important; }
+  #canvas {
+    display: none !important;
+  }
 }
 
 @media (max-width: 860px) {
   /* Restore default cursor on mobile */
-  * { cursor: auto !important; }
+
+  * {
+    cursor: auto !important;
+  }
 
   /* Hide custom cursor elements */
+
   .neon-cursor-container,
   .cursor-main,
   .cursor-trail,
   .cursor-glow,
   .spotlight-cursor,
-  #canvas { display: none !important; }
+  #canvas {
+    display: none !important;
+  }
 
   /* Hide browser mockup windows on mobile — too cluttered */
-  .hero-cards-container .hc-card { display: none; }
+
+  .hero-cards-container .hc-card {
+    display: none;
+  }
+
   /* Target the mockup wrapper directly */
+
   section#hero > div[class*="absolute"][class*="inset-0"][class*="z-[2]"] {
     display: none;
   }
 
   /* Reduce section padding */
+
   .section-blend::before,
   .section-blend::after {
     height: 80px;
   }
 
   /* Glass card: smaller padding + radius on mobile */
+
   .glass-card {
     padding: 20px;
     border-radius: 16px;
   }
+
   .glass-card:hover {
-    transform: none; /* Disable hover lift on touch — it sticks */
+    transform: none;
+    /* Disable hover lift on touch — it sticks */
   }
 
   /* Scroll progress thicker for visibility */
-  .scroll-progress { height: 3px; }
+
+  .scroll-progress {
+    height: 3px;
+  }
 
   /* Marquee edge fades narrower */
+
   .marquee-fade-l,
-  .marquee-fade-r { width: 60px; }
+  .marquee-fade-r {
+    width: 60px;
+  }
 
   /* Connect button: no hover transforms on touch */
+
   .connect-btn-wrap:hover {
     transform: none;
     filter: none;
@@ -830,13 +1661,25 @@ body {
 }
 
 @media (max-width: 480px) {
-  .glass-card { padding: 16px; border-radius: 14px; }
+  .glass-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
   .marquee-fade-l,
-  .marquee-fade-r { width: 40px; }
+  .marquee-fade-r {
+    width: 40px;
+  }
 }
-.earth-canvas { display: block; opacity: 0; transition: opacity 650ms ease; }
+
+.earth-canvas {
+  display: block;
+  opacity: 0;
+  transition: opacity 650ms ease;
+}
 
 /* ── STACKING CARDS ────────────────────────── */
+
 .stacking-cards-strip {
   width: 100%;
   background: #08080d;
@@ -881,7 +1724,8 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   will-change: transform;
 }
 
@@ -939,24 +1783,27 @@ body {
     top: -18% !important;
   }
 }
+
 /* -- Luminous Card -- */
+
 .luminous-card {
-	position: relative;
-	background: radial-gradient(circle at 50% 0%, #3a3a3a 0%, #1a1a1a 64%);
-	box-shadow: inset 0 1.01rem 0.2rem -1rem #fff0,
+  position: relative;
+  background: radial-gradient(circle at 50% 0%, #3a3a3a 0%, #1a1a1a 64%);
+  box-shadow: inset 0 1.01rem 0.2rem -1rem #fff0,
 		inset 0 -1.01rem 0.2rem -1rem #0000, 0 -1.02rem 0.2rem -1rem #fff0,
 		0 1rem 0.2rem -1rem #0000, 0 0 0 1px #fff3, 0 4px 4px 0 #0004, 0 0 0 1px #333;
-	border-radius: 1.8rem;
-	color: #fff;
-	padding: 2rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	transition: all 0.4s ease-in-out, translate 0.4s ease-out;
-    min-height: 280px;
+  border-radius: 1.8rem;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.4s ease-in-out, translate 0.4s ease-out;
+  min-height: 280px;
 }
+
 .luminous-card::before {
-	content: ";
+  content: ";
 	display: block;
 	--offset: 1rem;
 	width: calc(100% + 2 * var(--offset));
@@ -1060,35 +1907,108 @@ body {
 	cursor: pointer; transition: all 0.4s ease-in-out;
 }
 .luminous-card .toggle::before {
-	content: "; display: block; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;
-	width: 3.4rem; height: 0.68rem; border-radius: 0.2rem; background: #000; transition: all 0.4s ease-in-out;
+	content: ";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 3.4rem;
+  height: 0.68rem;
+  border-radius: 0.2rem;
+  background: #000;
+  transition: all 0.4s ease-in-out;
 }
+
 .luminous-card .toggle .handle {
-	position: absolute; top: 0; bottom: 0.04rem; margin: auto; left: 0.68rem; width: 40%; height: 30%; background: #aaa; border-radius: 0.2rem;
-	box-shadow: inset 0 1px 4px 0 #fff, inset 0 -1px 1px 0 #000a, 0 0 1px 1px #0003, 1px 3px 6px 1px #000a; transition: all 0.4s ease-in-out;
+  position: absolute;
+  top: 0;
+  bottom: 0.04rem;
+  margin: auto;
+  left: 0.68rem;
+  width: 40%;
+  height: 30%;
+  background: #aaa;
+  border-radius: 0.2rem;
+  box-shadow: inset 0 1px 4px 0 #fff, inset 0 -1px 1px 0 #000a, 0 0 1px 1px #0003, 1px 3px 6px 1px #000a;
+  transition: all 0.4s ease-in-out;
 }
-.luminous-card.active .toggle .handle { transform: translateX(1.58rem); }
+
+.luminous-card.active .toggle .handle {
+  transform: translateX(1.58rem);
+}
+
 .luminous-card .toggle span {
-	pointer-events: none; text-align: center; position: absolute; left: 0; right: 0; margin: auto; bottom: calc(100% + 0.4rem); font-size: 0.6rem; font-weight: 100; color: #555; opacity: 0; transition: opacity 0.4s ease-in-out;
+  pointer-events: none;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: calc(100% + 0.4rem);
+  font-size: 0.6rem;
+  font-weight: 100;
+  color: #555;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
 }
-.luminous-card .toggle:hover span { opacity: 1; }
-.luminous-card:not(.active) .toggle:hover .handle { transform: translateX(0.2rem); }
+
+.luminous-card .toggle:hover span {
+  opacity: 1;
+}
+
+.luminous-card:not(.active) .toggle:hover .handle {
+  transform: translateX(0.2rem);
+}
 
 /* Active States */
-.luminous-card.active {
-	box-shadow: inset 0 1.01rem 0.1rem -1rem #fffa, inset 0 -4rem 3rem -3rem #000a, 0 -1.02rem 0.2rem -1rem #fffa, 0 1rem 0.2rem -1rem #000, 0 0 0 1px #fff2, 0 4px 4px 0 #0004, 0 0 0 1px #333;
-}
-.luminous-card.active .slit { background: #fff; box-shadow: 0 0 4px 0 #fff; }
-.luminous-card.active .lumen { opacity: 0.5; }
-.luminous-card.active .darken { opacity: 0.8; }
-.luminous-card.active .darken .sl { opacity: 0.2; }
-.luminous-card.active .darken .ll { opacity: 1; }
-.luminous-card.active .darken .slt { opacity: 1; }
-.luminous-card.active .darken .srt { opacity: 1; }
-.luminous-card.active .toggle::before { background: #fffc; box-shadow: 0 0 0.3rem 0.2rem #fff7; }
-.luminous-card.active .toggle .handle { box-shadow: inset 0 1px 12px 0 #fff, inset 0 -1px 1px 0 #fffa, 0 0 2px 1px #4443, 1px 3px 6px 1px #0004; }
 
-/* From Uiverse.io by Creatlydev - Custom Cursor */ 
+.luminous-card.active {
+  box-shadow: inset 0 1.01rem 0.1rem -1rem #fffa, inset 0 -4rem 3rem -3rem #000a, 0 -1.02rem 0.2rem -1rem #fffa, 0 1rem 0.2rem -1rem #000, 0 0 0 1px #fff2, 0 4px 4px 0 #0004, 0 0 0 1px #333;
+}
+
+.luminous-card.active .slit {
+  background: #fff;
+  box-shadow: 0 0 4px 0 #fff;
+}
+
+.luminous-card.active .lumen {
+  opacity: 0.5;
+}
+
+.luminous-card.active .darken {
+  opacity: 0.8;
+}
+
+.luminous-card.active .darken .sl {
+  opacity: 0.2;
+}
+
+.luminous-card.active .darken .ll {
+  opacity: 1;
+}
+
+.luminous-card.active .darken .slt {
+  opacity: 1;
+}
+
+.luminous-card.active .darken .srt {
+  opacity: 1;
+}
+
+.luminous-card.active .toggle::before {
+  background: #fffc;
+  box-shadow: 0 0 0.3rem 0.2rem #fff7;
+}
+
+.luminous-card.active .toggle .handle {
+  box-shadow: inset 0 1px 12px 0 #fff, inset 0 -1px 1px 0 #fffa, 0 0 2px 1px #4443, 1px 3px 6px 1px #0004;
+}
+
+/* From Uiverse.io by Creatlydev - Custom Cursor */
+
 .project-cursor {
   border: none;
   background: #7808d0;
@@ -1140,6 +2060,7 @@ body {
 }
 
 /* -- Four-pointed star for project highlights -- */
+
 .four-pointed-star {
   position: relative;
   width: 10px;
@@ -1147,6 +2068,7 @@ body {
   flex-shrink: 0;
   margin-top: 5px;
 }
+
 .four-pointed-star::before,
 .four-pointed-star::after {
   content: "";
@@ -1157,22 +2079,29 @@ body {
   top: 50%;
   left: 50%;
 }
+
 .four-pointed-star::before {
   transform: translate(-50%, -50%) rotate(-45deg) skewX(22.5deg) skewY(22.5deg);
 }
+
 .four-pointed-star::after {
   transform: translate(-50%, -50%) rotate(45deg) skewX(22.5deg) skewY(22.5deg);
 }
 
 /* ── Custom Infinity Symbol ───────────────────── */
+
 .infinity-symbol {
-  --s: 36px; /* Size to match the large font */
-  --b: 6px; /* Border thickness */
+  --s: 36px;
+  /* Size to match the large font */
+  --b: 6px;
+  /* Border thickness */
   display: inline-flex;
   gap: calc((1.4142 - 1)*var(--s) - 1.4142*var(--b));
-  color: currentColor; /* inherit the text color */
+  color: currentColor;
+  /* inherit the text color */
   margin-bottom: 4px;
 }
+
 .infinity-symbol::before,
 .infinity-symbol::after {
   content: "";
@@ -1182,22 +2111,24 @@ body {
   border-radius: 50% 50% 0 50%;
   transform: rotate(-45deg);
 }
+
 .infinity-symbol::after {
   transform: rotate(-45deg) scale(-1);
 }
 
 /* -- GALAXY BUTTON (Tech Stack) ----------------------- */
+
 .galaxy-button {
-	--transition: 0.25s;
-	--spark: 1.8s;
-	--hue: 245;
-	position: relative;
+  --transition: 0.25s;
+  --spark: 1.8s;
+  --hue: 245;
+  position: relative;
 }
 
 .galaxy-button button {
-	--cut: 0.1em;
-	--active: 0;
-	--bg:
+  --cut: 0.1em;
+  --active: 0;
+  --bg:
 		radial-gradient(
 			120% 120% at 126% 126%,
 			hsl(var(--hue) calc(var(--active) * 97%) 98% / calc(var(--active) * 0.9)) 40%,
@@ -1209,27 +2140,27 @@ body {
 			transparent 70%
 		) calc(100px - (var(--active) * 100px)) 0 / 100% 100% no-repeat,
 		hsl(var(--hue) calc(var(--active) * 100%) calc(12% - (var(--active) * 8%)));
-	background: var(--bg);
-	font-size: 13.5px;
-	font-weight: 500;
-	border: 0;
-	cursor: pointer;
-	padding: 0.7em 1.2em;
-	display: flex;
-	align-items: center;
-	gap: 0.4em;
-	white-space: nowrap;
-	border-radius: 2rem;
-	position: relative;
-	box-shadow:
+  background: var(--bg);
+  font-size: 13.5px;
+  font-weight: 500;
+  border: 0;
+  cursor: pointer;
+  padding: 0.7em 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  white-space: nowrap;
+  border-radius: 2rem;
+  position: relative;
+  box-shadow:
 		0 0 calc(var(--active) * 2em) calc(var(--active) * 1em) hsl(var(--hue) 97% 61% / 0.5),
 		0 0.05em 0 0 hsl(var(--hue) calc(var(--active) * 97%) calc((var(--active) * 50%) + 30%)) inset,
 		0 -0.05em 0 0 hsl(var(--hue) calc(var(--active) * 97%) calc(var(--active) * 10%)) inset;
-	transition: box-shadow var(--transition), scale var(--transition), background var(--transition);
-	scale: calc(1 + (var(--active) * 0.05));
-	transform-style: preserve-3d;
-	perspective: 100vmin;
-	overflow: hidden;
+  transition: box-shadow var(--transition), scale var(--transition), background var(--transition);
+  scale: calc(1 + (var(--active) * 0.05));
+  transform-style: preserve-3d;
+  perspective: 100vmin;
+  overflow: hidden;
 }
 
 .galaxy-button button:active {
@@ -1237,162 +2168,175 @@ body {
 }
 
 .galaxy-button button:is(:hover, :focus-visible) {
-	--active: 1;
+  --active: 1;
 }
 
 .galaxy-button .star {
-	height: calc(var(--size) * 1px);
-	aspect-ratio: 1;
-	background: white;
-	border-radius: 50%;
-	position: absolute;
-	opacity: var(--alpha);
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(10deg) rotate(0deg) translateY(calc(var(--distance) * 1px)) ;
-	animation: orbit calc(var(--duration) * 1s) calc(var(--delay) * -1s) infinite linear;
+  height: calc(var(--size) * 1px);
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  opacity: var(--alpha);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(10deg) rotate(0deg) translateY(calc(var(--distance) * 1px)) ;
+  animation: orbit calc(var(--duration) * 1s) calc(var(--delay) * -1s) infinite linear;
 }
 
 @keyframes orbit {
-	to {
-		transform: translate(-50%, -50%) rotate(10deg) rotate(360deg) translateY(calc(var(--distance) * 1px));
-	}
+  to {
+    transform: translate(-50%, -50%) rotate(10deg) rotate(360deg) translateY(calc(var(--distance) * 1px));
+  }
 }
 
 .galaxy-button .galaxy {
-	position: absolute;
-	width: 100%;
-	aspect-ratio: 1;
-	top: 50%;
-	left: 50%;
-	translate: -50% -50%;
-	overflow: hidden;
-	opacity: var(--active);
-	transition: opacity var(--transition);
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  overflow: hidden;
+  opacity: var(--active);
+  transition: opacity var(--transition);
 }
 
 .galaxy-button .galaxy__ring {
-	height: 200%;
-	width: 200%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	border-radius: 50%;
-	transform: translate(-28%, -40%) rotateX(-24deg) rotateY(-30deg) rotateX(90deg);
-	transform-style: preserve-3d;
+  height: 200%;
+  width: 200%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-28%, -40%) rotateX(-24deg) rotateY(-30deg) rotateX(90deg);
+  transform-style: preserve-3d;
 }
 
 .galaxy-button .galaxy__container {
-	position: absolute;
-	inset: 0;
-	opacity: var(--active);
-	transition: opacity var(--transition);
+  position: absolute;
+  inset: 0;
+  opacity: var(--active);
+  transition: opacity var(--transition);
   -webkit-mask: radial-gradient(white, transparent);
   mask: radial-gradient(white, transparent);
 }
 
 .galaxy-button .star--static {
-	animation: none;
-	top: 50%;
-	left: 50%;
-	transform: translate(0, 0);
-	max-height: 4px;
-	filter: brightness(4);
-	opacity: 0.9;
-	animation:
+  animation: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, 0);
+  max-height: 4px;
+  filter: brightness(4);
+  opacity: 0.9;
+  animation:
 		move-x calc(var(--duration) * 0.1s) calc(var(--delay) * -0.1s) infinite linear,
 		move-y calc(var(--duration) * 0.2s) calc(var(--delay) * -0.2s) infinite linear;
 }
 
 .galaxy-button button:hover .star--static {
-	animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 @keyframes move-x {
-	0% { translate: -100px 0; }
-	100% { translate: 100px 0; }
+  0% {
+    translate: -100px 0;
+  }
+
+  100% {
+    translate: 100px 0;
+  }
 }
 
 @keyframes move-y {
-	0% { transform: translate(0, -50px); }
-	100% { transform: translate(0, 50px); }
+  0% {
+    transform: translate(0, -50px);
+  }
+
+  100% {
+    transform: translate(0, 50px);
+  }
 }
 
 .galaxy-button .spark {
-	position: absolute;
-	inset: 0;
-	border-radius: 2rem;
-	rotate: 0deg;
-	overflow: hidden;
-	-webkit-mask: linear-gradient(white, transparent 50%);
-	mask: linear-gradient(white, transparent 50%);
-	animation: flip calc(var(--spark) * 2) infinite steps(2, end);
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  rotate: 0deg;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(white, transparent 50%);
+  mask: linear-gradient(white, transparent 50%);
+  animation: flip calc(var(--spark) * 2) infinite steps(2, end);
 }
 
 @keyframes flip {
-	to { rotate: 360deg; }
+  to {
+    rotate: 360deg;
+  }
 }
 
 .galaxy-button .spark:before {
-	content: "";
-	position: absolute;
-	width: 200%;
-	aspect-ratio: 1;
-	top: 0%;
-	left: 50%;
-	z-index: -1;
-	translate: -50% -15%;
-	rotate: 0;
-	transform: rotate(-90deg);
-	opacity: calc((var(--active)) + 0.4);
-	background: conic-gradient(
+  content: "";
+  position: absolute;
+  width: 200%;
+  aspect-ratio: 1;
+  top: 0%;
+  left: 50%;
+  z-index: -1;
+  translate: -50% -15%;
+  rotate: 0;
+  transform: rotate(-90deg);
+  opacity: calc((var(--active)) + 0.4);
+  background: conic-gradient(
 		from 0deg,
 		transparent 0 340deg,
 		white 360deg
 	);
-	transition: opacity var(--transition);
-	animation: rotate var(--spark) linear infinite both;
+  transition: opacity var(--transition);
+  animation: rotate var(--spark) linear infinite both;
 }
 
 .galaxy-button .spark:after {
-	content: "";
-	position: absolute;
-	inset: var(--cut);
-	border-radius: 2rem;
+  content: "";
+  position: absolute;
+  inset: var(--cut);
+  border-radius: 2rem;
 }
 
 .galaxy-button .backdrop {
-	position: absolute;
-	inset: var(--cut);
-	background: var(--bg);
-	border-radius: 2rem;
-	transition: background var(--transition);
+  position: absolute;
+  inset: var(--cut);
+  background: var(--bg);
+  border-radius: 2rem;
+  transition: background var(--transition);
 }
 
 @keyframes rotate {
-	to { transform: rotate(90deg); }
+  to {
+    transform: rotate(90deg);
+  }
 }
 
 .galaxy-button .text {
-	translate: 2% -6%;
-	letter-spacing: 0.01ch;
-	color: hsl(0 0% calc(60% + (var(--active) * 26%)));
-	position: relative;
-	z-index: 10;
-	display: flex;
-	align-items: center;
-	gap: 6px;
+  translate: 2% -6%;
+  letter-spacing: 0.01ch;
+  color: hsl(0 0% calc(60% + (var(--active) * 26%)));
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 /* -- SHIMMER TEXT EFFECT ----------------------- */
+
 .shimmer-text {
   --bg-angle: 295;
   --duration: 5s;
   --place-color: rgba(255, 255, 255, 0.25);
-  
   --offset: 10%;
   --angle: calc(var(--bg-angle) * 1deg);
-
   /* Aurora gradient style */
   --aurora: linear-gradient(
     var(--angle),
@@ -1403,7 +2347,6 @@ body {
     #90e0ff,
     transparent calc(50% + var(--offset))
   );
-
   /* Clock gradient style (matches old creation text) */
   --clock: linear-gradient(
     var(--angle),
@@ -1413,7 +2356,6 @@ body {
     #e040fb,
     transparent calc(50% + var(--offset))
   );
-  
   /* Classic white shine */
   --classic: linear-gradient(
     var(--angle),
@@ -1421,14 +2363,11 @@ body {
     white,
     transparent calc(50% + var(--offset))
   );
-
   /* You can change var(--classic) to var(--aurora) for the colorful effect */
   --chosen: var(--classic);
-
   /* Use a repeating background that wraps seamlessly relative to the text width */
   --bg: var(--chosen) 0 0 / 200% 100% repeat border-box,
     linear-gradient(var(--place-color), var(--place-color)) padding-box;
-
   background: var(--bg);
   animation: text-shimmer var(--duration) infinite linear;
   -webkit-background-clip: text;
@@ -1440,7 +2379,13 @@ body {
 
 @keyframes text-shimmer {
   /* Shifts the background exactly one full tile (200%) for a mathematically flawless continuous loop */
-  0% { background-position: -200% 0; }
-  100% { background-position: 0% 0; }
+
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 0% 0;
+  }
 }
 

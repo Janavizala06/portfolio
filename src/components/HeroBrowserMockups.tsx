@@ -178,7 +178,7 @@ function Card({ url, href, onClick, children }: {
     </>
   );
 
-  const cls = "w-[360px] flex-shrink-0 rounded-[11px] overflow-hidden opacity-40 hover:opacity-90 hover:scale-[1.03] transition-all duration-200 shadow-[0_24px_60px_rgba(0,0,0,0.85),0_0_0_1px_rgba(255,255,255,0.05)] cursor-pointer pointer-events-auto";
+  const cls = "hero-card";
 
   if (isResume) return <div className={cls} onClick={onClick}>{shell}</div>;
   return (
