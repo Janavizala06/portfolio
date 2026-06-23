@@ -360,10 +360,7 @@ export default function KnowAboutMe() {
             style={{ left: springX, top: springY }}
           >
             {/* Stylus — wide & stubby (Apple Pencil style) */}
-            <div
-              className="relative"
-              style={{ transform: "translate(-20px, 0) scale(1.6)", transformOrigin: "top center" }}
-            >
+            <div className="relative stylus-scaler">
               {/* White tip — wide, taller */}
               <div className="w-[40px] h-[90px] rounded-t-full mx-auto relative overflow-hidden"
                 style={{

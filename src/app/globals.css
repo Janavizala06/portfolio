@@ -226,6 +226,16 @@ body {
   display: block;
 }
 
+.stylus-scaler {
+  transform: translate(-20px, 0) scale(0.8);
+  transform-origin: top center;
+}
+@media (min-width: 640px) {
+  .stylus-scaler {
+    transform: translate(-20px, 0) scale(1.6);
+  }
+}
+
 .about-photo-card {
   width: 280px;
   height: 320px;
