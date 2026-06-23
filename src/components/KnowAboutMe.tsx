@@ -740,7 +740,7 @@ export default function KnowAboutMe() {
                   { icon: "🚀", title: "Unleash LLM", sub: "Direct Finalist, Flaunch Excellence",
                     glow: "stat-card-pink" },
                   { icon: "🏢", title: "IBM Recognition", sub: "Selected for GIFT City Visit",
-                    glow: "stat-card-purple" },
+                    glow: "stat-card-sky" },
                 ].map((a) => (
                   <div key={a.title} className={`ach-card flex flex-col items-center text-center p-6 rounded-xl group relative overflow-hidden transition-all duration-300 ease-out cursor-pointer border border-white/5 bg-transparent hover:bg-white/[0.02] ${a.glow}`}>
                     <div className="relative z-10 flex flex-col items-center">

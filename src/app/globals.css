@@ -331,6 +331,9 @@ body {
 .stat-card-blue:hover { border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3); }
 .stat-card-blue::before { background: linear-gradient(to right, transparent, rgba(96, 165, 250, 0.2), transparent); }
 
+.stat-card-sky:hover { border-color: rgba(14, 165, 233, 0.5); box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3); }
+.stat-card-sky::before { background: linear-gradient(to right, transparent, rgba(56, 189, 248, 0.2), transparent); }
+
 /* Projects Grid */
 .projects-grid-wrap {
   display: grid;
