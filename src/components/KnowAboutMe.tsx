@@ -701,11 +701,11 @@ export default function KnowAboutMe() {
                   { value: "15+", label: "Technologies", color: "color-orange", glow: "stat-card-orange" },
                   { value: "9.05", label: "CGPA / 10", color: "color-yellow", glow: "stat-card-yellow" },
                   { value: "9.43", label: "SGPA / 10", color: "color-pink", glow: "stat-card-pink" },
-                  { value: <div className="infinity-symbol"></div>, label: "Curiosity", color: "color-purple", glow: "stat-card-purple" },
+                  { value: <span className="infinity-symbol"></span>, label: "Curiosity", color: "color-purple", glow: "stat-card-purple" },
                 ].map((s) => (
                   <div key={s.label} className={`stat-card flex flex-col items-center text-center p-4 rounded-2xl bg-black border border-white/[0.05] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_4px_10px_rgba(0,0,0,0.3)] relative overflow-hidden group transition-all duration-300 ease-out cursor-pointer hover:bg-white/[0.02] ${s.glow}`}>
                     <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-10" />
-                    <span className={`stat-value relative z-10 text-[28px] sm:text-[32px] font-bold mb-1 drop-shadow-md transition-transform duration-300 ${s.color}`}>{s.value}</span>
+                    <div className={`stat-value relative z-10 text-[28px] sm:text-[32px] font-bold mb-1 drop-shadow-md transition-transform duration-300 ${s.color}`}>{s.value}</div>
                     <span className="relative z-10 text-[11px] text-white/40 uppercase tracking-[0.08em] transition-colors duration-300 group-hover:text-white">{s.label}</span>
                   </div>
                 ))}
