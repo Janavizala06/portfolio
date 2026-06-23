@@ -757,14 +757,14 @@ export default function KnowAboutMe() {
 
           {/* Cards 4 and 5: Experience + Leadership */}
           <div className="wib-grid-exp">
-            <SpotLightItem>
-              <WibHoverCard>
+            <SpotLightItem className="h-full">
+              <WibHoverCard className="h-full">
               <motion.div
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.2 }}
-                className="wib-card p-6 sm:p-7 relative overflow-hidden"
+                className="wib-card p-6 sm:p-7 relative overflow-hidden h-full"
               >
-                <h3 className="font-serif text-[clamp(20px,2.5vw,28px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Experience</h3>
+                <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Experience</h3>
                 <div className="space-y-5">
                   {[
                     { company: "Hi Lab Solution", role: "Full Stack Intern", year: "2026" },
@@ -774,7 +774,7 @@ export default function KnowAboutMe() {
                     <div key={exp.company} className="flex items-start gap-3">
                       <div className="flex flex-col items-center mt-1.5">
                         <div className="w-2.5 h-2.5 rounded-full bg-white/40 flex-shrink-0 shadow-[0_0_8px_rgba(255,255,255,0.1)]" />
-                        {i < 2 && <div className="w-[1px] flex-1 bg-white/10 mt-1 min-h-[24px]" />}
+                        <div className="w-[1px] flex-1 bg-white/10 mt-1 min-h-[24px]" />
                       </div>
                       <div className="flex-1">
                         <div className="text-[18px] font-bold text-white/90">{exp.company}</div>
@@ -788,12 +788,12 @@ export default function KnowAboutMe() {
               </WibHoverCard>
             </SpotLightItem>
 
-            <SpotLightItem>
-              <WibHoverCard>
+            <SpotLightItem className="h-full">
+              <WibHoverCard className="h-full">
               <motion.div
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.25 }}
-                className="wib-card p-6 sm:p-8"
+                className="wib-card p-6 sm:p-8 h-full"
               >
                 <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Leadership &amp; Volunteering</h3>
                 <div className="space-y-5">
