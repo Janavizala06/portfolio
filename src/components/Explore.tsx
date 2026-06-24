@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useTilt3d } from "@/hooks/useTilt3d";
 import AuroraBackground from "./AuroraBackground";
+import ScrollText from '@/components/ui/scroll-text';
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -54,10 +55,12 @@ export default function Explore() {
           className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-2.5">
           Explore
         </motion.p>
-        <motion.h2 variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
-          className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]">
-          Go <em className="italic gradient-text-animated">deeper</em>
-        </motion.h2>
+        <ScrollText
+          text="Go deeper"
+          as="h2"
+          className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
+          highlight={[{ text: "deeper", className: "italic gradient-text-animated" }]}
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
           {exploreItems.map((item, i) => (

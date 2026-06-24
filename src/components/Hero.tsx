@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import ResumeModal from "./ResumeModal";
 import AuroraBackground from "./AuroraBackground";
 import HeroBrowserMockups from "./HeroBrowserMockups";
+import ScrollText from "@/components/ui/scroll-text";
 
 /* ── Icons ─────────────────────────────────────── */
 function MailIcon() {
@@ -91,23 +92,23 @@ export default function Hero() {
             </motion.div>
 
             {/* Heading */}
-            <motion.h1
-              variants={fadeUp}
+            <ScrollText
+              as="h1"
+              text="Building intelligent web experiences that matter."
               className="font-serif font-normal text-[clamp(44px,8vw,96px)] leading-[1.0] tracking-[-0.03em] text-[#f0f0f5] mb-7"
-            >
-              Building <em className="italic gradient-text-animated">intelligent</em> web
-              <br />
-              experiences that matter.
-            </motion.h1>
+              letterAnime={false}
+              blur={12}
+              staggerDelay={0.04}
+              highlight={[{ text: "intelligent", className: "italic gradient-text-animated" }]}
+            />
 
             {/* Subtitle */}
-            <motion.p
-              variants={fadeUp}
+            <ScrollText
+              as="p"
+              text="I craft full-stack applications powered by AI, turning complex problems into elegant, user-centric solutions. MERN · Python · LLMs."
               className="text-[clamp(15px,1.8vw,18px)] text-white/55 max-w-[640px] mx-auto leading-[1.75] mb-10 sm:mb-20"
-            >
-              I craft full-stack applications powered by AI, turning complex problems
-              into elegant, user-centric solutions. MERN · Python · LLMs.
-            </motion.p>
+              delay={0.3}
+            />
 
             {/* CTAs */}
             <motion.div variants={fadeUp} className="flex gap-3 flex-wrap justify-center">

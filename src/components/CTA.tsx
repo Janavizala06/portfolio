@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import ScrollText from '@/components/ui/scroll-text';
 
 const reveal = {
   hidden: { opacity: 0, y: 30 },
@@ -36,20 +37,20 @@ export default function CTA() {
         Open to work · Full-time &amp; Freelance
       </motion.div>
 
-      <motion.h2 variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
-        className="relative z-[2] font-serif text-[clamp(40px,7vw,80px)] font-normal tracking-[-0.03em] leading-[1.1] mb-[18px] flex flex-col items-center">
-        <span className="shimmer-text" style={{ '--placeholder-length': 12 } as React.CSSProperties}>From concept</span>
-        <span className="flex items-center gap-2">
-          <span className="shimmer-text" style={{ '--placeholder-length': 3 } as React.CSSProperties}>to</span>
-          <em className="italic shimmer-text" style={{ '--placeholder-length': 9, '--chosen': 'var(--clock)' } as React.CSSProperties}>creation.</em>
-        </span>
-        <span className="shimmer-text" style={{ '--placeholder-length': 21 } as React.CSSProperties}>Let&apos;s make it happen!</span>
-      </motion.h2>
+      <ScrollText
+        text="From concept to creation. Let's make it happen!"
+        as="h2"
+        className="relative z-[2] font-serif text-[clamp(40px,7vw,80px)] font-normal tracking-[-0.03em] leading-[1.1] mb-[18px] shimmer-text"
+        lineAnime
+        highlight={[{ text: 'creation.', className: 'italic' }]}
+      />
 
-      <motion.p variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
-        className="relative z-[2] text-[15px] text-white/60 max-w-[420px] leading-[1.7] mb-11">
-        I&apos;m available for full-time roles &amp; internships. I thrive on building AI-powered web applications and delivering seamless user experiences.
-      </motion.p>
+      <ScrollText
+        text="I'm available for full-time roles & internships. I thrive on building AI-powered web applications and delivering seamless user experiences."
+        as="p"
+        className="relative z-[2] text-[15px] text-white/60 max-w-[420px] leading-[1.7] mb-11"
+        delay={0.2}
+      />
 
       <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
         className="relative z-[2] flex gap-3 flex-wrap justify-center">

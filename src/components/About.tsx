@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { stackItems } from "@/data";
 import { useTilt3d } from "@/hooks/useTilt3d";
 import { useState, useCallback } from "react";
+import ScrollText from '@/components/ui/scroll-text';
 
 /* ── Reveal variants ──────────────────────────── */
 const reveal = {
@@ -51,10 +52,12 @@ export default function About() {
           className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-2.5">
           About
         </motion.p>
-        <motion.h2 variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
-          className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]">
-          Builder, not just <em className="italic text-white/55">developer</em>
-        </motion.h2>
+        <ScrollText
+          text="Builder, not just developer"
+          as="h2"
+          className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
+          highlight={[{ text: "developer", className: "italic text-white/55" }]}
+        />
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">

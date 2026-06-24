@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 const Globe = dynamic(() => import("./ui/Earth").then((mod) => mod.Earth), { ssr: false });
 import { Sparkles } from "./ui/Sparkles";
 import { Spotlight, SpotLightItem } from "./ui/spotlight";
+import ScrollText from "@/components/ui/scroll-text";
 
 
 /* ── Reveal variants ──────────────────────────── */
@@ -639,16 +640,12 @@ export default function KnowAboutMe() {
             "rgba(0, 150, 255, 0.12)",
             "rgba(0, 100, 200, 0.08)",
           ]} />
-          <motion.h3
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }}
+          <ScrollText
+            text="Where I've been"
+            as="h3"
             className="font-serif text-[clamp(40px,5vw,64px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
-          >
-            Where I&apos;ve{" "}
-            <em className="italic gradient-text-animated">been</em>
-          </motion.h3>
+            highlight={[{ text: "been", className: "italic gradient-text-animated" }]}
+          />
 
           {/* Card 1: Globe + Education */}
           <SpotLightItem className="mb-3.5">
@@ -851,15 +848,15 @@ export default function KnowAboutMe() {
 
         {/* ── Bento Grid ─────────────────────────────── */}
         <div className="mt-14 sm:mt-24">
-          <motion.h3
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] as const }}
+          <ScrollText
+            text="Builder, not just a coder"
+            as="h3"
             className="font-serif text-[clamp(40px,5vw,64px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
-          >
-            Builder, not just <em className="italic gradient-text-animated">a coder</em>
-          </motion.h3>
+            highlight={[
+              { text: "a", className: "italic gradient-text-animated" },
+              { text: "coder", className: "italic gradient-text-animated" },
+            ]}
+          />
 
           <div className="grid grid-cols-1 gap-3.5">
             {/* Stack — full width with luminous light effect */}

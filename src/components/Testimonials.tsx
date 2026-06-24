@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import ScrollText from '@/components/ui/scroll-text';
 import { testimonials } from "@/data";
 import AuroraBackground from "./AuroraBackground";
 
@@ -22,10 +23,12 @@ export default function Testimonials() {
           className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-2.5">
           Experience
         </motion.p>
-        <motion.h2 variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
-          className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]">
-          Work & <em className="italic gradient-text-animated">volunteer</em>
-        </motion.h2>
+        <ScrollText
+          text="Work & volunteer"
+          as="h2"
+          className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
+          highlight={[{ text: "volunteer", className: "italic gradient-text-animated" }]}
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-3.5">
           {testimonials.map((t, i) => (

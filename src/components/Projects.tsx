@@ -5,6 +5,7 @@ import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll, MotionValue } from "framer-motion";
 import { projects } from "@/data";
 import AuroraBackground from "./AuroraBackground";
+import ScrollText from "@/components/ui/scroll-text";
 
 /* ─── Single stacking card ─────────────────────────────── */
 interface CardProps {
@@ -130,16 +131,13 @@ export default function Projects() {
           >
             Selected Work
           </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+          <ScrollText
+            text="Projects that shipped"
+            as="h2"
             className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5]"
-          >
-            Projects that{" "}
-            <em className="italic gradient-text-animated">shipped</em>
-          </motion.h2>
+            direction="up"
+            highlight={[{ text: "shipped", className: "italic gradient-text-animated" }]}
+          />
           <p className="mt-3 text-[13px] text-white/30">Scroll down to explore ↓</p>
         </div>
       </div>
