@@ -1672,8 +1672,14 @@ body {
 .light-button a.bt:hover .light-holder .light {
   background: linear-gradient(
     180deg,
-    rgba(167, 139, 250, 0.4) 0%,
+    rgba(180, 150, 255, 0.9) 0%,
+    rgba(167, 139, 250, 0.5) 40%,
     rgba(255, 255, 255, 0) 75%,
     rgba(255, 255, 255, 0) 100%
   );
+}
+
+.light-button a.bt:hover .light-holder .dot {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(180, 150, 255, 0.8);
 }
