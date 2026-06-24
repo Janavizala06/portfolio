@@ -487,15 +487,7 @@ export default function KnowAboutMe() {
                 I believe in waking up each day eager to learn, build, and make an impact!
               </p>
 
-              {/* Social icons - restore normal cursor here */}    <p className="text-[14.5px] text-white/60 leading-[1.8] mb-5">
-                Currently pursuing B.Tech in Computer Engineering at MBIT (CVM University)
-                with a CGPA of 8.98. Former AI intern at Flaunch and Full Stack trainee at IBM.
-              </p>
-              <p className="text-[14.5px] text-white/60 leading-[1.8] mb-8">
-                I believe in waking up each day eager to learn, build, and make an impact!
-              </p>
-
-              {/* Social icons — restore normal cursor here */}
+              {/* Social icons - restore normal cursor here */}
               <div className="flex items-center gap-4 mb-8" style={{ cursor: "auto" }}>
                 {/* LinkedIn */}
                 <a href="https://linkedin.com/in/janavi-zala-226117288" target="_blank" rel="noopener noreferrer"
