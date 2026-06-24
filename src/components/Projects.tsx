@@ -134,7 +134,7 @@ export default function Projects() {
           <ScrollText
             text="Projects that shipped"
             as="h2"
-            className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5]"
+            className="font-serif text-[clamp(40px,5vw,64px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5]"
             direction="up"
             highlight={[{ text: "shipped", className: "italic gradient-text-animated" }]}
           />
