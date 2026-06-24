@@ -113,7 +113,7 @@ export default function Projects() {
       id="projects" 
       className="relative z-10 bg-[#08080d]"
     >
-      <div className="py-16 sm:py-24 relative section-blend overflow-hidden">
+      <div className="pt-16 sm:pt-24 pb-4 sm:pb-8 relative section-blend overflow-hidden">
         <AuroraBackground
           layout="center"
           colors={[
