@@ -95,7 +95,7 @@ export default function Hero() {
             <ScrollText
               as="h1"
               text="Building intelligent web <br/> experiences that matter."
-              className="font-serif font-normal text-[clamp(44px,8vw,96px)] leading-[1.0] tracking-[-0.03em] text-[#f0f0f5] mb-7 text-center"
+              className="font-serif font-normal text-[clamp(44px,8vw,96px)] leading-[1.15] tracking-[-0.03em] text-[#f0f0f5] mb-7 text-center"
               letterAnime={false}
               blur={12}
               staggerDelay={0.04}
