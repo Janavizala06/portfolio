@@ -122,7 +122,7 @@ export default function Projects() {
             "rgba(124, 58, 237, 0.32)",
           ]}
         />
-        <div className="max-w-[1080px] mx-auto px-4 sm:px-7 relative z-[1]">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-10 relative z-[1]">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
