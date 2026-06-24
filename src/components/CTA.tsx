@@ -20,7 +20,7 @@ export default function CTA() {
   const otwItems = Array(12).fill("OPEN TO WORK ·");
 
   return (
-    <section id="cta" className="pt-[60px] sm:pt-[120px] pb-4 sm:pb-6 px-4 sm:px-6 flex flex-col items-center justify-center text-center overflow-hidden relative section-blend">
+    <section id="cta" className="pt-8 sm:pt-12 pb-4 sm:pb-6 px-4 sm:px-6 flex flex-col items-center justify-center text-center overflow-hidden relative section-blend">
       {/* CTA mesh glow */}
       <div className="absolute -inset-[30%] z-0 pointer-events-none blur-[50px] animate-mesh"
         style={{
