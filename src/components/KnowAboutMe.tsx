@@ -426,7 +426,7 @@ export default function KnowAboutMe() {
               />
 
               {/* Dark body — wide & taller */}
-              <div className="w-[40px] h-[200px] mx-auto relative overflow-hidden"
+              <div className="w-[40px] h-[260px] mx-auto relative overflow-hidden"
                 style={{
                   background: "linear-gradient(to right, #303040 0%, #222230 15%, #1a1a26 35%, #141420 50%, #18182a 65%, #1e1e2c 85%, #2a2a38 100%)",
                   boxShadow: "4px 0 14px rgba(0,0,0,0.3), -3px 0 10px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.25)",
