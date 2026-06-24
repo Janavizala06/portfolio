@@ -95,7 +95,7 @@ export default function Hero() {
             <ScrollText
               as="h1"
               text="Building intelligent web experiences that matter."
-              className="font-serif font-normal text-[clamp(44px,8vw,96px)] leading-[1.0] tracking-[-0.03em] text-[#f0f0f5] mb-7 justify-center"
+              className="font-serif font-normal text-[clamp(44px,8vw,96px)] leading-[1.0] tracking-[-0.03em] text-[#f0f0f5] mb-7 text-center"
               letterAnime={false}
               blur={12}
               staggerDelay={0.04}
@@ -106,7 +106,7 @@ export default function Hero() {
             <ScrollText
               as="p"
               text="I craft full-stack applications powered by AI, turning complex problems into elegant, user-centric solutions. MERN · Python · LLMs."
-              className="text-[clamp(15px,1.8vw,18px)] text-white/55 max-w-[640px] mx-auto leading-[1.75] mb-10 sm:mb-20 justify-center"
+              className="text-[clamp(15px,1.8vw,18px)] text-white/55 max-w-[640px] mx-auto leading-[1.75] mb-10 sm:mb-20 text-center"
               delay={0.3}
             />
 
