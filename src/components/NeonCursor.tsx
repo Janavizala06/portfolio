@@ -58,7 +58,7 @@ const NeonCursor = ({ visible }: NeonCursorProps) => {
   const handleMouseOver = useCallback(
     (e) => {
       const target = e.target;
-      if (target.matches('a, button, input, [data-hover="true"]')) {
+      if (target && typeof target.matches === 'function' && target.matches('a, button, input, [data-hover="true"]')) {
         setIsHovering(true);
         void trailControls.start({
           scale: 1.5,

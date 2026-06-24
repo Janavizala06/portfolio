@@ -22,7 +22,7 @@ export default function CursorManager() {
     if (!target) return;
 
     // Walk up the DOM tree to find the nearest section with a matching ID
-    const section = target.closest('section');
+    const section = typeof target.closest === 'function' ? target.closest('section') : null;
     const isNeon = section && NEON_SECTIONS.includes(section.id);
     
     setActiveSection(prev => {

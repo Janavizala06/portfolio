@@ -198,7 +198,7 @@ const useCanvasCursor = (visible: boolean = true) => {
   useEffect(() => {
     if (ctx) {
       ctx.running = visible;
-      if (visible) {
+      if (visible && lines.length > 0) {
         render();
       }
     }
