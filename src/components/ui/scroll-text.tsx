@@ -137,7 +137,6 @@ export default function ScrollText({
       whileInView="visible"
       viewport={{ once, amount: threshold }}
       className={className}
-      style={{ overflow: 'hidden' }}
     >
       {tokens.map((token: string, i: number) => {
         if (token === "<br/>") {
