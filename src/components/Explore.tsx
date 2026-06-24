@@ -56,7 +56,7 @@ function LightButton({ title, href, delay }: { title: string, href: string, dela
 
 export default function Explore() {
   return (
-    <section className="py-16 sm:py-24 relative z-10 section-blend overflow-hidden">
+    <section className="pt-16 sm:pt-24 pb-4 sm:pb-8 relative z-10 section-blend overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-10 relative z-[2]">
         <motion.p
           variants={reveal}
@@ -70,11 +70,11 @@ export default function Explore() {
         <ScrollText
           text="Go deeper"
           as="h2"
-          className="font-serif text-[clamp(40px,5vw,64px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
+          className="font-serif text-[clamp(40px,5vw,64px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[24px]"
           highlight={[{ text: "deeper", className: "italic gradient-text-animated" }]}
         />
 
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 pt-10">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-16">
           {exploreItems.map((item, i) => (
             <LightButton key={item.title} title={item.title} href={item.href} delay={i * 0.1} />
           ))}
