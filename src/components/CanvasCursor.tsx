@@ -7,7 +7,7 @@ interface CanvasCursorProps {
 }
 
 const CanvasCursor = ({ visible }: CanvasCursorProps) => {
-  useCanvasCursor();
+  useCanvasCursor(visible);
 
   return (
     <canvas

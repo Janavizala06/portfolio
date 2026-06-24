@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-const useCanvasCursor = () => {
+const useCanvasCursor = (visible: boolean = true) => {
   function n(e) {
     this.init(e || {});
   }
@@ -136,7 +136,7 @@ const useCanvasCursor = () => {
     E = {
       debug: true,
       friction: 0.5,
-      trails: 20,
+      trails: 12,
       size: 50,
       dampening: 0.25,
       tension: 0.98,
@@ -194,6 +194,15 @@ const useCanvasCursor = () => {
       });
     };
   }, []);
+
+  useEffect(() => {
+    if (ctx) {
+      ctx.running = visible;
+      if (visible) {
+        render();
+      }
+    }
+  }, [visible]);
 };
 
 export default useCanvasCursor;

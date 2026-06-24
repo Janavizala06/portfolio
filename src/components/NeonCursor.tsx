@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, useMotionValue, useSpring } from 'framer-motion';
 import './NeonCursor.css';
 
 interface NeonCursorProps {
@@ -10,19 +10,27 @@ interface NeonCursorProps {
 }
 
 const NeonCursor = ({ visible }: NeonCursorProps) => {
-  const [position, setPosition] = useState({
-    x: 0,
-    y: 0,
-    scale: 1,
-    opacity: 1,
-  });
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+  
+  const springConfig = { damping: 20, stiffness: 400, mass: 0.5 };
+  const trailSpringConfig = { damping: 30, stiffness: 200, mass: 0.8 };
+  const glowSpringConfig = { damping: 40, stiffness: 150, mass: 1 };
+
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
+  const trailXSpring = useSpring(cursorX, trailSpringConfig);
+  const trailYSpring = useSpring(cursorY, trailSpringConfig);
+  const glowXSpring = useSpring(cursorX, glowSpringConfig);
+  const glowYSpring = useSpring(cursorY, glowSpringConfig);
+
   const [isClicking, setIsClicking] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const trailControls = useAnimation();
   const glowControls = useAnimation();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  /* ── Hue oscillator — same params as canvas cursor ── */
+  /* ── Hue oscillator ── */
   const phaseRef = useRef(Math.random() * 2 * Math.PI);
   const rafRef = useRef<number>(0);
 
@@ -40,12 +48,9 @@ const NeonCursor = ({ visible }: NeonCursorProps) => {
   }, []);
 
   const handleMouseMove = useCallback((e) => {
-    setPosition((prev) => ({
-      ...prev,
-      x: e.clientX,
-      y: e.clientY,
-    }));
-  }, []);
+    cursorX.set(e.clientX);
+    cursorY.set(e.clientY);
+  }, [cursorX, cursorY]);
 
   const handleMouseDown = () => setIsClicking(true);
   const handleMouseUp = () => setIsClicking(false);
@@ -81,11 +86,11 @@ const NeonCursor = ({ visible }: NeonCursorProps) => {
   }, [trailControls, glowControls]);
 
   useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
-    window.addEventListener('mouseover', handleMouseOver);
-    window.addEventListener('mouseout', handleMouseOut);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('mousedown', handleMouseDown, { passive: true });
+    window.addEventListener('mouseup', handleMouseUp, { passive: true });
+    window.addEventListener('mouseover', handleMouseOver, { passive: true });
+    window.addEventListener('mouseout', handleMouseOut, { passive: true });
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
@@ -108,31 +113,25 @@ const NeonCursor = ({ visible }: NeonCursorProps) => {
       {/* Main cursor dot */}
       <motion.div
         className='cursor-main'
-        animate={{
-          x: position.x - 10,
-          y: position.y - 10,
-          scale: isClicking ? 0.8 : isHovering ? 1.2 : 1,
+        style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
+          translateX: '-50%',
+          translateY: '-50%',
         }}
-        transition={{
-          type: 'spring',
-          damping: 20,
-          stiffness: 400,
-          mass: 0.5,
+        animate={{
+          scale: isClicking ? 0.8 : isHovering ? 1.2 : 1,
         }}
       />
 
       {/* Trailing circle */}
       <motion.div
         className='cursor-trail'
-        animate={{
-          x: position.x - 20,
-          y: position.y - 20,
-        }}
-        transition={{
-          type: 'spring',
-          damping: 30,
-          stiffness: 200,
-          mass: 0.8,
+        style={{
+          x: trailXSpring,
+          y: trailYSpring,
+          translateX: '-50%',
+          translateY: '-50%',
         }}
         initial={false}
       />
@@ -140,15 +139,11 @@ const NeonCursor = ({ visible }: NeonCursorProps) => {
       {/* Outer glow */}
       <motion.div
         className='cursor-glow'
-        animate={{
-          x: position.x - 30,
-          y: position.y - 30,
-        }}
-        transition={{
-          type: 'spring',
-          damping: 40,
-          stiffness: 150,
-          mass: 1,
+        style={{
+          x: glowXSpring,
+          y: glowYSpring,
+          translateX: '-50%',
+          translateY: '-50%',
         }}
         initial={false}
       />
