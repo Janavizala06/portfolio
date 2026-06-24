@@ -709,15 +709,15 @@ export default function KnowAboutMe() {
                 </div>
               </div>
               <div className="p-6 sm:p-8 flex flex-col justify-center border-l border-white/[0.06]">
-                <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-4 w-max">Education</h3>
-                <h4 className="text-[26px] sm:text-[30px] font-bold text-white mb-1">CVM University, MBIT</h4>
+                <h3 className="font-serif text-[clamp(28px,3.5vw,40px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-4 w-max">Education</h3>
+                <h4 className="text-[26px] sm:text-[30px] font-bold text-white/70 mb-1">CVM University, MBIT</h4>
                 <p className="text-[17px] text-white/70 mb-1">B.Tech - Computer Engineering</p>
                 <p className="text-[13px] text-white/40 mb-10">2023 - 2027</p>
 
                 <div className="mb-6 flex flex-col">
-                  <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-1 w-max">Location</h3>
-                  <h4 className="text-[26px] sm:text-[30px] font-bold text-white leading-[1.2]">Anand, Gujarat 🇮🇳</h4>
-                  <h4 className="text-[26px] sm:text-[30px] font-bold text-white leading-[1.2]">22°36′N 72°54′E</h4>
+                  <h3 className="font-serif text-[clamp(28px,3.5vw,40px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-1 w-max">Location</h3>
+                  <h4 className="text-[26px] sm:text-[30px] font-bold text-white/70 leading-[1.2]">Anand, Gujarat 🇮🇳</h4>
+                  <h4 className="text-[26px] sm:text-[30px] font-bold text-white/70 leading-[1.2]">22°36′N 72°54′E</h4>
                 </div>
               </div>
             </motion.div>
@@ -758,7 +758,7 @@ export default function KnowAboutMe() {
               viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.15 }}
               className="wib-card p-5 sm:p-8"
             >
-              <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Achievements &amp; Recognition</h3>
+              <h3 className="font-serif text-[clamp(28px,3.5vw,40px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Achievements &amp; Recognition</h3>
               <div className="wib-grid-achievements">
                 {[
                   { icon: "🥉", title: "DevSummit 2026", sub: "2nd Runner-Up, 10K Prize",
@@ -792,7 +792,7 @@ export default function KnowAboutMe() {
                 viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.2 }}
                 className="wib-card p-6 sm:p-7 relative overflow-hidden h-full"
               >
-                <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Experience</h3>
+                <h3 className="font-serif text-[clamp(28px,3.5vw,40px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Experience</h3>
                 <div className="space-y-5">
                   {[
                     { company: "Hi Lab Solution", role: "Full Stack Intern", year: "2026" },
@@ -823,7 +823,7 @@ export default function KnowAboutMe() {
                 viewport={{ once: true }} transition={{ duration: 0.85, delay: 0.25 }}
                 className="wib-card p-6 sm:p-8 h-full"
               >
-                <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Leadership &amp; Volunteering</h3>
+                <h3 className="font-serif text-[clamp(28px,3.5vw,40px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-6 w-max">Leadership &amp; Volunteering</h3>
                 <div className="space-y-5">
                   {[
                     { role: "Chairperson, ISTE Student Branch", org: "MBIT, 2025-Present" },
