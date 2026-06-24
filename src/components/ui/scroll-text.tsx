@@ -95,11 +95,10 @@ export default function ScrollText({
     [variants, direction, blur]
   );
 
-  // Split text into animatable tokens
   const tokens = useMemo(() => {
     if (lineAnime) return text.split('\n');
     if (letterAnime) return text.split('');
-    return text.split(' ');
+    return text.replace(/<br\s*\/?>/g, ' <br/> ').split(' ').filter(t => t.length > 0);
   }, [text, letterAnime, lineAnime]);
 
   // Determine default stagger
@@ -138,9 +137,12 @@ export default function ScrollText({
       whileInView="visible"
       viewport={{ once, amount: threshold }}
       className={className}
-      style={{ display: 'flex', flexWrap: 'wrap' }}
+      style={{ overflow: 'hidden' }}
     >
       {tokens.map((token: string, i: number) => {
+        if (token === "<br/>") {
+          return <br key={`br-${i}`} />;
+        }
         const highlightClass = getHighlightClass(token);
         return (
           <motion.span
