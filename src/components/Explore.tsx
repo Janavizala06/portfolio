@@ -74,7 +74,7 @@ export default function Explore() {
           highlight={[{ text: "deeper", className: "italic gradient-text-animated" }]}
         />
 
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+        <div className="flex flex-wrap justify-center gap-10 md:gap-24">
           {exploreItems.map((item, i) => (
             <LightButton key={item.title} title={item.title} href={item.href} delay={i * 0.1} />
           ))}
