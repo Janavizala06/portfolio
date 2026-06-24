@@ -57,7 +57,7 @@ function LightButton({ title, href, delay }: { title: string, href: string, dela
 export default function Explore() {
   return (
     <section className="py-16 sm:py-24 relative z-10 section-blend overflow-hidden">
-      <div className="max-w-[1080px] mx-auto px-4 sm:px-7 relative z-[2]">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-10 relative z-[2]">
         <motion.p
           variants={reveal}
           initial="hidden"
@@ -70,7 +70,7 @@ export default function Explore() {
         <ScrollText
           text="Go deeper"
           as="h2"
-          className="font-serif text-[clamp(30px,4.5vw,50px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
+          className="font-serif text-[clamp(40px,5vw,64px)] font-normal tracking-[-0.02em] leading-[1.15] text-[#f0f0f5] mb-[52px]"
           highlight={[{ text: "deeper", className: "italic gradient-text-animated" }]}
         />
 
