@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useTilt3d } from "@/hooks/useTilt3d";
-import AuroraBackground from "./AuroraBackground";
 import ScrollText from '@/components/ui/scroll-text';
 
 const reveal = {
@@ -58,12 +57,6 @@ function LightButton({ title, href, delay }: { title: string, href: string, dela
 export default function Explore() {
   return (
     <section className="py-16 sm:py-24 relative z-10 section-blend overflow-hidden">
-      <AuroraBackground layout="center" colors={[
-        "rgba(124, 58, 237, 0.58)",
-        "rgba(99, 102, 241, 0.45)",
-        "rgba(167, 139, 250, 0.35)",
-      ]} />
-      
       <div className="max-w-[1080px] mx-auto px-4 sm:px-7 relative z-[2]">
         <motion.p
           variants={reveal}
