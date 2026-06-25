@@ -699,7 +699,7 @@ export default function KnowAboutMe() {
 
                 <div className="mb-6 flex flex-col">
                   <h3 className="font-serif text-[clamp(28px,3.5vw,40px)] font-normal tracking-[-0.02em] gradient-text-animated drop-shadow-sm mb-1 w-max">Location</h3>
-                  <h4 className="text-[26px] sm:text-[30px] font-bold text-white/70 leading-[1.2]">Anand, Gujarat 🇮🇳</h4>
+                  <h4 className="text-[26px] sm:text-[30px] font-bold text-white/70 leading-[1.2] mb-2">Anand, Gujarat 🇮🇳</h4>
                   <h4 className="text-[26px] sm:text-[30px] font-bold text-white/70 leading-[1.2]">22°36′N 72°54′E</h4>
                 </div>
               </div>
