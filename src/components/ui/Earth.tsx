@@ -33,6 +33,7 @@ export function Earth({
 }: EarthProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const phiRef = useRef(0);
   const pointerInteraction = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
   const [size, setSize] = useState(560);
@@ -54,7 +55,6 @@ export function Earth({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    let phi = 0;
     let width = size;
     const devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
 
@@ -76,10 +76,10 @@ export function Earth({
       markers,
       onRender: (state) => {
         if (!pointerInteraction.current) {
-          phi += 0.0035;
+          phiRef.current += 0.0035;
         }
 
-        state.phi = phi + pointerInteractionMovement.current;
+        state.phi = phiRef.current + pointerInteractionMovement.current;
         state.width = width * devicePixelRatio;
         state.height = width * devicePixelRatio;
       },
