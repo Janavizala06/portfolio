@@ -474,17 +474,8 @@ export default function KnowAboutMe() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
             >
-              <p className="text-[16px] md:text-[18px] text-white/60 leading-[1.9] mb-6">
-                I&apos;m Janavi Zala, a proactive full-stack developer and AI enthusiast
-                passionate about building intelligent web experiences. From MERN stack apps
-                to LLM-powered platforms, I thrive on turning complex problems into elegant solutions.
-              </p>
-              <p className="text-[16px] md:text-[18px] text-white/60 leading-[1.9] mb-6">
-                Currently pursuing B.Tech in Computer Engineering at MBIT (CVM University)
-                with a CGPA of 8.98. Former AI intern at Flaunch and Full Stack trainee at IBM.
-              </p>
               <p className="text-[16px] md:text-[18px] text-white/60 leading-[1.9] mb-8">
-                I believe in waking up each day eager to learn, build, and make an impact!
+                I&apos;m Janavi Zala, a Full-Stack Developer focused on building innovative, user-centric web experiences. I combine modern web technologies with AI to create scalable products that are clean, practical, and impactful. Every project is an opportunity to learn, innovate, and solve meaningful problems.
               </p>
 
               {/* Social icons - restore normal cursor here */}
