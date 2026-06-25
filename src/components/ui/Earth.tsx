@@ -36,6 +36,7 @@ export function Earth({
   const phiRef = useRef(0);
   const pointerInteraction = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
+  const sizeRef = useRef(560);
   const [size, setSize] = useState(560);
 
   useEffect(() => {
@@ -44,6 +45,7 @@ export function Earth({
 
     const observer = new ResizeObserver(([entry]) => {
       const nextSize = Math.floor(entry.contentRect.width);
+      sizeRef.current = nextSize;
       setSize(nextSize);
     });
 
@@ -55,13 +57,12 @@ export function Earth({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    let width = size;
     const devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
 
     const globe = createGlobe(canvas, {
       devicePixelRatio,
-      width: width * devicePixelRatio,
-      height: width * devicePixelRatio,
+      width: sizeRef.current * devicePixelRatio,
+      height: sizeRef.current * devicePixelRatio,
       phi: 0,
       theta,
       dark,
@@ -80,8 +81,8 @@ export function Earth({
         }
 
         state.phi = phiRef.current + pointerInteractionMovement.current;
-        state.width = width * devicePixelRatio;
-        state.height = width * devicePixelRatio;
+        state.width = sizeRef.current * devicePixelRatio;
+        state.height = sizeRef.current * devicePixelRatio;
       },
     });
 
@@ -101,7 +102,6 @@ export function Earth({
     mapSamples,
     markerColor,
     scale,
-    size,
     theta,
   ]);
 
