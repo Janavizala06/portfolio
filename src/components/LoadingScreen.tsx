@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 /* ── Sparkle stars ───────────────────────────────────── */
 interface Star {
@@ -220,9 +221,12 @@ export default function LoadingScreen({
                         "radial-gradient(circle at 50% 80%, rgba(99,102,241,0.15) 0%, transparent 70%)",
                     }}
                   />
-                  <img
+                  <Image
                     src="/girl-avatar.png"
                     alt="Janavi Zala"
+                    width={160}
+                    height={160}
+                    priority
                     className="relative w-[120px] sm:w-[160px] h-auto object-contain"
                     style={{
                       filter: "drop-shadow(0 0 20px rgba(99,102,241,0.2))",

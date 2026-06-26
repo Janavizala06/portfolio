@@ -6,6 +6,7 @@ import { useTransform, motion, useScroll, MotionValue } from "framer-motion";
 import { projects } from "@/data";
 import AuroraBackground from "./AuroraBackground";
 import ScrollText from "@/components/ui/scroll-text";
+import Image from "next/image";
 
 /* ─── Single stacking card ─────────────────────────────── */
 interface CardProps {
@@ -38,14 +39,18 @@ function Card({ index, project: p, progress, range, targetScale }: CardProps) {
           transformOrigin: "top center", // Explicitly ensure transform origin is top
         }}
       >
-        {/* Left — image */}
+        {/* Left ✨ image */}
         <div className="project-image">
-          <motion.img
-            src={p.image}
-            alt={p.title}
-            className="w-full h-full object-cover"
-            style={{ scale: imageScale }}
-          />
+          <motion.div className="w-full h-full relative" style={{ scale: imageScale }}>
+            <Image
+              src={p.image}
+              alt={p.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority={index === 0}
+            />
+          </motion.div>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0e0e14]/70 md:block hidden" />
         </div>
 
@@ -88,7 +93,7 @@ function Card({ index, project: p, progress, range, targetScale }: CardProps) {
                 key={t.name}
                 className="inline-flex items-center gap-1.5 text-[12.5px] font-medium px-3 py-1.5 rounded-md bg-white/[0.04] border border-white/[0.07] text-white/55"
               >
-                {t.logo && <img src={t.logo} alt={t.name} className="w-4 h-4" />}
+                {t.logo && <Image src={t.logo} alt={t.name} width={16} height={16} className="w-4 h-4 object-contain" />}
                 {t.name}
               </span>
             ))}

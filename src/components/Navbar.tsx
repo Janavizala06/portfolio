@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navItems, navSections } from "@/data";
 import { useActiveSection } from "@/hooks/useActiveSection";
+import Image from "next/image";
 
 function getGreeting(): { text: string; icon: string } {
   const hour = new Date().getHours();
@@ -34,9 +35,9 @@ export default function Navbar() {
         shadow-[0_4px_30px_rgba(0,0,0,0.5),0_1px_0_0_rgba(255,255,255,0.06)_inset,0_0_0_0.5px_rgba(255,255,255,0.04)]
         max-w-[calc(100vw-32px)]"
     >
-      {/* Logo — always visible */}
-      <a href="#hero" className="flex items-center px-3 py-[5px] no-underline">
-        <img src="/logo2.png" alt="JZ" className="h-[22px] w-auto object-contain" />
+      {/* Logo - always visible */}
+      <a href="#" className="flex-shrink-0 flex items-center relative z-[100] h-[22px]">
+        <Image src="/logo2.png" alt="JZ" width={50} height={22} priority className="h-[22px] w-auto object-contain" />
       </a>
 
       {/* Separator */}

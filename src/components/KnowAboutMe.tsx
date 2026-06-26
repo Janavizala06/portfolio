@@ -10,6 +10,7 @@ const Globe = dynamic(() => import("./ui/Earth").then((mod) => mod.Earth), { ssr
 import { Sparkles } from "./ui/Sparkles";
 import { Spotlight, SpotLightItem } from "./ui/spotlight";
 import ScrollText from "@/components/ui/scroll-text";
+import Image from "next/image";
 
 
 /* ── Reveal variants ──────────────────────────── */
@@ -584,10 +585,11 @@ export default function KnowAboutMe() {
                     }}
                   />
                   {/* Logo */}
-                  <img
+                  <Image
                     src="/logo.png"
                     alt="JZ Logo"
-                    className="relative w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                     style={{
                       filter: "drop-shadow(0 0 20px rgba(99,102,241,0.4)) drop-shadow(0 0 50px rgba(139,92,246,0.2))",
                     }}
@@ -596,7 +598,7 @@ export default function KnowAboutMe() {
 
                 {/* Layer 2: Photo reveal */}
                 <motion.div className="absolute inset-0 z-[2]" style={{ clipPath }}>
-                  <img src="/avatar.png" alt="Janavi Zala" className="w-full h-full object-cover" />
+                  <Image src="/avatar.png" alt="Janavi Zala" fill className="object-cover" />
                 </motion.div>
 
                 {/* Blue border glow overlay */}
