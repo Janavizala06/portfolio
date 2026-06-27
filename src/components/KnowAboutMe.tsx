@@ -679,7 +679,7 @@ export default function KnowAboutMe() {
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_center,#3273ff,transparent_90%)] opacity-40" />
                   <div className="absolute -left-1/2 top-1/2 aspect-[1/0.7] w-[200%] rounded-[10%] border-t border-[#163474] bg-[#08132b]" />
                   <Sparkles
-                    density={1150}
+                    density={150}
                     color="#dbeafe"
                     size={1.35}
                     minSize={0.35}

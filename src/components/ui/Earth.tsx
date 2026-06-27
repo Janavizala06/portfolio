@@ -25,7 +25,7 @@ export function Earth({
   dark = 1,
   scale = 1.08,
   diffuse = 1.2,
-  mapSamples = 5000,
+  mapSamples = 2000,
   mapBrightness = 6,
   baseColor = [0.4, 0.6509, 1],
   markerColor = [0.16, 0.65, 1],
