@@ -7,6 +7,7 @@ import { projects } from "@/data";
 import AuroraBackground from "./AuroraBackground";
 import ScrollText from "@/components/ui/scroll-text";
 import Image from "next/image";
+import { ExternalLink, PlayCircle } from "lucide-react";
 
 /* ─── Single stacking card ─────────────────────────────── */
 interface CardProps {
@@ -65,9 +66,24 @@ function Card({ index, project: p, progress, range, targetScale }: CardProps) {
               <span className="ml-auto text-base font-mono text-white/20">{p.num}</span>
             </div>
 
-            <h3 className={`font-serif text-[clamp(28px,3.5vw,42px)] font-bold tracking-tight leading-[1.15] mb-4 ${["text-[#facc15]", "text-[#fb923c]", "text-[#34d399]", "text-[#f472b6]", "text-[#60a5fa]", "text-[#a78bfa]"][index % 6]}`}>
-              {p.title}
-            </h3>
+            <div className="flex flex-wrap items-center gap-4 mb-4">
+              <h3 className={`font-serif text-[clamp(28px,3.5vw,42px)] font-bold tracking-tight leading-[1.15] ${["text-[#facc15]", "text-[#fb923c]", "text-[#34d399]", "text-[#f472b6]", "text-[#60a5fa]", "text-[#a78bfa]"][index % 6]}`}>
+                {p.title}
+              </h3>
+              {p.liveDemo && (
+                <a href={p.liveDemo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white text-sm font-semibold whitespace-nowrap shadow-sm backdrop-blur-sm">
+                  <ExternalLink className="w-4 h-4" />
+                  Live Demo
+                </a>
+              )}
+              {p.videoDemo && (
+                <a href={p.videoDemo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white text-sm font-semibold whitespace-nowrap shadow-sm backdrop-blur-sm">
+                  <PlayCircle className="w-4 h-4" />
+                  Video
+                </a>
+              )}
+            </div>
+            
             <p className="text-[15.5px] text-white/50 leading-[1.75] mb-7 line-clamp-3">
               {p.fullDesc}
             </p>

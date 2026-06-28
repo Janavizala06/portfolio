@@ -7,6 +7,8 @@ export interface Project {
   desc: string; fullDesc: string; image: string;
   highlights: { icon: string; text: string }[];
   tags: { name: string; logo?: string }[];
+  liveDemo?: string;
+  videoDemo?: string;
 }
 export interface BlogPost { date: string; read: string; title: string; excerpt: string }
 export interface Testimonial { avatar: string; name: string; role: string; quote: string }
@@ -107,9 +109,10 @@ export const projects: Project[] = [
     type: "AI Platform",
     title: "Flavour with Fusion",
     period: "2024",
-    desc: "AI-Powered Recipe Generation & Smart Meal Planning Platform",
-    fullDesc: "Smart culinary platform that combines AI-powered recipe generation, nutritional analysis, ingredient optimization, and personalized meal planning to create healthier, more diverse, and sustainable dining experiences.",
+    desc: "AI-Powered Recipe Generation & Culinary Discovery Platform",
+    fullDesc: "Smart culinary platform that uses AI to generate personalized recipes based on available ingredients. Features advanced filtering, meal planning, and an intuitive user interface.",
     image: "/projects/flavour_fusion.png",
+    liveDemo: "https://flavour-with-fusion-1.vercel.app/",
     highlights: [
       { icon: "🤖", text: "AI-generated fusion recipes from global cuisines" },
       { icon: "📊", text: "Nutritional analysis & health-focused meal planning" },
@@ -133,6 +136,7 @@ export const projects: Project[] = [
     desc: "Smart Digital Library & Resource Management Platform",
     fullDesc: "Full-stack library management solution that streamlines inventory management, lending operations, user engagement, and analytics through automated workflows, role-based access control, and real-time resource tracking.",
     image: "/projects/libtrack.png",
+    liveDemo: "https://digitallib.vercel.app/",
     highlights: [
       { icon: "📖", text: "Comprehensive catalog, search & resource tracking" },
       { icon: "⚡", text: "Automated lending, returns & overdue fine management" },
@@ -158,6 +162,7 @@ export const projects: Project[] = [
     desc: "LLM-Powered Code Analysis & Error Explanation Platform",
     fullDesc: "Intelligent code analysis platform leveraging LLM technology to provide contextual error explanations, interactive debugging assistance, and real-time code insights across multiple programming languages.",
     image: "/projects/codetalk.png",
+    liveDemo: "https://codetalk-2.vercel.app/",
     highlights: [
       { icon: "🧠", text: "LLM-powered code understanding" },
       { icon: "⚡", text: "Real-time analysis & instant feedback" },
@@ -181,6 +186,7 @@ export const projects: Project[] = [
     desc: "Real-Time Endpoint Monitoring & Enterprise Asset Management Platform",
     fullDesc: "Centralized IT infrastructure monitoring platform that provides real-time endpoint visibility, asset tracking, network discovery, and license compliance across enterprise LAN environments.",
     image: "/projects/infraeye.png",
+    videoDemo: "#",
     highlights: [
       { icon: "🖥️", text: "Real-time endpoint monitoring & alerts" },
       { icon: "📊", text: "Hardware, software & license inventory" },
