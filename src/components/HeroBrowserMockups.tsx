@@ -237,14 +237,14 @@ export default function HeroBrowserMockups({ onResume }: { onResume: () => void 
         <MarqueeRow right duration={38} offset={40}>
           <Card url="mail.google.com"             href="mailto:janavi0612@gmail.com"             ><GmailContent /></Card>
           <Card url="github.com/Janavizala06"     href="https://github.com/Janavizala06"        ><GitHubContent /></Card>
-          <Card url="codetalk-2.vercel.app"       href="https://codetalk-2.vercel.app/"         ><CodeTalkContent /></Card>
+          <Card url="codetalk06.vercel.app"       href="https://codetalk06.vercel.app/"         ><CodeTalkContent /></Card>
           <Card url="janavi-zala · Resume.pdf"   href="resume" onClick={onResume}              ><ResumeContent /></Card>
           <Card url="linkedin.com/in/janavi-zala" href="https://www.linkedin.com/in/janavi-zala/"><LinkedInContent /></Card>
         </MarqueeRow>
 
         {/* ROW 0 ← LEFT   — CodeTalk · LinkedIn · Resume · Gmail · LibTrack */}
         <MarqueeRow duration={32}>
-          <Card url="codetalk-2.vercel.app"       href="https://codetalk-2.vercel.app/"         ><CodeTalkContent /></Card>
+          <Card url="codetalk06.vercel.app"       href="https://codetalk06.vercel.app/"         ><CodeTalkContent /></Card>
           <Card url="linkedin.com/in/janavi-zala" href="https://www.linkedin.com/in/janavi-zala/"><LinkedInContent /></Card>
           <Card url="janavi-zala · Resume.pdf"   href="resume" onClick={onResume}              ><ResumeContent /></Card>
           <Card url="mail.google.com"             href="mailto:janavi0612@gmail.com"             ><GmailContent /></Card>
@@ -257,14 +257,14 @@ export default function HeroBrowserMockups({ onResume }: { onResume: () => void 
           <Card url="mail.google.com"             href="mailto:janavi0612@gmail.com"             ><GmailContent /></Card>
           <Card url="digitallib.vercel.app"       href="https://digitallib.vercel.app/"         ><LibTrackContent /></Card>
           <Card url="linkedin.com/in/janavi-zala" href="https://www.linkedin.com/in/janavi-zala/"><LinkedInContent /></Card>
-          <Card url="codetalk-2.vercel.app"       href="https://codetalk-2.vercel.app/"         ><CodeTalkContent /></Card>
+          <Card url="codetalk06.vercel.app"       href="https://codetalk06.vercel.app/"         ><CodeTalkContent /></Card>
         </MarqueeRow>
 
         {/* ROW 2 ← LEFT   — Resume · GitHub · CodeTalk · LibTrack · Gmail */}
         <MarqueeRow duration={36} offset={80}>
           <Card url="janavi-zala · Resume.pdf"   href="resume" onClick={onResume}              ><ResumeContent /></Card>
           <Card url="github.com/Janavizala06"     href="https://github.com/Janavizala06"        ><GitHubContent /></Card>
-          <Card url="codetalk-2.vercel.app"       href="https://codetalk-2.vercel.app/"         ><CodeTalkContent /></Card>
+          <Card url="codetalk06.vercel.app"       href="https://codetalk06.vercel.app/"         ><CodeTalkContent /></Card>
           <Card url="digitallib.vercel.app"       href="https://digitallib.vercel.app/"         ><LibTrackContent /></Card>
           <Card url="mail.google.com"             href="mailto:janavi0612@gmail.com"             ><GmailContent /></Card>
         </MarqueeRow>
@@ -275,7 +275,7 @@ export default function HeroBrowserMockups({ onResume }: { onResume: () => void 
           <Card url="digitallib.vercel.app"       href="https://digitallib.vercel.app/"         ><LibTrackContent /></Card>
           <Card url="github.com/Janavizala06"     href="https://github.com/Janavizala06"        ><GitHubContent /></Card>
           <Card url="janavi-zala · Resume.pdf"   href="resume" onClick={onResume}              ><ResumeContent /></Card>
-          <Card url="codetalk-2.vercel.app"       href="https://codetalk-2.vercel.app/"         ><CodeTalkContent /></Card>
+          <Card url="codetalk06.vercel.app"       href="https://codetalk06.vercel.app/"         ><CodeTalkContent /></Card>
         </MarqueeRow>
 
         {/* ROW 4 ← LEFT   — LibTrack · Resume · Gmail · GitHub · LinkedIn */}
