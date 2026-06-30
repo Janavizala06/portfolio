@@ -162,7 +162,7 @@ export const projects: Project[] = [
     desc: "LLM-Powered Code Analysis & Error Explanation Platform",
     fullDesc: "Intelligent code analysis platform leveraging LLM technology to provide contextual error explanations, interactive debugging assistance, and real-time code insights across multiple programming languages.",
     image: "/projects/codetalk.png",
-    liveDemo: "https://codetalk-1.vercel.app/",
+    liveDemo: "https://codetalk06.vercel.app/",
     highlights: [
       { icon: "🧠", text: "LLM-powered code understanding" },
       { icon: "⚡", text: "Real-time analysis & instant feedback" },
