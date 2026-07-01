@@ -29,11 +29,33 @@ const cursive = Dancing_Script({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://janavizala.me"),
   title: "Janavi Zala — Full Stack Developer & AI Engineer",
-  description: "I craft full-stack applications powered by AI, turning complex problems into elegant, user-centric solutions. MERN · Python · LLMs.",
+  description: "craft full-stack applications powered by AI, turning complex problems into elegant, user-centric solutions.",
   icons: {
     icon: "/logo2.png",
     apple: "/logo2.png",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://janavizala.me",
+    title: "Janavi Zala — Full Stack Developer & AI Engineer",
+    description: "craft full-stack applications powered by AI, turning complex problems into elegant, user-centric solutions.",
+    siteName: "Janavi Zala Portfolio",
+    images: [
+      {
+        url: "/logo2.png",
+        width: 1200,
+        height: 630,
+        alt: "Janavi Zala Portfolio Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Janavi Zala — Full Stack Developer & AI Engineer",
+    description: "craft full-stack applications powered by AI, turning complex problems into elegant, user-centric solutions.",
+    images: ["/logo2.png"],
   },
 };
 
