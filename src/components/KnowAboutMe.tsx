@@ -74,13 +74,13 @@ function BentoCard({ children, className = "", delay = 0 }: {
 function EmailCopy() {
   const [copied, setCopied] = useState(false);
   const copy = useCallback(() => {
-    navigator.clipboard.writeText("janavi0612@gmail.com");
+    navigator.clipboard.writeText("janavizala0612@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }, []);
   return (
     <div className="flex items-center gap-2.5 mt-5 px-4 py-3 bg-[#0a0a12] rounded-[14px] border border-white/[0.06] text-sm transition-colors hover:bg-[#111120]">
-      <span className="text-white/55">janavi0612@gmail.com</span>
+      <span className="text-white/55">janavizala0612@gmail.com</span>
       <button onClick={copy} className="ml-auto text-xs font-medium px-3 py-[5px] rounded-lg bg-white/10 text-white border border-white/10 transition-colors hover:bg-white/15">
         {copied ? "Copied!" : "Copy"}
       </button>

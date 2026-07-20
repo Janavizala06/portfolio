@@ -235,7 +235,7 @@ export default function HeroBrowserMockups({ onResume }: { onResume: () => void 
       >
         {/* ROW -1 → RIGHT  — Gmail · GitHub · CodeTalk · Resume · LinkedIn */}
         <MarqueeRow right duration={38} offset={40}>
-          <Card url="mail.google.com"             href="mailto:janavi0612@gmail.com"             ><GmailContent /></Card>
+          <Card url="mail.google.com"             href="mailto:janavizala0612@gmail.com"             ><GmailContent /></Card>
           <Card url="github.com/Janavizala06"     href="https://github.com/Janavizala06"        ><GitHubContent /></Card>
           <Card url="codetalk06.vercel.app"       href="https://codetalk06.vercel.app/"         ><CodeTalkContent /></Card>
           <Card url="janavi-zala · Resume.pdf"   href="resume" onClick={onResume}              ><ResumeContent /></Card>
@@ -247,14 +247,14 @@ export default function HeroBrowserMockups({ onResume }: { onResume: () => void 
           <Card url="codetalk06.vercel.app"       href="https://codetalk06.vercel.app/"         ><CodeTalkContent /></Card>
           <Card url="linkedin.com/in/janavi-zala" href="https://www.linkedin.com/in/janavi-zala/"><LinkedInContent /></Card>
           <Card url="janavi-zala · Resume.pdf"   href="resume" onClick={onResume}              ><ResumeContent /></Card>
-          <Card url="mail.google.com"             href="mailto:janavi0612@gmail.com"             ><GmailContent /></Card>
+          <Card url="mail.google.com"             href="mailto:janavizala0612@gmail.com"             ><GmailContent /></Card>
           <Card url="digitallib.vercel.app"       href="https://digitallib.vercel.app/"         ><LibTrackContent /></Card>
         </MarqueeRow>
 
         {/* ROW 1 → RIGHT  — GitHub · Gmail · LibTrack · LinkedIn · CodeTalk */}
         <MarqueeRow right duration={45}>
           <Card url="github.com/Janavizala06"     href="https://github.com/Janavizala06"        ><GitHubContent /></Card>
-          <Card url="mail.google.com"             href="mailto:janavi0612@gmail.com"             ><GmailContent /></Card>
+          <Card url="mail.google.com"             href="mailto:janavizala0612@gmail.com"             ><GmailContent /></Card>
           <Card url="digitallib.vercel.app"       href="https://digitallib.vercel.app/"         ><LibTrackContent /></Card>
           <Card url="linkedin.com/in/janavi-zala" href="https://www.linkedin.com/in/janavi-zala/"><LinkedInContent /></Card>
           <Card url="codetalk06.vercel.app"       href="https://codetalk06.vercel.app/"         ><CodeTalkContent /></Card>
@@ -266,7 +266,7 @@ export default function HeroBrowserMockups({ onResume }: { onResume: () => void 
           <Card url="github.com/Janavizala06"     href="https://github.com/Janavizala06"        ><GitHubContent /></Card>
           <Card url="codetalk06.vercel.app"       href="https://codetalk06.vercel.app/"         ><CodeTalkContent /></Card>
           <Card url="digitallib.vercel.app"       href="https://digitallib.vercel.app/"         ><LibTrackContent /></Card>
-          <Card url="mail.google.com"             href="mailto:janavi0612@gmail.com"             ><GmailContent /></Card>
+          <Card url="mail.google.com"             href="mailto:janavizala0612@gmail.com"             ><GmailContent /></Card>
         </MarqueeRow>
 
         {/* ROW 3 → RIGHT  — LinkedIn · LibTrack · GitHub · Resume · CodeTalk */}
@@ -282,7 +282,7 @@ export default function HeroBrowserMockups({ onResume }: { onResume: () => void 
         <MarqueeRow duration={40} offset={120}>
           <Card url="digitallib.vercel.app"       href="https://digitallib.vercel.app/"         ><LibTrackContent /></Card>
           <Card url="janavi-zala · Resume.pdf"   href="resume" onClick={onResume}              ><ResumeContent /></Card>
-          <Card url="mail.google.com"             href="mailto:janavi0612@gmail.com"             ><GmailContent /></Card>
+          <Card url="mail.google.com"             href="mailto:janavizala0612@gmail.com"             ><GmailContent /></Card>
           <Card url="github.com/Janavizala06"     href="https://github.com/Janavizala06"        ><GitHubContent /></Card>
           <Card url="linkedin.com/in/janavi-zala" href="https://www.linkedin.com/in/janavi-zala/"><LinkedInContent /></Card>
         </MarqueeRow>

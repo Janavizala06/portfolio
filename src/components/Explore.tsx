@@ -12,7 +12,7 @@ const reveal = {
 const exploreItems = [
   { label: "Code", title: "GitHub", desc: "Explore my open-source projects, contributions, and code repositories.", href: "https://github.com/Janavizala06" },
   { label: "Network", title: "LinkedIn", desc: "Connect professionally — let's build something great together.", href: "https://linkedin.com/in/janavi-zala-226117288" },
-  { label: "Reach Out", title: "Email", desc: "Drop me a line — I respond within 24 hours.", href: "mailto:janavi0612@gmail.com" },
+  { label: "Reach Out", title: "Email", desc: "Drop me a line — I respond within 24 hours.", href: "mailto:janavizala0612@gmail.com" },
 ];
 
 function LightButton({ title, href, delay }: { title: string, href: string, delay: number }) {

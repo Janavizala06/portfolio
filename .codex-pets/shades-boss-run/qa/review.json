@@ -1,0 +1,962 @@
+{
+  "ok": true,
+  "frames_root": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames",
+  "errors": [],
+  "warnings": [],
+  "rows": [
+    {
+      "state": "idle",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\idle\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13473,
+          "bbox": [
+            54,
+            5,
+            138,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 506
+        },
+        {
+          "index": 1,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\idle\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13398,
+          "bbox": [
+            54,
+            5,
+            137,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 564
+        },
+        {
+          "index": 2,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\idle\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13534,
+          "bbox": [
+            54,
+            5,
+            137,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 583
+        },
+        {
+          "index": 3,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\idle\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13573,
+          "bbox": [
+            54,
+            5,
+            138,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 570
+        },
+        {
+          "index": 4,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\idle\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13374,
+          "bbox": [
+            55,
+            5,
+            137,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 574
+        },
+        {
+          "index": 5,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\idle\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13393,
+          "bbox": [
+            53,
+            5,
+            138,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 564
+        }
+      ]
+    },
+    {
+      "state": "running-right",
+      "expected_frames": 8,
+      "actual_frames": 8,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-right\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 14923,
+          "bbox": [
+            46,
+            5,
+            145,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 544
+        },
+        {
+          "index": 1,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-right\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15360,
+          "bbox": [
+            43,
+            5,
+            149,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 599
+        },
+        {
+          "index": 2,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-right\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13995,
+          "bbox": [
+            49,
+            5,
+            143,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 486
+        },
+        {
+          "index": 3,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-right\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15001,
+          "bbox": [
+            44,
+            5,
+            147,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 550
+        },
+        {
+          "index": 4,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-right\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15272,
+          "bbox": [
+            42,
+            5,
+            150,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 576
+        },
+        {
+          "index": 5,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-right\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15654,
+          "bbox": [
+            42,
+            5,
+            149,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 536
+        },
+        {
+          "index": 6,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-right\\06.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 14168,
+          "bbox": [
+            48,
+            5,
+            144,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 453
+        },
+        {
+          "index": 7,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-right\\07.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15343,
+          "bbox": [
+            43,
+            5,
+            149,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 577
+        }
+      ]
+    },
+    {
+      "state": "running-left",
+      "expected_frames": 8,
+      "actual_frames": 8,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-left\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15823,
+          "bbox": [
+            39,
+            5,
+            153,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 546
+        },
+        {
+          "index": 1,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-left\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15323,
+          "bbox": [
+            39,
+            5,
+            152,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 572
+        },
+        {
+          "index": 2,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-left\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 14370,
+          "bbox": [
+            44,
+            5,
+            148,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 496
+        },
+        {
+          "index": 3,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-left\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15774,
+          "bbox": [
+            38,
+            5,
+            153,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 579
+        },
+        {
+          "index": 4,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-left\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13957,
+          "bbox": [
+            47,
+            5,
+            144,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 485
+        },
+        {
+          "index": 5,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-left\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15599,
+          "bbox": [
+            40,
+            5,
+            151,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 586
+        },
+        {
+          "index": 6,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-left\\06.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15677,
+          "bbox": [
+            38,
+            5,
+            153,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 598
+        },
+        {
+          "index": 7,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running-left\\07.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15552,
+          "bbox": [
+            39,
+            5,
+            153,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 604
+        }
+      ]
+    },
+    {
+      "state": "waving",
+      "expected_frames": 4,
+      "actual_frames": 4,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\waving\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 12697,
+          "bbox": [
+            56,
+            5,
+            135,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 271
+        },
+        {
+          "index": 1,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\waving\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13772,
+          "bbox": [
+            44,
+            5,
+            147,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 383
+        },
+        {
+          "index": 2,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\waving\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13609,
+          "bbox": [
+            45,
+            5,
+            146,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 342
+        },
+        {
+          "index": 3,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\waving\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 12709,
+          "bbox": [
+            56,
+            5,
+            135,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 272
+        }
+      ]
+    },
+    {
+      "state": "jumping",
+      "expected_frames": 5,
+      "actual_frames": 5,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\jumping\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 17824,
+          "bbox": [
+            34,
+            5,
+            157,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 500
+        },
+        {
+          "index": 1,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\jumping\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15057,
+          "bbox": [
+            37,
+            5,
+            154,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 433
+        },
+        {
+          "index": 2,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\jumping\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19124,
+          "bbox": [
+            17,
+            5,
+            174,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 618
+        },
+        {
+          "index": 3,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\jumping\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 14513,
+          "bbox": [
+            36,
+            5,
+            156,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 447
+        },
+        {
+          "index": 4,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\jumping\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 17045,
+          "bbox": [
+            38,
+            5,
+            153,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 474
+        }
+      ]
+    },
+    {
+      "state": "failed",
+      "expected_frames": 8,
+      "actual_frames": 8,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\failed\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13780,
+          "bbox": [
+            50,
+            5,
+            141,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 415
+        },
+        {
+          "index": 1,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\failed\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 14229,
+          "bbox": [
+            47,
+            5,
+            144,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 454
+        },
+        {
+          "index": 2,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\failed\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15028,
+          "bbox": [
+            42,
+            5,
+            149,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 437
+        },
+        {
+          "index": 3,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\failed\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 17939,
+          "bbox": [
+            36,
+            5,
+            155,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 495
+        },
+        {
+          "index": 4,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\failed\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13261,
+          "bbox": [
+            52,
+            5,
+            140,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 428
+        },
+        {
+          "index": 5,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\failed\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13644,
+          "bbox": [
+            53,
+            5,
+            139,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 385
+        },
+        {
+          "index": 6,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\failed\\06.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13544,
+          "bbox": [
+            53,
+            5,
+            139,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 416
+        },
+        {
+          "index": 7,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\failed\\07.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13387,
+          "bbox": [
+            53,
+            5,
+            138,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 445
+        }
+      ]
+    },
+    {
+      "state": "waiting",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\waiting\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13234,
+          "bbox": [
+            51,
+            5,
+            140,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 556
+        },
+        {
+          "index": 1,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\waiting\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13091,
+          "bbox": [
+            52,
+            5,
+            139,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 569
+        },
+        {
+          "index": 2,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\waiting\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13572,
+          "bbox": [
+            44,
+            5,
+            148,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 548
+        },
+        {
+          "index": 3,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\waiting\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13311,
+          "bbox": [
+            53,
+            5,
+            138,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 581
+        },
+        {
+          "index": 4,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\waiting\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 12653,
+          "bbox": [
+            54,
+            5,
+            138,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 514
+        },
+        {
+          "index": 5,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\waiting\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13311,
+          "bbox": [
+            52,
+            5,
+            139,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 575
+        }
+      ]
+    },
+    {
+      "state": "running",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13121,
+          "bbox": [
+            52,
+            5,
+            139,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 690
+        },
+        {
+          "index": 1,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13692,
+          "bbox": [
+            50,
+            5,
+            141,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 692
+        },
+        {
+          "index": 2,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13178,
+          "bbox": [
+            53,
+            5,
+            139,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 724
+        },
+        {
+          "index": 3,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 12526,
+          "bbox": [
+            50,
+            5,
+            142,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 703
+        },
+        {
+          "index": 4,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13172,
+          "bbox": [
+            54,
+            5,
+            137,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 609
+        },
+        {
+          "index": 5,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\running\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13867,
+          "bbox": [
+            50,
+            5,
+            142,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 718
+        }
+      ]
+    },
+    {
+      "state": "review",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\review\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 12388,
+          "bbox": [
+            56,
+            5,
+            136,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 306
+        },
+        {
+          "index": 1,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\review\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 12256,
+          "bbox": [
+            55,
+            5,
+            136,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 335
+        },
+        {
+          "index": 2,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\review\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13467,
+          "bbox": [
+            47,
+            5,
+            144,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 372
+        },
+        {
+          "index": 3,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\review\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 12570,
+          "bbox": [
+            56,
+            5,
+            136,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 329
+        },
+        {
+          "index": 4,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\review\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 13213,
+          "bbox": [
+            49,
+            5,
+            143,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 375
+        },
+        {
+          "index": 5,
+          "file": "E:\\ANTIGRAVITY\\PORTFOLIO\\CLAUDE\\aayush-next\\.codex-pets\\shades-boss-run\\frames\\review\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 12951,
+          "bbox": [
+            54,
+            5,
+            137,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 368
+        }
+      ]
+    }
+  ]
+}
